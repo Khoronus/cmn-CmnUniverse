@@ -1,0 +1,9 @@
+# Ignore all the folders with name
+build/
+
+# Ignore specific files (created locally)
+configure/path_configuration.txt
+configure/win/build_result.txt
+CmnLib/module/version/version.hpp
+CmnMath/module/version/version.hpp
+CmnCS/module/version/version.hpp

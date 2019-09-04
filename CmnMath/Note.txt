@@ -1,0 +1,8 @@
+geometry
+
+The distances are considered n dimensional (0-4)
+The dimension of the distance are referred to the highest dimensional object took in consideration.
+
+i.e. points are all 0 dimension
+     cube and sphere are 3 dimensions. A sphere-point is in the distance_threedim_sphere
+     mix are not taken in account yet.
