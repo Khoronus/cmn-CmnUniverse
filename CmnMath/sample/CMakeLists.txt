@@ -21,7 +21,7 @@ macro(CREATE_EXAMPLE NAME SOURCES LIBRARIES)
 	add_definitions(-DUNICODE -D_UNICODE)
 
     install(TARGETS ${NAME}
-      DESTINATION ${PREFIX_DOC}/examples
+      DESTINATION ${CMAKE_INSTALL_PREFIX}/examples
     )
 
     if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
