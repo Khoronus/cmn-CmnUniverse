@@ -89,6 +89,12 @@ install(TARGETS ${MAIN_PROJ_NAME} EXPORT ${MAIN_PROJ_NAME}Targets
         FRAMEWORK     DESTINATION ${CMNLIB_FRAMEWORK_INSTALL_DIR})
 
 ######################################################################
+# Options
+#option (USE_STATIC "Use static library" OFF)
+option (BUILD_EXAMPLES "Build Samples" ON)
+option (USE_WIN32 "Compile with Win32" ON)
+
+######################################################################
 # Recurse into the subdirectories. 
 add_subdirectory (module)
 add_subdirectory (sample)

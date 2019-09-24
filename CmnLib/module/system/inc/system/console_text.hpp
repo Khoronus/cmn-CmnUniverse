@@ -14,7 +14,8 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF 
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * 
- * @author  Alessandro Moro <alessandromoro.italy@gmail.com>
+ * @author  Unknwon
+ * @modify Alessandro Moro <alessandromoro.italy@gmail.com>
  * @bug No known bugs.
  * @version 1.1.1.0
  * 
