@@ -116,7 +116,9 @@ int main(int argc, const char** argv)
 
 
 	// Camera manager
-	cv::VideoCapture vc(0);
+	cv::VideoCapture vc;
+	if (argc > 1 && strlen(argv[1]) == 1) vc.open(std::stoi(argv[1]));
+	if (argc > 1 && strlen(argv[1]) > 1) vc.open(argv[1]);
 
 	// Image and Histogram containers and vars
 	cv::Mat frame, hsv, hue, mask, hist,
