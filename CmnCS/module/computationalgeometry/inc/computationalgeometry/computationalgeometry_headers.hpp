@@ -1,6 +1,6 @@
 /**
-* @file statistics_headers.hpp
-* @brief Header of all the files related to the statistics
+* @file computationalgeometry_headers.hpp
+* @brief Header of all the files related to the computational geomtery
 *
 * @section LICENSE
 *
@@ -17,7 +17,7 @@
 *
 * @original author Alessandro Moro
 * @bug No known bugs.
-* @version 0.1.0.0
+* @version 0.2.0.0
 *
 */
 
@@ -33,5 +33,6 @@
 #include "mesh_naive_3D.hpp"
 #include "mesh_naive_3DIO.hpp"
 #include "ConvertPlane2D3D.hpp"
+#include "nearest_zerodim_point.hpp"
 
-#endif /* CMNCS_COMPUTATIONALGEOMETRY_COMPUTATIONALGEOMETRYHEADERS_HPP__ */
+#endif // CMNCS_COMPUTATIONALGEOMETRY_COMPUTATIONALGEOMETRYHEADERS_HPP__

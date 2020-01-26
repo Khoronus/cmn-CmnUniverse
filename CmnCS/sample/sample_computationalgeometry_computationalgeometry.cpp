@@ -80,6 +80,18 @@ void test()
 	std::cout << "Convert: " << xy << " -> " << uv << " -> " << xyz << 
 		std::endl;
 
+	// nearest
+	std::map<int, cv::Point> m_points = { {0, cv::Point(50, 70)},
+	{1, cv::Point(250, 170)} ,{2, cv::Point(320, 290)},
+	{5, cv::Point(80, 85)} };
+	// Find index
+	int id_dist = CmnCS::computationalgeometry::NearestZeroDimPoint::find_index_nearest<cv::Point>(cv::Point(0, 0), m_points);
+	if (id_dist != CmnCS::computationalgeometry::kInvalidNearestIndex) {
+		int w = 512, h = 512;
+		int id_distangle = CmnCS::computationalgeometry::NearestZeroDimPoint::find_index_nearest<cv::Point>(m_points[id_dist], cv::Point(w / 2, h / 2), 0.05, m_points);
+		std::cout << "id_dist: " << id_dist << 
+			" id_distangle: " << id_distangle << std::endl;
+	}
 }
 
 } // namespace anonymous

@@ -22,9 +22,9 @@ SET( MAIN_PROJ_NAME      "CmnCS" )
 project (${MAIN_PROJ_NAME})
 
 set(CMNCS_VERSION_MAJOR 0 CACHE STRING "major version of cmncs" FORCE)
-set(CMNCS_VERSION_MINOR 5 CACHE STRING "minor version of cmncs" FORCE)
+set(CMNCS_VERSION_MINOR 6 CACHE STRING "minor version of cmncs" FORCE)
 set(CMNCS_VERSION_SUBMINOR 0 CACHE STRING "subminor version of cmncs" FORCE)
-set(CMNCS_VERSION_PATCH 1 CACHE STRING "patch version of cmncs" FORCE)
+set(CMNCS_VERSION_PATCH 0 CACHE STRING "patch version of cmncs" FORCE)
 set(CMNCS_VERSION "${CMNCS_VERSION_MAJOR}.${CMNCS_VERSION_MINOR}.${CMNCS_VERSION_SUBMINOR}.${CMNCS_VERSION_PATCH}"
                              CACHE STRING "version of cmncs" FORCE)
 set(CMNCS_VERSION_NAME \"CmnCSAlpha\" CACHE STRING "name version of cmncs" FORCE)
