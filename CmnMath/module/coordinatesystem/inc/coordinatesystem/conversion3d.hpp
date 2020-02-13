@@ -97,7 +97,7 @@ public:
 	}
 
 	/** @link: http://jp.mathworks.com/help/matlab/ref/cart2sph.html
-
+		@link (geodesic coord): https://gis.stackexchange.com/questions/58923/calculating-view-angle
 		It converts cartesian coordinates in spherical cordinates.
 		The cartesian coordinates are in the form
 		X right (Xr) Y up (Yu) Z front (Zf)
@@ -112,6 +112,47 @@ public:
 			std::pow(s.z, 2));
 		elevation = std::atan2(s.y, std::sqrt(std::pow(s.x, 2) + std::pow(s.z, 2)));
 		azimuth = std::atan2(s.z, s.x);
+	}
+
+	/** @link: https://jp.mathworks.com/help/matlab/ref/sph2cart.html
+
+		@note Compared to the matlabl specs, the Y and Z are inverted.
+			  The output of cartesian2spericalXrYuZf has YZ axes inverted.
+	*/
+	template <typename _Ty2>
+	static void sphericalXrYuZf2cartesian(_Ty r, _Ty elevation, _Ty azimuth,
+		_Ty2 &d) {
+		d.x = r * std::cos(elevation) * std::cos(azimuth);
+		d.z = r * std::cos(elevation) * std::sin(azimuth);
+		d.y = r * std::sin(elevation);
+	}
+
+	/** @link: http://jp.mathworks.com/help/matlab/ref/cart2sph.html
+		@link (geodesic coord): https://gis.stackexchange.com/questions/58923/calculating-view-angle
+		It converts cartesian coordinates in spherical cordinates.
+		The cartesian coordinates are in the form
+		X right (Xr) Y front (Yf) Z up (Zu)
+		@param[out] elevation [-PI/2, PI/2]
+		@param[out] azimuth [-PI, PI]
+	*/
+	template <typename _Ty2>
+	static void cartesian2sphericalXrYfZu(_Ty2 &s, _Ty &r, _Ty &elevation,
+		_Ty &azimuth) {
+
+		r = std::sqrt(std::pow(s.x, 2) + std::pow(s.y, 2) +
+			std::pow(s.z, 2));
+		elevation = std::atan2(s.z, std::sqrt(std::pow(s.x, 2) + std::pow(s.y, 2)));
+		azimuth = std::atan2(s.y, s.x);
+	}
+
+	/** @link: https://jp.mathworks.com/help/matlab/ref/sph2cart.html
+	*/
+	template <typename _Ty2>
+	static void sphericalXrYfZu2cartesian(_Ty r, _Ty elevation, _Ty azimuth,
+		_Ty2 &d) {
+		d.x = r * std::cos(elevation) * std::cos(azimuth);
+		d.y = r * std::cos(elevation) * std::sin(azimuth);
+		d.z = r * std::sin(elevation);
 	}
 
 	static void cylindrical2cartesian(_Ty r, _Ty theta, _Ty h,
