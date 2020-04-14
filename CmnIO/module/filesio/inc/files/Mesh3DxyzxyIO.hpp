@@ -1,6 +1,7 @@
 #ifndef CMNIO_FILESIO_MESH3DXYZXYIO_HPP__
 #define CMNIO_FILESIO_MESH3DXYZXYIO_HPP__
 
+#include <vector>
 #include <fstream>
 #include <iostream>
 #include <string>
