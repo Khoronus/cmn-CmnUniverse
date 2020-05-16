@@ -36,7 +36,9 @@
 #include <iterator>
 #include <chrono>
 
-namespace commctrl
+namespace CmnLib
+{
+namespace text
 {
 
 /** @brief Class to perform some functions on a string
@@ -85,6 +87,7 @@ public:
 };
 
 
-} // namespace commctrl
+} // namespace text
+} // namespace CmnLib
 
 #endif // CMNLIB_STRING_STDSTRINGFUNC_HPP__
