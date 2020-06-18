@@ -12,6 +12,8 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 
 */
 
+#define NOMINMAX
+
 #include <iostream>
 #include <fstream>
 
