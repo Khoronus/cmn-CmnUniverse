@@ -96,6 +96,7 @@ CREATE_EXAMPLE(test_opencv_gmm test_opencv_gmm "")
 CREATE_EXAMPLE(test_opencv_poissonblending test_opencv_poissonblending "")
 CREATE_EXAMPLE(test_opencv_filter2d test_opencv_filter2d "")
 CREATE_EXAMPLE(devel_measure_templateregionsidentifier devel_measure_templateregionsidentifier "measure")
+CREATE_EXAMPLE(test_opencv_fisheye2square test_opencv_fisheye2square "")
 endif(BUILD_EXAMPLES)
 
 #######################################################################
