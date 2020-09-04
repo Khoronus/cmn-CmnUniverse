@@ -251,8 +251,8 @@ public:
 		CMN_32F  y = xy.y - (h / 2.0f);
 		// ratio [-1, 1]
 		CMN_32F  _x = x / (w / 2.0f), _   y = y / (h / 2.0f);
-		_x *= CV_PI / 2;
-		_y *= CV_PI / 2;
+		_x *= CmnMath::core::kPIf / 2;
+		_y *= CmnMath::core::kPIf / 2;
 		CMN_32F longitude = _x / R;
 		CMN_32F latitude = 2 * std::atan(std::exp(_y / R)) - CmnMath::core::kPIf / 2;
 		CMN_32F S = 1.0f;

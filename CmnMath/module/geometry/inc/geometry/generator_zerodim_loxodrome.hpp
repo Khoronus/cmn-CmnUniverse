@@ -78,7 +78,7 @@ public:
 		for (CMN_32F lambda = minval; lambda <= maxval; lambda += singleinterval)
 		{
 			CMN_32F beta = lambda - lambda0;
-			CMN_32F m = beta;//std::tan(CV_PI / 2 - beta);
+			CMN_32F m = beta;//std::tan(CmnMath::core::kPI / 2 - beta);
 			CMN_32F ch = std::cosh(k * m);
 			CMN_32F c = std::cos(lambda);
 			CMN_32F s = std::sin(lambda);

@@ -17,7 +17,7 @@
 *
 * @author  Alessandro Moro <alessandromoro.italy@gmail.com>
 * @bug No known bugs.
-* @version 0.1.0.0
+* @version 0.2.0.0
 *
 */
 
@@ -51,6 +51,10 @@ void test_anglebetween()
 		" <= " << angle2 << " is between: " << CmnMath::numericsystem::AngleBetween<CmnMath::CMN_64F>::two_angles(angle_target2, angle1, angle2) << std::endl;
 }
 
+void test_quaternionNaive() {
+	CmnMath::numericsystem::QuaternionNaive qn;
+}
+
 
 void test()
 {
@@ -80,6 +84,8 @@ void main()
 	test();
 	test_angleconversion();
 	test_anglebetween();
+	// TODO
+	test_quaternionNaive();
 }
 
 

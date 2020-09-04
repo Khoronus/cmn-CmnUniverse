@@ -55,7 +55,7 @@ public:
 		std::vector<float> angles;
 		for (auto it : pts) {
 			float a0 = std::atan2(it.y, it.x);
-			a0 = (a0 > 0 ? a0 : (2 * CV_PI + a0));
+			a0 = (a0 > 0 ? a0 : (2 * CmnMath::core::kPI + a0));
 			//std::cout << "a: " << a0 << std::endl;
 			angles.push_back(a0);
 			//cv::circle(out, cv::Point2f(it.x * 256 + 256, it.y * 256 + 256), 1, cv::Scalar(0, 255, 0), -1);

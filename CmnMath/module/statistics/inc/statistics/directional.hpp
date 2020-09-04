@@ -104,10 +104,10 @@ private:
 			result = std::atan(s / c);
 		}
 		else if (s < 0 && c > 0) {
-			result = std::atan(s / c) + 2 * CV_PI;
+			result = std::atan(s / c) + 2 * CmnMath::core::kPI;
 		}
 		else if (c < 0) {
-			result = std::atan(s / c) + CV_PI;
+			result = std::atan(s / c) + CmnMath::core::kPI;
 		}
 		else {
 			return false;
