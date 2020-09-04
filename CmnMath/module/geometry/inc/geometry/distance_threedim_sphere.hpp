@@ -1,5 +1,5 @@
 /**
-* @file 
+* @file distance_threedim_sphere.hpp
 * @brief Header
 *
 * @section LICENSE
@@ -17,7 +17,7 @@
 *
 * @original author Alessandro Moro
 * @bug No known bugs.
-* @version 0.1.0.0
+* @version 0.1.1.0
 *
 */
 
@@ -40,7 +40,7 @@ public:
 	*/
 	static REAL spherical_law_cosines(const _Ty3D &p, const _Ty3D &q, REAL r) {
 		return r * std::acos(std::sin(p[2]) * std::sin(q[2]) +
-			std::std::cos(p[2]) * std::cos(p[2]) * std::cos(std::abs(p[1] - q[1])));
+			std::cos(p[2]) * std::cos(p[2]) * std::cos(std::abs(p[1] - q[1])));
 	}
 };
 

@@ -179,7 +179,7 @@ void test()
 		CmnMath::algebralinear::Vector3f v1(2, -1, 1);
 		CmnMath::algebralinear::Vector3f v2(2, 1, 1);
 		CmnMath::CMN_32F t = 0;
-		if (CmnMath::geometry::IntersectionTwoDimTriangleXYZ < CmnMath::algebralinear::Vector3f, CmnMath::CMN_32F >::RayTriangle(p, d, v0, v1, v2, 0.00001f, t)) {
+		if (CmnMath::geometry::IntersectionTwoDimTriangleXYZ<CmnMath::algebralinear::Vector3f, CmnMath::CMN_32F >::RayTriangle(p, d, v0, v1, v2, 0.00001f, false, t)) {
 			std::cout << "IntersectionTwoDimTriangleXYZ::Intersect at: " << p.x + d.x * t << " " << p.y + d.y * t << " " << p.z + d.z * t << std::endl;
 		}
 	}

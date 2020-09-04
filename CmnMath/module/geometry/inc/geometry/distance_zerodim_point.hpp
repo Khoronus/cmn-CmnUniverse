@@ -17,7 +17,7 @@
 *
 * @original author Alessandro Moro
 * @bug No known bugs.
-* @version 0.1.0.0
+* @version 0.2.0.0
 *
 */
 
@@ -41,6 +41,17 @@ class DistanceZeroDimPoint
 {
 public:
 
+
+	/** @brief Measure the L2 norm distance between two points
+
+		@link: http://mathworld.wolfram.com/L2-Norm.html
+	*/
+	template <typename _Ty3, typename REAL>
+	static REAL L2(const _Ty3 &a, const _Ty3 &b) {
+		return std::sqrt(std::pow(a.x - b.x, 2) +
+			std::pow(a.y - b.y, 2) + std::pow(a.z - b.z, 2));
+	}
+
 	/** @brief Calculate the euclidean distance.
 
   	    Calculate the euclidean distance.
@@ -62,8 +73,8 @@ public:
 	@param[in] b First point.
 	@return Return the distance.
 	*/
-	template <typename _Ty>
-	static CMN_32F point_point_2d(const _Ty &a, const _Ty &b)
+	template <typename _Ty, typename REAL>
+	static REAL point_point_2d(const _Ty &a, const _Ty &b)
 	{
 		return std::sqrt(std::pow(a.x - b.x, 2) +
 			std::pow(a.y - b.y, 2));
@@ -71,10 +82,10 @@ public:
 
 	/** @brief Calculate the euclidean distance.
 
-	Calculate the euclidean distance.
-	@param[in] a First point.
-	@param[in] b First point.
-	@return Return the distance.
+		Calculate the euclidean distance.
+		@param[in] a First point.
+		@param[in] b First point.
+		@return Return the distance.
 	*/
 	template <typename _Ty, typename _Ty2>
 	static _Ty2 point_point_3d(const _Ty &a, const _Ty &b)
@@ -87,12 +98,12 @@ public:
 
 	/** @brief Calculate the index of the most distant points.
 
-	Calculate the index of the most distant points.
-	@param[in] v_points Set of points to analyze.
-	@param[in] idx_first Index of one of the two most distant points.
-	@param[in] idx_second Index of the other of the two most distant
-	points.
-	@return Return 1 in case of success. 0 otherwise.
+		Calculate the index of the most distant points.
+		@param[in] v_points Set of points to analyze.
+		@param[in] idx_first Index of one of the two most distant points.
+		@param[in] idx_second Index of the other of the two most distant
+		points.
+		@return Return 1 in case of success. 0 otherwise.
 	*/
 	template <typename _Ty>
 	static CMN_32S points_2_most_distant(const std::vector<_Ty> &v_points,
