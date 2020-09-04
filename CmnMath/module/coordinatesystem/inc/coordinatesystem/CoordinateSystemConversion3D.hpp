@@ -17,17 +17,17 @@
 *
 * @author Alessandro Moro
 * @bug No known bugs.
-* @version 0.1.0.0
+* @version 0.2.0.0
 *
 */
 
-#ifndef CMNMATH_COORDINATESYSTEM_CONVERSION3D_HPP__
-#define CMNMATH_COORDINATESYSTEM_CONVERSION3D_HPP__
+#ifndef CMNMATH_COORDINATESYSTEM_COORDINATESYSTEMCONVERSION3D_HPP__
+#define CMNMATH_COORDINATESYSTEM_COORDINATESYSTEMCONVERSION3D_HPP__
 
 
 #include <cmath>
 #include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
-#include "algebralinear\inc\algebralinear\algebralinear_headers.hpp"
+#include "algebralinear/inc/algebralinear/algebralinear_headers.hpp"
 
 namespace CmnMath
 {
@@ -291,4 +291,4 @@ public:
 
 
 
-#endif /* CMNMATH_COORDINATESYSTEM_CONVERSION2D_HPP__ */
+#endif // CMNMATH_COORDINATESYSTEM_COORDINATESYSTEMCONVERSION3D_HPP__

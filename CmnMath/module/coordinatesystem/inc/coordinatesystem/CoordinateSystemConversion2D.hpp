@@ -1,6 +1,6 @@
 /**
-* @file quaternion.hpp
-* @brief Header related to quaternions.
+* @file CoordinateSystemConversion2D.hpp
+* @brief Header related to the conversion of coordinate system in 2D.
 *
 * @section LICENSE
 *
@@ -21,8 +21,8 @@
 *
 */
 
-#ifndef CMNMATH_COORDINATESYSTEM_CONVERSION2D_HPP__
-#define CMNMATH_COORDINATESYSTEM_CONVERSION2D_HPP__
+#ifndef CMNMATH_COORDINATESYSTEM_COORDINATESYSTEMCONVERSION2D_HPP__
+#define CMNMATH_COORDINATESYSTEM_COORDINATESYSTEMCONVERSION2D_HPP__
 
 #include <cmath>
 #include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
@@ -76,4 +76,4 @@ public:
 } // namespace CmnMath
 
 
-#endif /* CMNMATH_COORDINATESYSTEM_CONVERSION2D_HPP__ */
+#endif // CMNMATH_COORDINATESYSTEM_COORDINATESYSTEMCONVERSION2D_HPP__

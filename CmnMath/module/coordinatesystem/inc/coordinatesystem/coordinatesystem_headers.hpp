@@ -1,6 +1,6 @@
 /**
 * @file coordinatesystem_headers.hpp
-* @brief Header of all the files related to the dynamic
+* @brief Header of all the files related to the subject.
 *
 * @section LICENSE
 *
@@ -17,15 +17,16 @@
 *
 * @original author Alessandro Moro
 * @bug No known bugs.
-* @version 0.1.0.0
+* @version 0.2.0.0
 *
 */
 
 #ifndef CMNMATH_COORDINATESYSTEM_COORDINATESTEMHEADERS_HPP__
 #define CMNMATH_COORDINATESYSTEM_COORDINATESTEMHEADERS_HPP__
 
-#include "conversion2d.hpp"
-#include "conversion3d.hpp"
+#include "CoordinateSystemConversion2D.hpp"
+#include "CoordinateSystemConversion3D.hpp"
 #include "conversion_threedim_sphere.hpp"
+#include "conversion_threedim_hemisphere.hpp"
 
-#endif /* CMNMATH_COORDINATESYSTEM_COORDINATESTEMHEADERS_HPP__ */
+#endif // CMNMATH_COORDINATESYSTEM_COORDINATESTEMHEADERS_HPP__
