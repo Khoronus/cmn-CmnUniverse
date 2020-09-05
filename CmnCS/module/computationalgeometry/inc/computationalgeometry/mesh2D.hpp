@@ -86,7 +86,7 @@ public:
 			// check that no points are already nearly placed
 			for (auto it : points_)
 			{
-				float d = CmnMath::geometry::DistanceZeroDimPoint::point_point_2d(
+				float d = CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f, float>(
 					pt, it.second);
 				if (d < min_radius) return false;
 			}

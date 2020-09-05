@@ -104,9 +104,9 @@ public:
 				cv::Point2f p2(t[4], t[5]);
 				cv::Point2f c(static_cast<float>(size.width) / 2, 
 					static_cast<float>(size.height) / 2);
-				if (CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f>(p0, c) > filter.x ||
-					CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f>(p1, c) > filter.y ||
-					CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f>(p2, c) > filter.z)
+				if (CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f, float>(p0, c) > filter.x ||
+					CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f, float>(p1, c) > filter.y ||
+					CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f, float>(p2, c) > filter.z)
 					continue;
 
 				cv::Point3f a = (m_3Dmap[std::pair<int, int>(t_aux[4], t_aux[5])] - m_3Dmap[std::pair<int, int>(t_aux[0], t_aux[1])]);
@@ -199,9 +199,9 @@ public:
 				cv::Point2f p1(t[2], t[3]);
 				cv::Point2f p2(t[4], t[5]);
 				cv::Point2f c(size.width / 2, size.height / 2);
-				if (CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f>(p0, c) > filter.x ||
-					CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f>(p1, c) > filter.y ||
-					CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f>(p2, c) > filter.z)
+				if (CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f, float>(p0, c) > filter.x ||
+					CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f, float>(p1, c) > filter.y ||
+					CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f, float>(p2, c) > filter.z)
 					continue;
 
 				cv::Point3f a = (m_3Dmap[std::pair<int, int>(t_aux[4], t_aux[5])] - m_3Dmap[std::pair<int, int>(t_aux[0], t_aux[1])]);
