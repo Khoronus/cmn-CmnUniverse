@@ -1,4 +1,4 @@
-/* @file inside.hpp
+/* @file deprecated.hpp
  * @brief It defines the deprecated calls for the various compilers.
  *
  * @section LICENSE

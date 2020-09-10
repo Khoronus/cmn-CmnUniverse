@@ -1,6 +1,6 @@
 /**
 * @file define.hpp
-* @brief Header of constants values
+* @brief Header of defines.
 *
 * @section LICENSE
 *
