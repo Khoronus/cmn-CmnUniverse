@@ -52,7 +52,7 @@ void test_anglebetween()
 }
 
 void test_quaternionNaive() {
-	CmnMath::numericsystem::QuaternionNaive qn;
+	CmnMath::numericsystem::QuaternionNaive<> qn;
 }
 
 

@@ -24,7 +24,7 @@ project (${MAIN_PROJ_NAME})
 set(CMNIP_VERSION_MAJOR 0 CACHE STRING "major version of cmnip" FORCE)
 set(CMNIP_VERSION_MINOR 5 CACHE STRING "minor version of cmnip" FORCE)
 set(CMNIP_VERSION_SUBMINOR 0 CACHE STRING "subminor version of cmnip" FORCE)
-set(CMNIP_VERSION_PATCH 2 CACHE STRING "patch version of cmnip" FORCE)
+set(CMNIP_VERSION_PATCH 3 CACHE STRING "patch version of cmnip" FORCE)
 set(CMNIP_VERSION "${CMNIP_VERSION_MAJOR}.${CMNIP_VERSION_MINOR}.${CMNIP_VERSION_SUBMINOR}.${CMNIP_VERSION_PATCH}"
                              CACHE STRING "version of cmnip" FORCE)
 set(CMNIP_VERSION_NAME \"CmnIPAlpha\" CACHE STRING "name version of cmnip" FORCE)

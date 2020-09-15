@@ -132,7 +132,7 @@ void detect_clusters(
 		// the radius is not compatible
 		for (auto it2 = it->second.begin(); it2 != it->second.end(); it2++)
 		{
-			float d = CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f>(
+			float d = CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f, float>(
 				c, v_points2[*it2]);
 			if (d > radius[0][it->first] + max_delta_radius) {
 				*it2 = -1;

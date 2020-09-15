@@ -5,7 +5,18 @@ namespace CmnIP
 namespace signal
 {
 
-float T [] = { 0x15, 0x38, 0x32, 0x2c, 0x0d, 0x13, 0x07, 0x2a };
+SimplexNoise::SimplexNoise()
+{
+	T = std::vector<float>{ 0x15, 0x38, 0x32, 0x2c, 0x0d, 0x13, 0x07, 0x2a };
+}
+
+
+SimplexNoise::~SimplexNoise()
+{
+}
+
+// older declaration
+//float T [] = { 0x15, 0x38, 0x32, 0x2c, 0x0d, 0x13, 0x07, 0x2a };
 
 int SimplexNoise::b2Param(int N, int B){
 	return N >> B & 1;
@@ -67,15 +78,6 @@ float SimplexNoise::Get1D(float x){
 
 float SimplexNoise::Get2D(float x, float y){
 	return SimplexNoise::noise(x, y, 0);
-}
-
-SimplexNoise::SimplexNoise()
-{
-}
-
-
-SimplexNoise::~SimplexNoise()
-{
 }
 
 } // namespace signal

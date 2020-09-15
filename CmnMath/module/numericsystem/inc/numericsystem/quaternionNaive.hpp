@@ -17,7 +17,7 @@
 *
 * @original author Alessandro Moro
 * @bug No known bugs.
-* @version 0.1.0.0
+* @version 0.2.0.0
 *
 */
 
@@ -38,26 +38,27 @@ namespace numericsystem
 // Quaternion struct
 // Simple incomplete quaternion struct for demo purpose
 ///////////////////////////////
+template <typename REAL = double>
 struct QuaternionNaive {
 	QuaternionNaive() :x(0), y(0), z(0), w(1) {};
-	QuaternionNaive(double x, double y, double z, double w) :x(x), y(y), z(z), w(w) {};
+	QuaternionNaive(REAL x, REAL y, REAL z, REAL w) :x(x), y(y), z(z), w(w) {};
 
 	void normalize() {
-		double norm = std::sqrt(x*x + y*y + z*z + w*w);
+		REAL norm = std::sqrt(x*x + y*y + z*z + w*w);
 		x /= norm;
 		y /= norm;
 		z /= norm;
 		w /= norm;
 	}
 
-	double norm() {
+	REAL norm() {
 		return std::sqrt(x*x + y*y + z*z + w*w);
 	}
 
-	double x;
-	double y;
-	double z;
-	double w;
+	REAL x;
+	REAL y;
+	REAL z;
+	REAL w;
 
 	QuaternionNaive operator*(QuaternionNaive& q2) {
 		QuaternionNaive q;
@@ -79,6 +80,7 @@ struct QuaternionNaive {
 //	return q;
 //}
 
+template <typename REAL = double>
 class QuaternionNaiveTransform
 {
 public:
@@ -87,10 +89,10 @@ public:
 	@link http://www.cg.info.hiroshima-cu.ac.jp/~miyazaki/knowledge/teche52.html
 	*/
 	static void rotationmatrix2quaternion_inconsinstentresult(
-		float r11, float r12, float r13,
-		float r21, float r22, float r23,
-		float r31, float r32, float r33,
-		float &q0, float &q1, float &q2, float &q3) {
+		REAL r11, REAL r12, REAL r13,
+		REAL r21, REAL r22, REAL r23,
+		REAL r31, REAL r32, REAL r33,
+		REAL&q0, REAL&q1, REAL&q2, REAL&q3) {
 
 		q0 = (r11 + r22 + r33 + 1.0f) / 4.0f;
 		q1 = (r11 - r22 - r33 + 1.0f) / 4.0f;
@@ -131,7 +133,7 @@ public:
 		else {
 			printf("coding error\n");
 		}
-		float r = NORM(q0, q1, q2, q3);
+		REAL r = NORM(q0, q1, q2, q3);
 		q0 /= r;
 		q1 /= r;
 		q2 /= r;
@@ -144,10 +146,10 @@ public:
 		@test http://www.energid.com/resources/orientation-calculator/
 	*/
 	static void rotationmatrix2quaternion(
-		float r11, float r12, float r13,
-		float r21, float r22, float r23,
-		float r31, float r32, float r33,
-		double &x, double &y, double &z, double &w) {
+		REAL r11, REAL r12, REAL r13,
+		REAL r21, REAL r22, REAL r23,
+		REAL r31, REAL r32, REAL r33,
+		REAL&x, REAL&y, REAL&z, REAL&w) {
 
 		w = std::sqrt((std::max)(0.0f, 1 + r11 + r22 + r33)) / 2;
 		x = std::sqrt((std::max)(0.0f, 1 + r11 - r22 - r33)) / 2;
@@ -157,10 +159,12 @@ public:
 		y *= SIGN(y * (r13 - r31));
 		z *= SIGN(z * (r21 - r12));
 	}
+
+
 	static void rotationmatrix2quaternion(
-		float r11, float r12, float r13,
-		float r21, float r22, float r23,
-		float r31, float r32, float r33,
+		REAL r11, REAL r12, REAL r13,
+		REAL r21, REAL r22, REAL r23,
+		REAL r31, REAL r32, REAL r33,
 		QuaternionNaive &q) {
 		rotationmatrix2quaternion(
 			r11, r12, r13,
@@ -194,10 +198,10 @@ public:
 	@link http://www.euclideanspace.com/maths/geometry/rotations/conversions/QuaternionNaiveToAngle/
 	@test http://www.energid.com/resources/orientation-calculator/
 	*/
-	static void axis_angle(QuaternionNaive &qt, double &x, double&y, double&z, double &angle) {
+	static void axis_angle(QuaternionNaive &qt, REAL&x, REAL&y, REAL&z, REAL&angle) {
 		if (qt.w > 1) qt.normalize(); // if w>1 acos and sqrt will produce errors, this cant happen if QuaternionNaive is normalised
 		angle = 2 * std::acos(qt.w);
-		double s = std::sqrt(1 - qt.w * qt.w); // assuming QuaternionNaive normalised then w is less than 1, so term always positive.
+		REAL s = std::sqrt(1 - qt.w * qt.w); // assuming QuaternionNaive normalised then w is less than 1, so term always positive.
 		if (s < 0.001) { // test to avoid divide by zero, s is always positive due to sqrt
 						 // if s close to zero then direction of axis not important
 			x = qt.x; // if it is important that axis is normalised then replace with x=1; y=z=0;
@@ -216,19 +220,19 @@ public:
 	///////////////////////////////
 	enum RotSeq { zyx, zyz, zxy, zxz, yxz, yxy, yzx, yzy, xyz, xyx, xzy, xzx };
 
-	static void twoaxisrot(double r11, double r12, double r21, double r31, double r32, double res[]) {
+	static void twoaxisrot(REAL r11, REAL r12, REAL r21, REAL r31, REAL r32, REAL res[]) {
 		res[0] = atan2(r11, r12);
 		res[1] = acos(r21);
 		res[2] = atan2(r31, r32);
 	}
 
-	static void threeaxisrot(double r11, double r12, double r21, double r31, double r32, double res[]) {
+	static void threeaxisrot(REAL r11, REAL r12, REAL r21, REAL r31, REAL r32, REAL res[]) {
 		res[0] = atan2(r31, r32);
 		res[1] = asin(r21);
 		res[2] = atan2(r11, r12);
 	}
 
-	static void QuaternionNaive2Euler(const QuaternionNaive& q, double res[], RotSeq rotSeq)
+	static void QuaternionNaive2Euler(const QuaternionNaive& q, REAL res[], RotSeq rotSeq)
 	{
 		switch (rotSeq) {
 		case zyx:
@@ -346,12 +350,12 @@ public:
 
 
 private:
-	static double rad2deg(double rad) {
+	static REAL rad2deg(REAL rad) {
 		return rad*180.0 / CmnMath::core::kPI;
 	}
 
-	static inline float SIGN(float x) { return (x >= 0.0f) ? +1.0f : -1.0f; }
-	static inline float NORM(float a, float b, float c, float d) { return sqrt(a * a + b * b + c * c + d * d); }
+	static inline REAL SIGN(REAL x) { return (x >= 0.) ? +1. : -1.; }
+	static inline REAL NORM(REAL a, REAL b, REAL c, REAL d) { return sqrt(a * a + b * b + c * c + d * d); }
 };
 
 }	// namespace numericspace

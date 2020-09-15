@@ -130,7 +130,7 @@ int Connection2D::get_next_connected(cv::Point2f &norm,
 	for (std::set< std::pair< float, float > >::const_iterator it = vertex_sparse.begin(); it != vertex_sparse.end(); it++)
 #endif
 	{
-		double dist = CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f>(p, cv::Point2f( 
+		float dist = CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f, float>(p, cv::Point2f( 
 			it->first, it->second ) );
 		if (dist >= min_distance && dist <= max_distance) {
 			v_inside.push_back( cv::Point2f(it->first, it->second) );

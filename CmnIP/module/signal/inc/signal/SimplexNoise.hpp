@@ -21,6 +21,7 @@
 #define CMNIP_SIGNAL_SIMPLEXNOISE_HPP__
 
 #include <cmath>
+#include <vector>
 #include "INoiseGenerator.hpp"
 
 namespace CmnIP
@@ -43,7 +44,7 @@ private:
 	int A[3];
 
 	float u, v, w;
-	float T [];
+	std::vector<float> T;
 	float noise(float x, float y, float z);
 	float K(int a);
 	float Shuffle(int i, int j, int k);

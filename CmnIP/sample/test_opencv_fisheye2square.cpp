@@ -58,7 +58,11 @@ int main(int argc, char **argv)
 	}
 	Mat outImage(orignalImage.rows, orignalImage.cols, CV_8UC3);
 
+#if CV_MAJOR_VERSION == 2
 	namedWindow("result", CV_WINDOW_NORMAL);
+#else
+	namedWindow("result", cv::WINDOW_NORMAL);
+#endif
 
 	for (int i = 0; i < outImage.cols; i++)
 	{
