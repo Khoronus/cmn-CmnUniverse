@@ -151,10 +151,14 @@ public:
 		REAL r31, REAL r32, REAL r33,
 		REAL&x, REAL&y, REAL&z, REAL&w) {
 
-		w = std::sqrt((std::max)(0.0f, 1 + r11 + r22 + r33)) / 2;
-		x = std::sqrt((std::max)(0.0f, 1 + r11 - r22 - r33)) / 2;
-		y = std::sqrt((std::max)(0.0f, 1 - r11 + r22 - r33)) / 2;
-		z = std::sqrt((std::max)(0.0f, 1 - r11 - r22 + r33)) / 2;
+		w = std::sqrt((std::max)(static_cast<REAL>(0.), 
+			static_cast<REAL>(1.) + r11 + r22 + r33)) / 2;
+		x = std::sqrt((std::max)(static_cast<REAL>(0.), 
+			static_cast<REAL>(1.) + r11 - r22 - r33)) / 2;
+		y = std::sqrt((std::max)(static_cast<REAL>(0.), 
+			static_cast<REAL>(1.) - r11 + r22 - r33)) / 2;
+		z = std::sqrt((std::max)(static_cast<REAL>(0.), 
+			static_cast<REAL>(1.) - r11 - r22 + r33)) / 2;
 		x *= SIGN(x * (r32 - r23));
 		y *= SIGN(y * (r13 - r31));
 		z *= SIGN(z * (r21 - r12));
@@ -165,7 +169,7 @@ public:
 		REAL r11, REAL r12, REAL r13,
 		REAL r21, REAL r22, REAL r23,
 		REAL r31, REAL r32, REAL r33,
-		QuaternionNaive &q) {
+		QuaternionNaive<REAL> &q) {
 		rotationmatrix2quaternion(
 			r11, r12, r13,
 			r21, r22, r23,
@@ -198,7 +202,7 @@ public:
 	@link http://www.euclideanspace.com/maths/geometry/rotations/conversions/QuaternionNaiveToAngle/
 	@test http://www.energid.com/resources/orientation-calculator/
 	*/
-	static void axis_angle(QuaternionNaive &qt, REAL&x, REAL&y, REAL&z, REAL&angle) {
+	static void axis_angle(QuaternionNaive<REAL> &qt, REAL&x, REAL&y, REAL&z, REAL&angle) {
 		if (qt.w > 1) qt.normalize(); // if w>1 acos and sqrt will produce errors, this cant happen if QuaternionNaive is normalised
 		angle = 2 * std::acos(qt.w);
 		REAL s = std::sqrt(1 - qt.w * qt.w); // assuming QuaternionNaive normalised then w is less than 1, so term always positive.
@@ -232,7 +236,7 @@ public:
 		res[2] = atan2(r11, r12);
 	}
 
-	static void QuaternionNaive2Euler(const QuaternionNaive& q, REAL res[], RotSeq rotSeq)
+	static void QuaternionNaive2Euler(const QuaternionNaive<REAL>& q, REAL res[], RotSeq rotSeq)
 	{
 		switch (rotSeq) {
 		case zyx:
@@ -356,6 +360,7 @@ private:
 
 	static inline REAL SIGN(REAL x) { return (x >= 0.) ? +1. : -1.; }
 	static inline REAL NORM(REAL a, REAL b, REAL c, REAL d) { return sqrt(a * a + b * b + c * c + d * d); }
+
 };
 
 }	// namespace numericspace
