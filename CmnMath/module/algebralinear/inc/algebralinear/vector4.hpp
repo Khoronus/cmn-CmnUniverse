@@ -45,7 +45,9 @@ public:
 	T w;
 
 	//! trivial ctor
-	Vector4<T>() {}
+	Vector4<T>() : Vector3<T>() {
+		static_cast<T>(w) = 0;
+	}
 
 	//! setting ctor
 	Vector4<T>(const T x0, const T y0, const T z0, const T w0): Vector3<T>(x0, y0, z0), w(w0) {}

@@ -51,7 +51,10 @@ public:
 			
 	/** Default constructor
 	*/
-	Vector2<T>() {}
+	Vector2<T>() { 
+		static_cast<T>(x) = 0; 
+		static_cast<T>(y) = 0;
+	}
 
 	/** Constructor with parameters
 		@param[in] x0 X value

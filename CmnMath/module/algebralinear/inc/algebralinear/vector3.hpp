@@ -63,7 +63,9 @@ public:
 	T z;
 
 	//! trivial ctor
-	Vector3<T>() {}
+	Vector3<T>() : Vector2<T>() {
+		static_cast<T>(z) = 0;
+	}
 
 	//! setting ctor
 	Vector3<T>(const T x0, const T y0, const T z0): Vector2<T>(x0, y0), z(z0) {}
