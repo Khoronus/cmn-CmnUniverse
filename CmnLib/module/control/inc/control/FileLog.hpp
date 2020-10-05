@@ -39,38 +39,42 @@ class Log
   static const int MAX_EXIT_CODES = 3;
 
   // FILE LOG ERRORS
-  static enum logErrors
+  enum logErrors
   {
     LOG_NOERROR = 0,		// no errors
     LOG_NOFILENAME = 1,	// no filename set
     LOG_ERROR = 101		// general error
   };
-  static enum logLevels 
+  enum logLevels 
   {
     LEVEL_0,       // buffer all log messages  
     QUIET_MODE     // do not print out any messages
   };
-
+  enum logStats 
+  {
+    LOG_CLOSE,   // Log is closed  
+    LOG_OPEN     // Log is open
+  };
   /** Constructor
   */
   Log(const std::string filename, bool bAppend = false);
 
   /** Distruptor
   */
-  Log::~Log();
+  ~Log();
 
   /** Get the error state
   */
   logErrors GetError()	{ return logError_; }
   /** Create file header
   */
-  void Log::CreateFileHeader();
+  void CreateFileHeader();
   /** Add string
   */
-  void Log::operator+(std::string &msg);
+  void operator+(std::string &msg);
   /** Add string
   */
-  void Log::operator+(char *msg);
+  void operator+(char *msg);
 
  private:
   /** Log filename
