@@ -9,7 +9,7 @@
 #define CMNLIB_CONTROL_LOGTOSTDOUT_HPP__
 
 #include <iostream>
-#include "cmnlibcore\inc\cmnlibcore\cmnlibcore_headers.hpp"
+#include "cmnlibcore/inc/cmnlibcore/cmnlibcore_headers.hpp"
 #include "Logger.hpp"
 
 namespace CmnLib

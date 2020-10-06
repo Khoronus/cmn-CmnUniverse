@@ -8,7 +8,7 @@
 #ifndef CMNLIB_CONTROL_LOGTOOUTPUTWINDOW_HPP__
 #define CMNLIB_CONTROL_LOGTOOUTPUTWINDOW_HPP__
 
-#include "cmnlibcore\inc\cmnlibcore\cmnlibcore_headers.hpp"
+#include "cmnlibcore/inc/cmnlibcore/cmnlibcore_headers.hpp"
 #include "Logger.hpp"
 
 namespace CmnLib

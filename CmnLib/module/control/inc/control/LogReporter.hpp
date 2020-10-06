@@ -11,7 +11,7 @@
 #include <mutex>
 #include <set>
 #include <string>
-#include "cmnlibcore\inc\cmnlibcore\cmnlibcore_headers.hpp"
+#include "cmnlibcore/inc/cmnlibcore/cmnlibcore_headers.hpp"
 
 #include "LogToFile.hpp"
 #include "LogToMessageBox.hpp"

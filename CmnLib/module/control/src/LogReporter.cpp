@@ -5,7 +5,7 @@
 // http://www.geometrictools.com/License/Boost/LICENSE_1_0.txt
 // File Version: 1.0.0 (2014/08/11)
 
-#include "control\inc\control\LogReporter.hpp"
+#include "control/inc/control/LogReporter.hpp"
 
 namespace CmnLib
 {

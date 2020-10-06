@@ -9,7 +9,7 @@
 #define CMNLIB_CONTROL_LOGTOFILE_HPP__
 
 #include <fstream>
-#include "cmnlibcore\inc\cmnlibcore\cmnlibcore_headers.hpp"
+#include "cmnlibcore/inc/cmnlibcore/cmnlibcore_headers.hpp"
 #include "Logger.hpp"
 
 namespace CmnLib
