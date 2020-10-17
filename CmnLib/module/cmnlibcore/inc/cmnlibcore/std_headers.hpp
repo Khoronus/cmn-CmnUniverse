@@ -40,5 +40,6 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 #include <list>
 #include <complex>
 #include <exception>
+#include <new>
 
 #endif /* CMNLIB_CMNLIBCORE_STDHEADERS_HPP__ */
