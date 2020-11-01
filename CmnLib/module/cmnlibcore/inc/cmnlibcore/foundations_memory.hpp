@@ -830,43 +830,6 @@ namespace core
 		return (sz + n-1) & -n;
 	}
 
-	/*!
-	  The STL-compilant memory Allocator based on CmnLib::fastMalloc() and CmnLib::fastFree()
-	*/
-	template<typename _Tp> class CL_EXPORTS Allocator
-	{
-	public: 
-		typedef _Tp value_type;
-		typedef value_type* pointer;
-		typedef const value_type* const_pointer;
-		typedef value_type& reference;
-		typedef const value_type& const_reference;
-		typedef size_t size_type;
-		typedef ptrdiff_t difference_type;
-		template<typename U> class rebind { typedef Allocator<U> other; };
-
-		explicit Allocator() {}
-		~Allocator() {}
-		explicit Allocator(Allocator const&) {}
-		template<typename U>
-		explicit Allocator(Allocator<U> const&) {}
-
-		// address
-		pointer address(reference r) { return &r; }
-		const_pointer address(const_reference r) { return &r; }
-
-		pointer allocate(size_type count, const void* =0)
-		{ return reinterpret_cast<pointer>(fastMalloc(count * sizeof (_Tp))); }
-
-		void deallocate(pointer p, size_type) {fastFree(p); }
-
-		size_type max_size() const
-		{ return max(static_cast<_Tp>(-1)/sizeof(_Tp), 1); }
-
-		void construct(pointer p, const _Tp& v) { new(static_cast<void*>(p)) _Tp(v); }
-		void destroy(pointer p) { p->~_Tp(); }
-	};
-
 	/** Class to manage the basic memory functions such as allocation and free
 	*/
 	class MemoryFoundations
@@ -1549,6 +1512,50 @@ namespace core
 
 		#endif
 	};
+
+
+	/*!
+	  The STL-compilant memory Allocator based on CmnLib::fastMalloc() and CmnLib::fastFree()
+	*/
+	template<typename _Tp> class CL_EXPORTS Allocator
+	{
+	public:
+		typedef _Tp value_type;
+		typedef value_type* pointer;
+		typedef const value_type* const_pointer;
+		typedef value_type& reference;
+		typedef const value_type& const_reference;
+		typedef size_t size_type;
+		typedef ptrdiff_t difference_type;
+		template<typename U> class rebind { typedef Allocator<U> other; };
+
+		explicit Allocator() {}
+		~Allocator() {}
+		explicit Allocator(Allocator const&) {}
+		template<typename U>
+		explicit Allocator(Allocator<U> const&) {}
+
+		// address
+		pointer address(reference r) { return &r; }
+		const_pointer address(const_reference r) { return &r; }
+
+		pointer allocate(size_type count, const void* = 0)
+		{
+			return reinterpret_cast<pointer>(MemoryFoundations::fastMalloc(count * sizeof(_Tp)));
+		}
+
+		void deallocate(pointer p, size_type) { fastFree(p); }
+
+		size_type max_size() const
+		{
+			return max(static_cast<_Tp>(-1) / sizeof(_Tp), 1);
+		}
+
+		void construct(pointer p, const _Tp& v) { new(static_cast<void*>(p)) _Tp(v); }
+		void destroy(pointer p) { p->~_Tp(); }
+	};
+
+
 
 }	// namespace core
 }	// namespace CmnLib
