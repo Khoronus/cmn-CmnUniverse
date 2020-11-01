@@ -5,12 +5,16 @@
 // http://www.geometrictools.com/License/Boost/LICENSE_1_0.txt
 // File Version: 1.0.1 (2014/08/31)
 
-#include "control\inc\control\LogToMessageBox.hpp"
+#include "control/inc/control/LogToMessageBox.hpp"
 
-#ifdef USE_WIN32
+#if defined _WIN32 || _WIN64
 #include <Windows.h>
-#include "system\inc\system\environment.hpp"
 #endif
+
+#if defined __linux__
+#endif
+
+#include "system/inc/system/environment.hpp"
 
 namespace CmnLib
 {

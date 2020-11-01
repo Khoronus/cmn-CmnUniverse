@@ -10,7 +10,7 @@
 
 #include <string>
 #include <vector>
-#include "cmnlibcore\inc\cmnlibcore\cmnlibcore_headers.hpp"
+#include "cmnlibcore/inc/cmnlibcore/cmnlibcore_headers.hpp"
 
 namespace CmnLib
 {

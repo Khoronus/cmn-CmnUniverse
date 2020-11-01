@@ -159,7 +159,7 @@ namespace memory
 #endif
 #endif
           }
-          catch(bad_alloc xa)
+          catch(std::bad_alloc xa)
           {
             //cout << "[e] Error memory allocation" << endl;
           }
