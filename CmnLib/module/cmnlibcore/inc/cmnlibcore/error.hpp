@@ -276,7 +276,8 @@ public:
 		return 1;
 	}
 	//----------------------------------------------------------------------------
-	char* clErrorStr( int status )
+	//char* clErrorStr( int status )
+	std::string clErrorStr(int status)
 	{
 		std::string tmp = status >= 0 ? "status":"error";
 		std::string msg = "Unknown " + tmp + " code " + std::to_string(status);
@@ -284,11 +285,11 @@ public:
 		switch (status)
 		{
 		case CL_StsOk :			msg = "No Error"; break;
-		case CL_StsError :			msg = "Unspecified error"; break;
+		case CL_StsError :		msg = "Unspecified error"; break;
 		default :				msg = "Unknown command"; break;
 		};
 
-		return msg.c_str();
+		return msg;
 	}
 	//----------------------------------------------------------------------------
 	void clError( int code, const char* func_name,
@@ -334,11 +335,12 @@ public:
 								exc.file.c_str(), exc.line, customErrorCallbackData);
 		else
 		{
-			const char* errorStr = Error::clErrorStr(exc.code);
+			//const char* errorStr = Error::clErrorStr(exc.code);
+			std::string errorStr = Error::clErrorStr(exc.code);
 			char buf[1 << 16];
 
 			sprintf( buf, "CL Error: %s (%s) in %s, file %s, line %d",
-				errorStr, exc.err.c_str(), exc.func.size() > 0 ?
+				errorStr.c_str(), exc.err.c_str(), exc.func.size() > 0 ?
 				exc.func.c_str() : "unknown function", exc.file.c_str(), exc.line );
 			fprintf( stderr, "%s\n", buf );
 			fflush( stderr );
