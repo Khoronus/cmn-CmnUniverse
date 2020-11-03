@@ -24,6 +24,8 @@
 #ifndef CMNLIB_CMNLIBCORE_ERROR_HPP__
 #define CMNLIB_CMNLIBCORE_ERROR_HPP__
 
+#include <iostream>
+#include <string>
 #include "exception.hpp"
 
 namespace CmnLib
@@ -230,7 +232,7 @@ public:
 
 
 	//----------------------------------------------------------------------------
-	Error(char *FunctionName, char *filename = __FILE__)
+	Error(char *FunctionName, const char *filename = __FILE__)
 	{
 		strcpy(clFuncName, FunctionName);
 		strcpy(clFileName, filename);
@@ -276,18 +278,17 @@ public:
 	//----------------------------------------------------------------------------
 	char* clErrorStr( int status )
 	{
-		static char buf[256];
-
-		sprintf(buf, "Unknown %s code %d", status >= 0 ? "status":"error", status);
+		std::string tmp = status >= 0 ? "status":"error";
+		std::string msg = "Unknown " + tmp + " code " + std::to_string(status);
 
 		switch (status)
 		{
-		case CL_StsOk :			return "No Error";
-		case CL_StsError :		return "Unspecified error";
-		default :				return "Unknown command";
+		case CL_StsOk :			msg = "No Error"; break;
+		case CL_StsError :			msg = "Unspecified error"; break;
+		default :				msg = "Unknown command"; break;
 		};
 
-		return buf;
+		return msg.c_str();
 	}
 	//----------------------------------------------------------------------------
 	void clError( int code, const char* func_name,
