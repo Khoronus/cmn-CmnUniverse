@@ -1,16 +1,16 @@
 # Check which libraries or OS compile.
-if (USE_WIN32)
-set (COMPILE_WITH_WIN32 1)
-else()
-set (COMPILE_WITH_WIN32 0)
-endif()
+#if (USE_WIN32)
+#set (COMPILE_WITH_WIN32 1)
+#else()
+#set (COMPILE_WITH_WIN32 0)
+#endif()
 
 # configure a header file to pass some of the CMake settings
 # to the source code
-configure_file (
-  "${PROJECT_SOURCE_DIR}/module/cmnlibcore/inc/cmnlibcore/libdefine.hpp.in"
-  "${PROJECT_SOURCE_DIR}/module/cmnlibcore/inc/cmnlibcore/libdefine.hpp"
-  )
+#configure_file (
+#  "${PROJECT_SOURCE_DIR}/module/cmnlibcore/inc/cmnlibcore/libdefine.hpp.in"
+#  "${PROJECT_SOURCE_DIR}/module/cmnlibcore/inc/cmnlibcore/libdefine.hpp"
+#  )
 
 # configure a header file to pass some of the CMake settings
 # to the source code
