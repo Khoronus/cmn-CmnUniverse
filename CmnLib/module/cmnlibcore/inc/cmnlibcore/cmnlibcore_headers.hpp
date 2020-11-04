@@ -32,4 +32,4 @@
 #include "foundations.hpp"
 #include "deprecated.hpp"
 
-#endif /* CMNLIB_CMNLIBCORE_CMNLIBCOREHEADERS_HPP__ */
+#endif // CMNLIB_CMNLIBCORE_CMNLIBCOREHEADERS_HPP__

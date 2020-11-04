@@ -9,7 +9,7 @@
 #define CMNLIB_CONTROL_LOGTOSTRINGARRAY_HPP__
 
 #include <vector>
-#include "cmnlibcore\inc\cmnlibcore\cmnlibcore_headers.hpp"
+#include "cmnlibcore/inc/cmnlibcore/cmnlibcore_headers.hpp"
 #include "Logger.hpp"
 
 namespace CmnLib
@@ -36,4 +36,4 @@ private:
 }  // namespace control
 }  // namespace CmnLib
 
-#endif /* CMNLIB_CONTROL_LOGTOSTRINGARRAY_HPP__ */
+#endif // CMNLIB_CONTROL_LOGTOSTRINGARRAY_HPP__

@@ -5,11 +5,11 @@
 // http://www.geometrictools.com/License/Boost/LICENSE_1_0.txt
 // File Version: 1.0.1 (2014/08/31)
 
-#include "control\inc\control\LogToOutputWindow.hpp"
+#include "control/inc/control/LogToOutputWindow.hpp"
 
 #ifdef USE_WIN32
 #include <Windows.h>
-#include "system\inc\system\environment.hpp"
+#include "system/inc/system/environment.hpp"
 #endif
 
 namespace CmnLib
@@ -37,5 +37,6 @@ void LogToOutputWindow::Report(std::string const& message)
 #endif
 }
 //----------------------------------------------------------------------------
+
 }  // namespace control
 }  // namespace CmnLib
