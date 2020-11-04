@@ -7,11 +7,17 @@
 
 #include "control/inc/control/LogToMessageBox.hpp"
 
-#if defined _WIN32 || _WIN64
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
 #include <Windows.h>
-#endif
+#include "system\inc\system\environment.hpp"
+#elif __linux__
 
-#if defined __linux__
+#define MB_ICONHAND                 0x00000010L
+#define MB_ICONERROR                MB_ICONHAND
+#define MB_YESNOCANCEL              0x00000003L
+#define MB_APPLMODAL                0x00000000L
+#define MB_TOPMOST                  0x00040000L
+
 #endif
 
 #include "system/inc/system/environment.hpp"
