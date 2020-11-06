@@ -13,7 +13,7 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 */
 
 
-#include "string\inc\string\StringFormatConversion.hpp"
+#include "string/inc/string/StringFormatConversion.hpp"
 
 
 //-----------------------------------------------------------------------------

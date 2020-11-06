@@ -66,7 +66,8 @@ public:
 #if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
 			for (auto it = container.begin(); it != container.end(); it++) {
 #else
-			for (std::map<T0, T1>::const_iterator it = container.begin(); it != container.end(); it++) {
+			//for (std::map<T0, T1>::const_iterator it = container.begin(); it != container.end(); it++) {
+			for (auto &it : container) {
 #endif
 				T0 diff = std::abs(it->first - key_in);
 				if (diff < tolerance && diff < min_diff) {
@@ -103,7 +104,8 @@ public:
 			for (auto it = container.begin(); it != container.end(); it++) {
 #else
 			T0 min_diff = 10000000;
-			for (std::vector< std::pair<T0, T1> >::const_iterator it = container.begin(); it != container.end(); it++) {
+			//for (std::vector< std::pair<T0, T1> >::const_iterator it = container.begin(); it != container.end(); it++) {
+			for (auto &it : container) {
 #endif
 				T0 diff = std::abs(it->first - key_in);
 				if (diff < tolerance && diff < min_diff) {
@@ -147,7 +149,8 @@ public:
 #if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
 			for (auto it = container.begin(); it != container.end(); it++)
 #else
-			for (std::vector< std::pair<T0, T1> >::const_iterator it = container.begin(); it != container.end(); it++)
+			//for (std::vector< std::pair<T0, T1> >::const_iterator it = container.begin(); it != container.end(); it++)
+			for (auto &it : container) 
 #endif
 			{
 				T0 diff = it->first - key_in;
