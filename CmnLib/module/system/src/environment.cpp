@@ -13,8 +13,8 @@
 #include <sys/io.h>  // For _access_s.  This must change for Linux and Mac OS X.
 #endif
 
-#include "system\inc\system\environment.hpp"
-#include "control\inc\control\Logger.hpp"
+#include "system/inc/system/environment.hpp"
+#include "control/inc/control/Logger.hpp"
 
 namespace CmnLib
 {
