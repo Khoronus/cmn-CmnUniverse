@@ -31,7 +31,7 @@ namespace system
 //-----------------------------------------------------------------------------
 void ConsoleText::write(const std::string &msg, int attribute)
 {
-#ifdef WIN32
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
   HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
   const int saved_colors = GetConsoleTextAttribute(hConsole);
   SetConsoleTextAttribute(hConsole, attribute);
@@ -90,8 +90,8 @@ void ConsoleText::write(const std::string &msg, int attribute)
 
   std::cout << msg;
 
-#ifdef WIN32
-  SetConsoleTextAttribute(hConsole, saved_colors);	
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
+  SetConsoleTextAttribute(hConsole, saved_colors);
 #elif __linux__
   std::cout << RESET;
 #endif
