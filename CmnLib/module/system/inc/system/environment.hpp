@@ -14,6 +14,7 @@
 #include <string>
 #include <vector>
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
+#define CMN_USE_WIN
 #include <io.h>  // For _access_s.  This must change for Linux and Mac OS X.
 #elif __linux__
 #include <unistd.h>
