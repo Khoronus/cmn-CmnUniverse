@@ -24,6 +24,7 @@ Environment::Environment ()
 //----------------------------------------------------------------------------
 std::string Environment::GetVariable (std::string const& name)
 {
+#ifdef CMN_USE_WIN
     size_t size;
     getenv_s(&size, nullptr, 0, name.c_str());
     if (size > 0)
@@ -38,11 +39,15 @@ std::string Environment::GetVariable (std::string const& name)
     {
         return "";
     }
+#else
+    return "";
+#endif
 }
 //----------------------------------------------------------------------------
 bool Environment::SplitPath (std::string const& path, std::string& drive,
     std::string& directory, std::string& name, std::string& extension)
 {
+#ifdef CMN_USE_WIN
     char driveBuffer[_MAX_DRIVE];
     char directoryBuffer[_MAX_DIR];
     char nameBuffer[_MAX_FNAME];
@@ -64,11 +69,15 @@ bool Environment::SplitPath (std::string const& path, std::string& drive,
     extension = "";
     LogError("SplitPath(" + path + ") failed.");
     return false;
+#else
+    return false;
+#endif
 }
 //----------------------------------------------------------------------------
 bool Environment::FullPath (std::string const& relativePath,
     std::string& fullPath)
 {
+#ifdef CMN_USE_WIN
     char fullPathBuffer[_MAX_PATH];
     if (_fullpath(fullPathBuffer, relativePath.c_str(), _MAX_PATH))
     {
@@ -78,6 +87,9 @@ bool Environment::FullPath (std::string const& relativePath,
 
     LogError("FullPath" + relativePath + ") failed.");
     return false;
+#else
+    return false;
+#endif
 }
 //----------------------------------------------------------------------------
 int Environment::GetNumDirectories () const
@@ -149,6 +161,7 @@ void Environment::RemoveAll ()
 std::string Environment::GetPath (std::string const& name, FileMode mode)
     const
 {
+#ifdef CMN_USE_WIN
     for (auto const& directory : mDirectories)
     {
         std::string decorated = directory + name;
@@ -181,6 +194,9 @@ std::string Environment::GetPath (std::string const& name, FileMode mode)
         }
     }
     return "";
+#else
+    return "";
+#endif
 }
 //----------------------------------------------------------------------------
 std::string Environment::CreateString(char const* format, ...)
@@ -193,6 +209,7 @@ std::string Environment::CreateString(char const* format, ...)
 std::string Environment::CreateStringFromArgs(char const* format,
     va_list arguments)
 {
+#ifdef CMN_USE_WIN
     if (format)
     {
         // Get the output string length not including the null terminator.
@@ -233,6 +250,9 @@ std::string Environment::CreateStringFromArgs(char const* format,
     }
 
     return "";
+#else
+    return "";
+#endif
 }
 //----------------------------------------------------------------------------
 std::wstring Environment::CreateString(wchar_t const* format, ...)
@@ -245,6 +265,7 @@ std::wstring Environment::CreateString(wchar_t const* format, ...)
 std::wstring Environment::CreateStringFromArgs(wchar_t const* format,
     va_list arguments)
 {
+#ifdef CMN_USE_WIN
     if (format)
     {
         // Get the output string length not including the null terminator.
@@ -285,6 +306,10 @@ std::wstring Environment::CreateStringFromArgs(wchar_t const* format,
     }
 
     return L"";
+#else
+    return L"";
+#endif
+ 
 }
 //----------------------------------------------------------------------------
 std::wstring Environment::Convert(std::string const& input)
