@@ -15,6 +15,11 @@ macro(CREATE_EXAMPLE NAME SOURCES LIBRARIES)
 	add_executable(${NAME} ${srcs})
 	target_link_libraries(${NAME} ${LIBRARIES})
 
+	# set compiler standard
+	set(CMAKE_CXX_STANDARD 14)
+	set(CMAKE_CXX_STANDARD_REQUIRED ON)
+	set(CMAKE_CXX_EXTENSIONS OFF)
+
 	# ------------------------
 	# DEFINITIONS
 	# ------------------------
