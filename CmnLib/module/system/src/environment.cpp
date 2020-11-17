@@ -5,14 +5,6 @@
 // http://www.geometrictools.com/License/Boost/LICENSE_1_0.txt
 // File Version: 1.0.1 (2014/08/31)
 
-#include <cstdarg>
-#include <cstdlib>
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
-#include <io.h>  // For _access_s.  This must change for Linux and Mac OS X.
-#elif __linux__
-#include <sys/io.h>  // For _access_s.  This must change for Linux and Mac OS X.
-#endif
-
 #include "system/inc/system/environment.hpp"
 #include "control/inc/control/Logger.hpp"
 

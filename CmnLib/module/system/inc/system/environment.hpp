@@ -8,8 +8,18 @@
 #ifndef CMNLIB_SYSTEM_ENVIRONMENT_HPP__
 #define CMNLIB_SYSTEM_ENVIRONMENT_HPP__
 
+#include <stdlib.h>
+#include <cstdarg>
+#include <cstdlib>
 #include <string>
 #include <vector>
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
+#include <io.h>  // For _access_s.  This must change for Linux and Mac OS X.
+#elif __linux__
+#include <unistd.h>
+#include <sys/io.h>  // For _access_s.  This must change for Linux and Mac OS X.
+#endif
+
 #include "cmnlibcore/inc/cmnlibcore/cmnlibcore_headers.hpp"
 
 namespace CmnLib
@@ -73,6 +83,7 @@ private:
     // The list of directories for GetPath to search.
     std::vector<std::string> mDirectories;
 };
+
 
 }	// namespace system
 }	// namespace CmnLib
