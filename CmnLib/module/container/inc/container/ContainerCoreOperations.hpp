@@ -73,8 +73,8 @@ public:
 #else
 			//for (std::vector<std::pair<_Ty, _Ty>>::iterator it = container_mM.begin(); it != container_mM.end(); it++) {
 			for (auto &it : container_mM) {
-				it->first = 1000000;
-				it->second = -1000000;
+				it.first = 1000000;
+				it.second = -1000000;
 #endif
 			}
 		}
@@ -106,8 +106,8 @@ public:
 		//for (std::vector<std::pair<_Ty, _Ty> >::const_iterator it = container.begin(); it != container.end(); it++) {
 		for (auto &it : container) {
 #endif
-			v1.push_back( it->first );
-			v2.push_back( it->second );
+			v1.push_back( it.first );
+			v2.push_back( it.second );
 		}
 	}
 

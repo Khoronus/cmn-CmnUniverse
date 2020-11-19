@@ -69,10 +69,10 @@ public:
 			//for (std::map<T0, T1>::const_iterator it = container.begin(); it != container.end(); it++) {
 			for (auto &it : container) {
 #endif
-				T0 diff = std::abs(it->first - key_in);
+				T0 diff = std::abs(it.first - key_in);
 				if (diff < tolerance && diff < min_diff) {
 					min_diff = diff;
-					key = it->first;
+					key = it.first;
 					bFound = true;
 				}
 			}
@@ -107,7 +107,7 @@ public:
 			//for (std::vector< std::pair<T0, T1> >::const_iterator it = container.begin(); it != container.end(); it++) {
 			for (auto &it : container) {
 #endif
-				T0 diff = std::abs(it->first - key_in);
+				T0 diff = std::abs(it.first - key_in);
 				if (diff < tolerance && diff < min_diff) {
 					min_diff = diff;
 					idx_selected = idx;
