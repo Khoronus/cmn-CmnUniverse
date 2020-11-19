@@ -1,5 +1,5 @@
 /**
-* @file conversion_threedim_sphere.hpp
+* @file conversion_threedim_hemisphere.hpp
 * @brief Performs transformation over sphere
 *
 * @section LICENSE

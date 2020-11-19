@@ -99,7 +99,10 @@ public:
 	*/
 	static void uv2spheref(_Ty2 &uv, CmnMath::CMN_32F radius, _Ty1 &xyz)
 	{
-		CmnMath::CMN_32F theta = uv.x * CmnMath::core::kPIf * 2.;
+		// it subtracts PI because in the sphere2uv conversion the solution 
+		// starts from PI (0.5+)
+		// 0.5 represents PI in a 2PI solution
+		CmnMath::CMN_32F theta = uv.x * CmnMath::core::kPIf * 2. - CmnMath::core::kPIf;
 		CmnMath::CMN_32F phi = uv.y * CmnMath::core::kPIf;
 
 		xyz.x = std::cosf(theta) * std::sinf(phi) * radius;
@@ -115,7 +118,10 @@ public:
 	*/
 	static void uv2sphere_ypolef(_Ty2 &uv, CmnMath::CMN_32F radius, _Ty1 &xyz)
 	{
-		CmnMath::CMN_32F theta = uv.x * CmnMath::core::kPIf * 2.;
+		// it subtracts PI because in the sphere2uv conversion the solution 
+		// starts from PI (0.5+)
+		// 0.5 represents PI in a 2PI solution
+		CmnMath::CMN_32F theta = uv.x * CmnMath::core::kPIf * 2. - CmnMath::core::kPIf;
 		CmnMath::CMN_32F phi = uv.y * CmnMath::core::kPIf;
 
 		xyz.x = std::cosf(theta) * std::sinf(phi) * radius;

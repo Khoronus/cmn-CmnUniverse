@@ -49,6 +49,61 @@ void test()
 	}
 }
 
+
+/** @brief It tests the conversion between spherical to uv coordinates
+]] [-14.2258, -13.9415, 22.4334] [-0.474195, 0.747781, -0.464718] [0.123394, 0.231119] [0.474195, 0.464718, 0.747781]
+]] [-18.8562, -5.11617, 22.7655] [-0.628541, 0.75885, -0.170539] [0.0421676, 0.225762] [0.628541, 0.170539, 0.75885]
+	*/
+void test_conversion_threedim_sphere()
+{
+	// 1 sample
+	if (true) {
+		CmnMath::algebralinear::Vector3f xyz_original(-14.2258, -13.9415, 22.4334);
+		// normalize
+		float magnitude = std::sqrt(std::pow(xyz_original.x, 2) + std::pow(xyz_original.y, 2) + std::pow(xyz_original.z, 2));
+		CmnMath::algebralinear::Vector3f p_norm;
+		if (magnitude > 0) {
+			p_norm = CmnMath::algebralinear::Vector3f(
+				xyz_original.x / magnitude,
+				xyz_original.y / magnitude,
+				xyz_original.z / magnitude);
+		}
+		CmnMath::algebralinear::Vector3f xyz_out;
+		CmnMath::algebralinear::Vector2f uv;
+		CmnMath::coordinatesystem::conversion_threedim_sphere<CmnMath::algebralinear::Vector3f, CmnMath::algebralinear::Vector2f>::sphere2uvf(p_norm, uv);
+		CmnMath::coordinatesystem::conversion_threedim_sphere<CmnMath::algebralinear::Vector3f, CmnMath::algebralinear::Vector2f>::uv2sphere_ypolef(uv, 1.0f, xyz_out);
+		std::cout << "]] " << xyz_original << " " << p_norm << " " << uv << " "
+			<< xyz_out << std::endl;
+	}
+
+	// cube sample
+	for (float z = -10; z <= 10; z += 10) {
+		for (float y = -10; y <= 10; y += 10) {
+			for (float x = -10; x <= 10; x += 10) {
+
+				CmnMath::algebralinear::Vector3f xyz_original(x, y, z);
+				// normalize
+				float magnitude = std::sqrt(std::pow(xyz_original.x, 2) + std::pow(xyz_original.y, 2) + std::pow(xyz_original.z, 2));
+				CmnMath::algebralinear::Vector3f p_norm;
+				if (magnitude > 0) {
+					p_norm = CmnMath::algebralinear::Vector3f(
+						xyz_original.x / magnitude,
+						xyz_original.y / magnitude,
+						xyz_original.z / magnitude);
+				}
+				CmnMath::algebralinear::Vector3f xyz_out;
+				CmnMath::algebralinear::Vector2f uv;
+				CmnMath::coordinatesystem::conversion_threedim_sphere<CmnMath::algebralinear::Vector3f, CmnMath::algebralinear::Vector2f>::sphere2uvf(p_norm, uv);
+				CmnMath::coordinatesystem::conversion_threedim_sphere<CmnMath::algebralinear::Vector3f, CmnMath::algebralinear::Vector2f>::uv2sphere_ypolef(uv, 1.0f, xyz_out);
+				std::cout << "]] " << xyz_original << " " << p_norm << " " << uv << " "
+					<< xyz_out << std::endl;
+
+			}
+		}
+	}
+}
+
+
 } // namespace anonymous
 
 // ############################################################################
@@ -58,6 +113,7 @@ void main()
 	std::cout << "Sample CoordinateSystem" << std::endl;
 
 	test();
+	test_conversion_threedim_sphere();
 }
 
 
