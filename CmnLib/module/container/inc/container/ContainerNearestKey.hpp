@@ -57,18 +57,20 @@ public:
 		if (container.size() > 0)
 		{
 			T0 key = container.begin()->first;
-#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//			T0 min_diff = std::numeric_limits<T0>::max();
+//#else
+//			T0 min_diff = 1000000;
+//#endif
 			T0 min_diff = std::numeric_limits<T0>::max();
-#else
-			T0 min_diff = 1000000;
-#endif
 			bool bFound = false;
-#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
-			for (auto it = container.begin(); it != container.end(); it++) {
-#else
-			//for (std::map<T0, T1>::const_iterator it = container.begin(); it != container.end(); it++) {
+//#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//			for (auto it = container.begin(); it != container.end(); it++) {
+//#else
+//			//for (std::map<T0, T1>::const_iterator it = container.begin(); it != container.end(); it++) {
+//			for (auto &it : container) {
+//#endif
 			for (auto &it : container) {
-#endif
 				T0 diff = std::abs(it.first - key_in);
 				if (diff < tolerance && diff < min_diff) {
 					min_diff = diff;
@@ -99,14 +101,16 @@ public:
 		{
 			int idx_selected = -1;
 			int idx = 0;
-#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//			T0 min_diff = std::numeric_limits<T0>::max();
+//			for (auto it = container.begin(); it != container.end(); it++) {
+//#else
+//			T0 min_diff = 10000000;
+//			//for (std::vector< std::pair<T0, T1> >::const_iterator it = container.begin(); it != container.end(); it++) {
+//			for (auto &it : container) {
+//#endif
 			T0 min_diff = std::numeric_limits<T0>::max();
-			for (auto it = container.begin(); it != container.end(); it++) {
-#else
-			T0 min_diff = 10000000;
-			//for (std::vector< std::pair<T0, T1> >::const_iterator it = container.begin(); it != container.end(); it++) {
 			for (auto &it : container) {
-#endif
 				T0 diff = std::abs(it.first - key_in);
 				if (diff < tolerance && diff < min_diff) {
 					min_diff = diff;

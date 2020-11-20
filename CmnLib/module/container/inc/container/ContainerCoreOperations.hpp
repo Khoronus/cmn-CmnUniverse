@@ -100,12 +100,14 @@ public:
 		std::vector<_Ty> &v1, std::vector<_Ty> &v2) {
 	
 		v1.clear(); v2.clear();
-#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
-		for (auto it = container.begin(); it != container.end(); it++) {
-#else
-		//for (std::vector<std::pair<_Ty, _Ty> >::const_iterator it = container.begin(); it != container.end(); it++) {
+//#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//		for (auto it = container.begin(); it != container.end(); it++) {
+//#else
+//		//for (std::vector<std::pair<_Ty, _Ty> >::const_iterator it = container.begin(); it != container.end(); it++) {
+//		for (auto &it : container) {
+//#endif
+
 		for (auto &it : container) {
-#endif
 			v1.push_back( it.first );
 			v2.push_back( it.second );
 		}
