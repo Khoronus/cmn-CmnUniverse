@@ -37,7 +37,8 @@ void test()	{
 		true);
 
 	log.CreateFileHeader();
-	log + std::string("This is a test");
+	std::string msg("This is a test");
+	log + msg;
 
 	// It does not save and display messages from lower level than set one.
 	std::cout << "Create LogMS: " << 

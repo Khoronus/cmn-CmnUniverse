@@ -115,17 +115,17 @@ void Logger::Listener::Assertion(std::string const& message)
 //----------------------------------------------------------------------------
 void Logger::Listener::Error(std::string const& message)
 {
-    Report("\CMNLIB ERROR:\n" + message);
+    Report("\nCMNLIB ERROR:\n" + message);
 }
 //----------------------------------------------------------------------------
 void Logger::Listener::Warning(std::string const& message)
 {
-    Report("\CMNLIB WARNING:\n" + message);
+    Report("\nCMNLIB WARNING:\n" + message);
 }
 //----------------------------------------------------------------------------
 void Logger::Listener::Information(std::string const& message)
 {
-    Report("\CMNLIB INFORMATION:\n" + message);
+    Report("\nCMNLIB INFORMATION:\n" + message);
 }
 //----------------------------------------------------------------------------
 void Logger::Listener::Report(std::string const&)

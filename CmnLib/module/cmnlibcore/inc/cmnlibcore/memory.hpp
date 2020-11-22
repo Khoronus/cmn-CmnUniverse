@@ -39,7 +39,8 @@ namespace memory
     *	@param data Pointer to the vecture structure. Must be a NULLPTR pointer
     *	@param lenght Memory to allocate
     */
-      static void AllocateVector(T* &data, int lenght, char* acFile = __FILE__, unsigned int uiLine = __LINE__)	{
+//      static void AllocateVector(T* &data, int lenght, char* acFile = __FILE__, unsigned int uiLine = __LINE__)	{
+      static void AllocateVector(T* &data, int lenght, const std::string& acFile = __FILE__, unsigned int uiLine = __LINE__)	{
         if (data == NULLPTR)
         {
           try
@@ -50,7 +51,7 @@ namespace memory
 #ifndef CL_MEMORY_MANAGER
             data = CL_NEW T[lenght];
 #else
-            data = new(acFile, uiLine) T[lenght];
+            data = new(acFile.c_str(), uiLine) T[lenght];
 #endif
 #endif
           }
