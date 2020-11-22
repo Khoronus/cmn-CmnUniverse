@@ -15,6 +15,14 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 #ifndef CMNLIB_CMNLIBCORE_MEMORY_HPP__
 #define CMNLIB_CMNLIBCORE_MEMORY_HPP__
 
+#if _DEBUG
+#define CMNLIB
+#define CL_MEMORY_MANAGER
+#endif
+
+#include <iostream>
+#include <string>
+
 #include "cmnlibcore_headers.hpp"
 
 namespace CmnLib
@@ -51,7 +59,8 @@ namespace memory
 #ifndef CL_MEMORY_MANAGER
             data = CL_NEW T[lenght];
 #else
-            data = new(acFile.c_str(), uiLine) T[lenght];
+			const char* pchar = acFile.c_str();
+            data = new(pchar, uiLine) T[lenght];
 #endif
 #endif
           }

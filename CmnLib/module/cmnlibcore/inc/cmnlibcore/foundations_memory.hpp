@@ -15,6 +15,11 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 #ifndef CMNLIB_CMNLIBCORE_FOUNDATIONSMEMORY_HPP__
 #define CMNLIB_CMNLIBCORE_FOUNDATIONSMEMORY_HPP__
 
+#if _DEBUG
+#define CMNLIB
+#define CL_MEMORY_MANAGER
+#endif
+
 #include "foundations.hpp"
 
 #ifndef CL_MEMORY_MANAGER
@@ -294,7 +299,7 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 		//void RemoveBlock (Block* pkBlock);
 
 		//----------------------------------------------------------------------------
-		void* Allocate (size_t uiSize, char* acFile, unsigned int uiLine,
+		void* Allocate (size_t uiSize, const char* acFile, unsigned int uiLine,
 			bool bIsArray)
 		{
 			ms_uiNumNewCalls++;
@@ -447,45 +452,21 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 	#define CL_DELETE delete
 
 	//----------------------------------------------------------------------------
-	void* operator new (size_t uiSize)
-	{
-		return Memory::getSingletonPtr()->Allocate(uiSize,0,0,false);
-	}
+	void* operator new (size_t uiSize);
 	//----------------------------------------------------------------------------
-	void* operator new[](size_t uiSize)
-	{
-		return Memory::getSingletonPtr()->Allocate(uiSize,0,0,true);
-	}
+	void* operator new[](size_t uiSize);
 	//----------------------------------------------------------------------------
-	void* operator new (size_t uiSize, char* acFile, unsigned int uiLine)
-	{
-		return Memory::getSingletonPtr()->Allocate(uiSize,acFile,uiLine,false);
-	}
+	void* operator new (size_t uiSize, const char* acFile, unsigned int uiLine);
 	//----------------------------------------------------------------------------
-	void* operator new[] (size_t uiSize, char* acFile, unsigned int uiLine)
-	{
-		return Memory::getSingletonPtr()->Allocate(uiSize,acFile,uiLine,true);
-	}
+	void* operator new[](size_t uiSize, const char* acFile, unsigned int uiLine);
 	//----------------------------------------------------------------------------
-	void operator delete (void* pvAddr)
-	{
-		Memory::getSingletonPtr()->Deallocate((char*)pvAddr,false);
-	}
+	void operator delete (void* pvAddr);
 	//----------------------------------------------------------------------------
-	void operator delete[] (void* pvAddr)
-	{
-		Memory::getSingletonPtr()->Deallocate((char*)pvAddr,true);
-	}
+	void operator delete[](void* pvAddr);
 	//----------------------------------------------------------------------------
-	void operator delete (void* pvAddr, char*, unsigned int)
-	{
-		Memory::getSingletonPtr()->Deallocate((char*)pvAddr,false);
-	}
+	void operator delete (void* pvAddr, char*, unsigned int);
 	//----------------------------------------------------------------------------
-	void operator delete[] (void* pvAddr, char*, unsigned int)
-	{
-		Memory::getSingletonPtr()->Deallocate((char*)pvAddr,true);
-	}
+	void operator delete[](void* pvAddr, char*, unsigned int);
 	//----------------------------------------------------------------------------
 
 
@@ -758,27 +739,27 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 
 	//--------------------------------------------------------------------------
 	template<> Memory* CmnLib::core::Singleton<Memory>::ms_Singleton = 0;
-	Memory* Memory::getSingletonPtr(void)
-	{
-		return ms_Singleton;
-	}
-	//--------------------------------------------------------------------------
-	Memory& Memory::getSingleton(void)
-	{  
-		return *ms_Singleton;
-	}
+	//Memory* Memory::getSingletonPtr(void)
+	//{
+	//	return ms_Singleton;
+	//}
+	////--------------------------------------------------------------------------
+	//Memory& Memory::getSingleton(void)
+	//{  
+	//	return *ms_Singleton;
+	//}
 
 	//--------------------------------------------------------------------------
 	template<> MemoryLeakTrackerC* CmnLib::core::Singleton<MemoryLeakTrackerC>::ms_Singleton = 0;
-	MemoryLeakTrackerC* MemoryLeakTrackerC::getSingletonPtr(void)
-	{
-		return ms_Singleton;
-	}
-	//--------------------------------------------------------------------------
-	MemoryLeakTrackerC& MemoryLeakTrackerC::getSingleton(void)
-	{  
-		return *ms_Singleton;
-	}
+	//MemoryLeakTrackerC* MemoryLeakTrackerC::getSingletonPtr(void)
+	//{
+	//	return ms_Singleton;
+	//}
+	////--------------------------------------------------------------------------
+	//MemoryLeakTrackerC& MemoryLeakTrackerC::getSingleton(void)
+	//{  
+	//	return *ms_Singleton;
+	//}
 
 #endif	// endif #define CL_MEMORY_MANAGER
 
