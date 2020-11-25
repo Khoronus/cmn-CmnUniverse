@@ -148,3 +148,6 @@ install(EXPORT ${MAIN_PROJ_NAME}Targets DESTINATION ${CMNMATH_CMAKE_CONFIG_INSTA
 		                               FILE ${MAIN_PROJ_NAME}-config.cmake
 									   NAMESPACE ${MAIN_PROJ_NAME}::)
 install(FILES ${version_file} DESTINATION ${CMNMATH_CMAKE_CONFIG_INSTALL_DIR})
+
+# Print all the variables
+print_all_variables()

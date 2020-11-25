@@ -14,3 +14,14 @@ macro(GET_PATH VAR_LIST VAR_REQUESTED VAR_OUT)
 	endif()
   ENDFOREACH()
 endmacro(GET_PATH VAR_LIST VAR_IDX VAR_OUT)
+
+#######################################################################
+# Macro to print all the variables
+macro(print_all_variables)
+    message(STATUS "print_all_variables------------------------------------------{")
+    get_cmake_property(_variableNames VARIABLES)
+    foreach (_variableName ${_variableNames})
+        message(STATUS "${_variableName}=${${_variableName}}")
+    endforeach()
+    message(STATUS "print_all_variables------------------------------------------}")
+endmacro()

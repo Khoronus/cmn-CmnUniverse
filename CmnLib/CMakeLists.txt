@@ -1,6 +1,13 @@
 ######################################################################
 # The project name
 cmake_minimum_required (VERSION 3.13)
+
+######################################################################
+# Import macro
+include ("../cmakemacro/cmake_macro_setvariables.txt")
+
+######################################################################
+# The project name
 SET( MAIN_PROJ_NAME      "CmnLib" )
 project (${MAIN_PROJ_NAME})
 
@@ -22,17 +29,18 @@ endif()
 if(UNIX)
     include(GNUInstallDirs)
 
-    set(CMNLIB_INC_INSTALL_DIR "${CMAKE_INSTALL_INCLUDEDIR}/module") 
+    #set(CMNLIB_INC_INSTALL_DIR "${CMAKE_INSTALL_INCLUDEDIR}/module")
+    set(CMNLIB_INC_INSTALL_DIR "module")  
     set(CMNLIB_RUNTIME_INSTALL_DIR "${CMAKE_INSTALL_BINDIR}") 
     set(CMNLIB_LIBRARY_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
     set(CMNLIB_ARCHIVE_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
     set(CMNLIB_FRAMEWORK_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
 
-    set(CMNLIB_CMAKE_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/cmnlib/cmake")
-    set(CMNLIB_ADDITIONAL_FILES_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/module")
+    set(CMNLIB_CMAKE_CONFIG_INSTALL_DIR "cmake")
+    set(CMNLIB_ADDITIONAL_FILES_INSTALL_DIR "./")
 
     set(CMNLIB_RUNTIME_INSTALL_DIR "bin") # for the nodesize_dbg, just ignore version and the like
-    set(CMNLIB_INC_INSTALL_DIR "include/cmnlib") # header filestree
+    set(CMNLIB_INC_INSTALL_DIR "module") # header filestree
 
 elseif(WIN32)
     set(CMNLIB_INC_INSTALL_DIR "module")
@@ -119,8 +127,13 @@ write_basic_package_version_file(${version_file}
                                  COMPATIBILITY AnyNewerVersion)
 
 
-#add files (if necessary)								 
+#add files (if necessary)	
+string(TOLOWER ${MAIN_PROJ_NAME} main_proj_name_lowcase)
 install(EXPORT ${MAIN_PROJ_NAME}Targets DESTINATION ${CMNLIB_CMAKE_CONFIG_INSTALL_DIR}
-		                               FILE ${MAIN_PROJ_NAME}-config.cmake
+		                               FILE ${main_proj_name_lowcase}-config.cmake
 									   NAMESPACE ${MAIN_PROJ_NAME}::)
 install(FILES ${version_file} DESTINATION ${CMNLIB_CMAKE_CONFIG_INSTALL_DIR})
+
+
+# Print all the variables
+print_all_variables()
