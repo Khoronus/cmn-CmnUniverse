@@ -17,6 +17,7 @@ endmacro(GET_PATH VAR_LIST VAR_IDX VAR_OUT)
 
 #######################################################################
 # Macro to print all the variables
+# https://stackoverflow.com/questions/31343813/displaying-cmake-variables#:~:text=Run%20CMake%20and%20have%20a,all%20variables%20printed%20after%20configuration.
 macro(print_all_variables)
     message(STATUS "print_all_variables------------------------------------------{")
     get_cmake_property(_variableNames VARIABLES)
