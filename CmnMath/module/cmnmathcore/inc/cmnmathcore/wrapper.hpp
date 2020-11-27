@@ -8,6 +8,15 @@
 #ifndef CMNMATH_CMNMATHCORE_WRAPPER__   
 #define CMNMATH_CMNMATHCORE_WRAPPER__   
 
+#include <memory.h>
+#include <wchar.h>
+#include <algorithm>
+
+#if defined(WIN32)
+#include <cstring>
+#include <cwchar>
+#endif
+
 #include <cstddef>
 #include "define.hpp"
 

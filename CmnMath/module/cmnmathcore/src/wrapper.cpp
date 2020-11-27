@@ -5,12 +5,7 @@
 // http://www.geometrictools.com/License/Boost/LICENSE_1_0.txt
 // File Version: 1.7.0 (2014/12/07)
 
-#if defined(WIN32)
-#include <cstring>
-#include <cwchar>
-#endif
-
-#include "cmnmathcore\inc\cmnmathcore\wrapper.hpp"
+#include "cmnmathcore/inc/cmnmathcore/wrapper.hpp"
 
 namespace CmnMath
 {
