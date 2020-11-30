@@ -33,6 +33,8 @@ namespace CmnLib
 namespace core
 {
 
+class Exception;
+
 //*********************** Define error calls **************************************
 
 #ifdef CL_ERROR_DISPLAY_COUT
@@ -59,7 +61,7 @@ static bool breakOnError = false;
 *	@remarks
 *		It is actually used for the main operations.
 */
-class Error
+class CL_EXPORTS Error
 {
 public:
 

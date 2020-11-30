@@ -46,35 +46,35 @@ public:
  
 	TCheckedVariable(void)
 	{
-		first = false;
+		this->first = false;
 	}
  
 	TCheckedVariable( T t )
 	{
-		first = true;
-		second = t;
+		this->first = true;
+		this->second = t;
 	}
  
 	CMN_BOOL IsInitialised() const
 	{
-		return first;
+		return this->first;
 	}
  
 	void Reset()
 	{
-		first = false;
+		this->first = false;
 	}
  
 	const T& operator=( const T &rhs )
 	{
-		first = true;
-		second = rhs;
-		return second;
+		this->first = true;
+		this->second = rhs;
+		return this->second;
 	}
  
 	operator T() const
 	{
-		return second;
+		return this->second;
 	}
 };
 

@@ -21,6 +21,7 @@
 */
 
 #include "numericanalysis/inc/numericanalysis/curvefit.hpp"
+#include "cmnlibcore/inc/cmnlibcore/exception.hpp"
 
 namespace CmnMath
 {
@@ -65,7 +66,8 @@ double CCurveFit::GetATerm()
 {
 	if (m_dataPoints.size() < CURVEFIT_MIN_VALUES)
 	{
-		throw std::exception( "Insufficient pairs of co-ordinates" );
+		std::string err_msg = "Insufficient pairs of co-ordinates";
+		throw CmnLib::core::Exception(100, err_msg, __FILE__, __LINE__);
 	}
  
 	if( m_a.IsInitialised() )
