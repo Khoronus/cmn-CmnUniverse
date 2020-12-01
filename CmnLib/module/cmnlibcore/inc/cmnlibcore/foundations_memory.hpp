@@ -27,6 +27,10 @@
 
 #include <assert.h>
 
+#include <limits>
+#include <climits>
+#include <iostream>
+#include <cstdint>
 #include <fstream>
 #include <memory>
 

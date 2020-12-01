@@ -25,6 +25,7 @@
 #define CMNLIB_CMNLIBCORE_ERROR_HPP__
 
 #include <iostream>
+#include <cstring>
 #include <string>
 #include "exception.hpp"
 
