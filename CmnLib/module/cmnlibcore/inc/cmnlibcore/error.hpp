@@ -33,8 +33,6 @@ namespace CmnLib
 namespace core
 {
 
-class Exception;
-
 //*********************** Define error calls **************************************
 
 #ifdef CL_ERROR_DISPLAY_COUT
@@ -332,11 +330,10 @@ public:
 	//----------------------------------------------------------------------------
 	Error( const Exception& exc )
 	{
-		if (customErrorCallback != 0) 
+		if (customErrorCallback != 0) {
 			customErrorCallback(exc.code, exc.func.c_str(), exc.err.c_str(),
 								exc.file.c_str(), exc.line, customErrorCallbackData);
-		else
-		{
+		} else {
 			//const char* errorStr = Error::clErrorStr(exc.code);
 			std::string errorStr = Error::clErrorStr(exc.code);
 			char buf[1 << 16];

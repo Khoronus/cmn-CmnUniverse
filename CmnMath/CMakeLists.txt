@@ -22,7 +22,7 @@ project (${MAIN_PROJ_NAME})
 
 set(CMNMATH_VERSION_MAJOR 0 CACHE STRING "major version of cmnmath" FORCE)
 set(CMNMATH_VERSION_MINOR 7 CACHE STRING "minor version of cmnmath" FORCE)
-set(CMNMATH_VERSION_SUBMINOR 1 CACHE STRING "subminor version of cmnmath" FORCE)
+set(CMNMATH_VERSION_SUBMINOR 2 CACHE STRING "subminor version of cmnmath" FORCE)
 set(CMNMATH_VERSION_PATCH 0 CACHE STRING "patch version of cmnmath" FORCE)
 set(CMNMATH_VERSION "${CMNMATH_VERSION_MAJOR}.${CMNMATH_VERSION_MINOR}.${CMNMATH_VERSION_SUBMINOR}.${CMNMATH_VERSION_PATCH}"
                              CACHE STRING "version of cmnmath" FORCE)

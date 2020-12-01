@@ -24,7 +24,11 @@
 #ifndef CMNLIB_CMNLIBCORE_EXCEPTION_HPP__
 #define CMNLIB_CMNLIBCORE_EXCEPTION_HPP__
 
-#include "foundations.hpp"
+#include <exception>
+#include <string>
+#include <cstdarg>
+
+#include "foundation_lib.hpp"
 
 namespace CmnLib
 {
@@ -43,7 +47,7 @@ CL_INLINE std::string format( const char* fmt, ... )
 	The standard cmnlib exception class.
 	Instances of the class are thrown by various functions and methods in the case of critical errors.
 	*/
-class CL_EXPORTS Exception : public std::exception
+class Exception : public std::exception
 {
 public:
 	/*!
@@ -85,5 +89,5 @@ public:
 }	// namespace core
 }	// namespace CmnLib
 
-#endif /* CMNLIB_CMNLIBCORE_EXCEPTION_HPP__ */
+#endif // CMNLIB_CMNLIBCORE_EXCEPTION_HPP__
 

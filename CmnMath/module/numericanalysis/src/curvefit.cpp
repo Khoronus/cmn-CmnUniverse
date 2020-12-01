@@ -67,7 +67,8 @@ double CCurveFit::GetATerm()
 	if (m_dataPoints.size() < CURVEFIT_MIN_VALUES)
 	{
 		std::string err_msg = "Insufficient pairs of co-ordinates";
-		throw CmnLib::core::Exception(100, err_msg, __FILE__, __LINE__);
+		std::string func;
+		throw CmnLib::core::Exception(100, err_msg, func, __FILE__, __LINE__);
 	}
  
 	if( m_a.IsInitialised() )
