@@ -21,7 +21,6 @@
 */
 
 #include "numericanalysis/inc/numericanalysis/curvefit.hpp"
-#include "cmnlibcore/inc/cmnlibcore/exception.hpp"
 
 namespace CmnMath
 {
@@ -97,7 +96,9 @@ double CCurveFit::GetBTerm()
 {
 	if (m_dataPoints.size() < CURVEFIT_MIN_VALUES)
 	{
-		throw std::exception( "Insufficient pairs of co-ordinates" );
+		std::string err_msg = "Insufficient pairs of co-ordinates";
+		std::string func;
+		throw CmnLib::core::Exception(100, err_msg, func, __FILE__, __LINE__);
 	}
  
 	if( m_b.IsInitialised() )
@@ -126,7 +127,9 @@ double CCurveFit::GetCTerm()
 {
 	if (m_dataPoints.size() < CURVEFIT_MIN_VALUES)
 	{
-		throw std::exception( "Insufficient pairs of co-ordinates" );
+		std::string err_msg = "Insufficient pairs of co-ordinates";
+		std::string func;
+		throw CmnLib::core::Exception(100, err_msg, func, __FILE__, __LINE__);
 	}
  
 	if( m_c.IsInitialised() )
@@ -155,7 +158,9 @@ double CCurveFit::GetRSquare()
 {
 	if (m_dataPoints.size() < CURVEFIT_MIN_VALUES)
 	{
-		throw std::exception( "Insufficient pairs of co-ordinates" );
+		std::string err_msg = "Insufficient pairs of co-ordinates";
+		std::string func;
+		throw CmnLib::core::Exception(100, err_msg, func, __FILE__, __LINE__);
 	}
  
 	return (1.0 - getSSerr() / getSStot());
@@ -169,7 +174,8 @@ double CCurveFit::getSxy(int nXPower, int nYPower)
 	std::for_each( m_dataPoints.begin(), m_dataPoints.end(),
 		[ &dSxy, nXPower, nYPower ]( const CDataPoint &dp )
 	{
-		dSxy += pow( dp.x(), nXPower ) * pow( dp.y(), nYPower );
+		dSxy += std::pow( dp.x(), nXPower ) * 
+		        std::pow( dp.y(), nYPower );
 	} );
  
 	return dSxy;

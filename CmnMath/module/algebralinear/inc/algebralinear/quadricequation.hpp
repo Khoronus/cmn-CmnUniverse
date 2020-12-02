@@ -26,7 +26,7 @@
 #define CMNMATH_ALGEBRALINEAR_QUADRICEQUATION_HPP__
 
 #include <vector>
-#include "cmnmathcore\inc\cmnmathcore\cmnmathcore_headers.hpp"
+#include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
 
 namespace CmnMath
 {
@@ -99,4 +99,4 @@ public:
 } // namespace algebralinear
 } // namespace CmnMath
 
-#endif /* CMNMATH_ALGEBRALINEAR_QUADRICEQUATION_HPP__ */
+#endif // CMNMATH_ALGEBRALINEAR_QUADRICEQUATION_HPP__

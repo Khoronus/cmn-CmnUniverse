@@ -25,8 +25,10 @@
 
 #include <vector>
 #include <algorithm>    // std::for_each
+#include <cmath>
 
 #include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
+#include "cmnlibcore/inc/cmnlibcore/exception.hpp"
 
 #include "TCheckedVariable.hpp"
 
