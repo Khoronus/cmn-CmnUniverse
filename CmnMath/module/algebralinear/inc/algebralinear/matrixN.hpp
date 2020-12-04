@@ -36,6 +36,13 @@ namespace CmnMath
 namespace algebralinear
 {
 
+template<class Mtx, unsigned N, unsigned C, unsigned R, unsigned I>
+class IdentityMtxImpl;
+template <class Mtx, unsigned N, class F, CMN_32S Init, unsigned C, unsigned R, unsigned I>
+class InitMtxImpl;
+template<class Mtx, unsigned N, unsigned C, unsigned R, unsigned I>
+class TransposeMtxImpl;
+
 //! used in creating an identity matrix
 template<class Mtx, unsigned N> 
 class IdentityMtx

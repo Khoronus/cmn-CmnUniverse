@@ -68,10 +68,11 @@ void test()
 
 // ############################################################################
 
-void main()
+int main()
 {
 	std::cout << "Sample NumericSystem" << std::endl;
 	test();
+	return 0;
 }
 
 

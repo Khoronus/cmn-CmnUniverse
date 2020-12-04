@@ -25,6 +25,7 @@
 #ifndef CMNMATH_ALGEBRALINEAR_COMPARE_HPP__
 #define CMNMATH_ALGEBRALINEAR_COMPARE_HPP__
 
+#include <cfloat>
 #include <memory>
 #include <cmath>
 

@@ -46,7 +46,8 @@ public:
 
 	//! trivial ctor
 	Vector4<T>() : Vector3<T>() {
-		static_cast<T>(w) = 0;
+		//static_cast<T>(w) = 0;
+		w = 0;
 	}
 
 	//! setting ctor
@@ -58,34 +59,34 @@ public:
 
 	//! function call operator
 	void operator ()(const T x0, const T y0, const T z0, const T w0) 
-	{	x= x0; y= y0; z= z0; w= w0; }
+	{	this->x= x0; this->y= y0; this->z= z0; w= w0; }
 
 	//! test for equality
 	bool operator==(const Vector4<T> &v)
-	{	return (x==v.x && y==v.y && z==v.z && w==v.w);	}
+	{	return (this->x==v.x && this->y==v.y && this->z==v.z && w==v.w);	}
 
 	//! test for inequality
 	bool operator!=(const Vector4<T> &v)
-	{	return (x!=v.x || y!=v.y || z!=v.z || w!=v.w);	}
+	{	return (this->x!=v.x || this->y!=v.y || this->z!=v.z || w!=v.w);	}
 
 	//! set to value
 	const Vector4<T> &operator =(const Vector4<T> &v)
 	{	
-		x= v.x; y= v.y;	z= v.z;	w= v.w;	
+		this->x= v.x; this->y= v.y;	this->z= v.z;	w= v.w;	
 		return *this;
 	}
 			
 	//! negation
 	const Vector4<T> operator -(void) const
-	{	return vector4<T>(-x,-y,-z,w);	}
+	{	return Vector4<T>(-this->x,-this->y,-this->z,w);	}
 
 	//! addition; not sure what to do with w component	
 	const Vector4<T> operator +(const Vector4<T> &v) const
-	{   return Vector4<T>(x+v.x, y+v.y, z+v.z, w);	 }	
+	{   return Vector4<T>(this->x+v.x, this->y+v.y, this->z+v.z, w);	 }	
 
 	//! subtraction; results in a vector
 	const Vector4<T> operator -(const Vector4<T> &v) const
-	{   return Vector4<T>(x-v.x, y-v.y, z-v.z, 0);	 }	
+	{   return Vector4<T>(this->x-v.x, this->y-v.y, this->z-v.z, 0);	 }	
 
 	//! uniform scaling
 	const Vector4<T> operator *(const T num) const
@@ -104,39 +105,39 @@ public:
 	//! addition
 	const Vector4<T> &operator +=(const Vector4<T> &v)
 	{
-		x+=v.x;	y+=v.y;	z+=v.z;	
+		this->x+=v.x;	this->y+=v.y;	this->z+=v.z;	
 		return *this;
 	}
 
 	//! subtraction
 	const Vector4<T> &operator -=(const Vector4<T> &v) 
 	{ 
-		x-=v.x;	y-=v.y;	z-=v.z;	
+		this->x-=v.x;	this->y-=v.y;	this->z-=v.z;	
 		return *this;	
 	}
 
 	//! uniform scaling, note this scales the w component as well
 	const Vector4<T> &operator *=(const T num)
 	{
-		x*=num; y*=num; z*=num;	w*=num;
+		this->x*=num; this->y*=num; this->z*=num;	w*=num;
 		return *this;
 	}
 			
 	//! uniform scaling, note this scales the w component as well
 	const Vector4<T> &operator /=(const T num)
 	{
-		x/=num; y/=num; z/=num;	w/=num;								
+		this->x/=num; this->y/=num; this->z/=num;w/=num;								
 		return *this;
 	}
 
 	//! dot product
 	T operator *(const Vector4<T> &v) const
-	{	return x*v.x + y*v.y + z*v.z;	}
+	{	return this->x*v.x + this->y*v.y + this->z*v.z;	}
 
 	//! cross product, returns a vector
 	const Vector4<T> operator %(const Vector4<T> &v) const 
 	{
-		Vector4<T> temp(y*v.z - z*v.y, z*v.x - x*v.z, x*v.y - y*v.x, 0);
+		Vector4<T> temp(this->y*v.z - this->z*v.y, this->z*v.x - this->x*v.z, this->x*v.y - this->y*v.x, 0);
 		return temp;
 	}	
 };

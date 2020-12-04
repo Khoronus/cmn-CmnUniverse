@@ -46,7 +46,7 @@ public:
 	{
 		float module = std::sqrt(std::pow(p.x, 2.0f) + std::pow(p.y, 2.0f) +
 			std::pow(p.z, 2.0f));
-		return cv::Point3f(p.x / module, p.y / module, p.z / module);
+		return _Ty3(p.x / module, p.y / module, p.z / module);
 	}
 
 };

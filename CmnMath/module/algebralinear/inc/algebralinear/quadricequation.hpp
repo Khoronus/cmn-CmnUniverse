@@ -73,21 +73,21 @@ public:
 		std::vector<CMN_32F>&x, std::vector<CMN_32F> &i)
 	{
 		if (a == 0) return 0;
-		CMN_32F d = std::powf(b, 2) - 4 * a * c;
+		CMN_32F d = std::pow(b, 2) - 4 * a * c;
 		if (d == 0) {
 			x.push_back(-b / 2 * a);
 			return 1;
 		}
 		if (d > 0) {
-			x.push_back((-b + std::sqrtf(d)) / (2 * a));
-			x.push_back((-b - std::sqrtf(d)) / (2 * a));
+			x.push_back((-b + std::sqrt(d)) / (2 * a));
+			x.push_back((-b - std::sqrt(d)) / (2 * a));
 			return 2;
 		}
 		if (d < 0) {
 			x.push_back(-b / 2 * a);
 			x.push_back(-b / 2 * a);
-			i.push_back(std::sqrtf(-d) / (2 * a));
-			i.push_back(-std::sqrtf(-d) / (2 * a));
+			i.push_back(std::sqrt(-d) / (2 * a));
+			i.push_back(-std::sqrt(-d) / (2 * a));
 			return -2;
 		}
 		return 0;
