@@ -24,6 +24,8 @@
 #include <iostream>
 #include <string>
 
+#include "ts/inc/ts/ts.hpp"
+#include "cmnlibcore/inc/cmnlibcore/cmnlibcore_headers.hpp"
 #include "algebralinear/inc/algebralinear/algebralinear_headers.hpp"
 
 namespace
@@ -68,11 +70,12 @@ void test()
 
 // ############################################################################
 
-int main()
-{
-	std::cout << "Sample NumericSystem" << std::endl;
-	test();
-	return 0;
-}
+//int main()
+//{
+//	std::cout << "Sample NumericSystem" << std::endl;
+//	//test();
+//	return 0;
+//}
 
+CMNLIB_TEST_MAIN(&test, "MemoryLeakCPP.txt", "MemoryLeakC.txt");
 
