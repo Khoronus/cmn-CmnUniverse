@@ -38,18 +38,18 @@ endif()
 if(UNIX)
     include(GNUInstallDirs)
 
-    set(CMNMATH_INC_INSTALL_DIR "${CMAKE_INSTALL_INCLUDEDIR}/module") 
+    #set(CMNLIB_INC_INSTALL_DIR "${CMAKE_INSTALL_INCLUDEDIR}/module")
+    set(CMNMATH_INC_INSTALL_DIR "module")  
     set(CMNMATH_RUNTIME_INSTALL_DIR "${CMAKE_INSTALL_BINDIR}") 
     set(CMNMATH_LIBRARY_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
     set(CMNMATH_ARCHIVE_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
     set(CMNMATH_FRAMEWORK_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
 
-    set(CMNMATH_CMAKE_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/cmnmath/cmake")
-    set(CMNMATH_ADDITIONAL_FILES_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/module")
+    set(CMNMATH_CMAKE_CONFIG_INSTALL_DIR "cmake")
+    set(CMNMATH_ADDITIONAL_FILES_INSTALL_DIR "./")
 
     set(CMNMATH_RUNTIME_INSTALL_DIR "bin") # for the nodesize_dbg, just ignore version and the like
-    set(CMNMATH_INC_INSTALL_DIR "include/cmnmath") # header filestree
-
+    set(CMNMATH_INC_INSTALL_DIR "module") # header filestree
 elseif(WIN32)
     set(CMNMATH_INC_INSTALL_DIR "module")
     set(CMNMATH_RUNTIME_INSTALL_DIR   "bin") 

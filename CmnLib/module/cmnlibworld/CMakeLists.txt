@@ -1,6 +1,4 @@
 #Setting the output folder
-
-#Setting the output folder
 # First for the generic no-config case (e.g. with mingw)
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin )
 set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib )
@@ -57,7 +55,6 @@ target_link_libraries(${PROJ_NAME} cmnlibcore)
 target_link_libraries(${PROJ_NAME} container)
 target_link_libraries(${PROJ_NAME} control)
 target_link_libraries(${PROJ_NAME} string)
-target_link_libraries(${PROJ_NAME} version)
 
 #Use static compiler library or dynamic
 if (USE_STATIC)

@@ -37,6 +37,9 @@ FILE( GLOB_RECURSE PROJ_HEADERS *.hpp *.h)
 set(PROJ_RETURNLIST "")
 HEADER_DIRECTORIES(PROJ_RETURNLIST)
 
+######################################################################
+# Project
+
 PROJECT( ${PROJ_NAME} )
 
 # set compiler standard
