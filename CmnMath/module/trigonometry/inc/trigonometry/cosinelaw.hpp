@@ -41,13 +41,13 @@ public:
 	//! retuns the angle to side a given an arbitrary triangle of sides of length a,b,c
 	static inline _Ty cosine_law_sss(_Ty a, _Ty b, _Ty c)
 	{
-		return std::acosf((b*b + c*c - a*a) / (2 * b*c));
+		return std::acos((b*b + c*c - a*a) / (2 * b*c));
 	}
 
 	//! returns the length of the side across from angle in an arbitrary triangle
 	static inline _Ty cosine_law_sas(_Ty len1, _Ty angle, _Ty len2)
 	{
-		return std::sqrtf(len1*len1 + len2*len2 - 2 * len1*len2*std::cosf(angle));
+		return std::sqrt(len1*len1 + len2*len2 - 2 * len1*len2*std::cos(angle));
 	}
 };
 
