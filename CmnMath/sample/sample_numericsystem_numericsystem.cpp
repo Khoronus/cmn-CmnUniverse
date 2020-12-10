@@ -77,7 +77,7 @@ void test()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample NumericSystem" << std::endl;
 
@@ -86,6 +86,8 @@ void main()
 	test_anglebetween();
 	// TODO
 	test_quaternionNaive();
+	
+	return 0;
 }
 
 

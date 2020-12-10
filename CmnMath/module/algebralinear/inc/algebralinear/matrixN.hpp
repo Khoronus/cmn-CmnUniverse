@@ -205,6 +205,7 @@ public:
 	}													                    \
 	Matrix##dimension& operator=(const Matrix##dimension& obj) {			\
 		*this = obj;														\
+		return *this;                                                                                                       \
 	}																        \
 
 //! external matrix class defines
