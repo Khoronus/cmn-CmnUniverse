@@ -95,7 +95,7 @@ public:
 		CMN_32F maxdiff = 0;
 		for (CMN_32S i = 1; i < N; ++i)
 		{
-			CMN_32F diff = std::fabsf(std::fabsf(vec[i].real()) - std::fabsf(vec[0].real()));
+			CMN_32F diff = std::fabs(std::fabs(vec[i].real()) - std::fabs(vec[0].real()));
 			if (diff > maxdiff ) maxdiff = diff;
 		}
 		//if (maxdiff > vec[0].real()) return maxdiff;
