@@ -39,6 +39,28 @@ class VectorOperationXYZ
 {
 public:
 
+	/** @brief Function to calculate dot product of two vectors.
+	* 
+	* Function to calculate dot product of two vectors.
+	*/
+	template <typename REAL = float>
+	REAL dot_product_unsafe(REAL* a, REAL* b, size_t s) {
+		REAL product = 0;
+		for (size_t i = 0; i < s; i++)
+			product = product + a[i] * b[i];
+		return product;
+	}
+	/** @brief Function to calculate cross product of two vectors.
+	* 
+	* Function to calculate cross product of two vectors.
+	*/
+	template <typename REAL = float>
+	void cross_product_unsafe(REAL* a, REAL* b, REAL* o) {
+		o[0] = a[1] * b[2] - a[2] * b[1];
+		o[1] = a[0] * b[2] - a[2] * b[0];
+		o[2] = a[0] * b[1] - a[1] * b[0];
+	}
+
 	template <typename _Ty2>
 	static _Ty2 dot_product(const _Ty &a, const _Ty &b)
 	{
