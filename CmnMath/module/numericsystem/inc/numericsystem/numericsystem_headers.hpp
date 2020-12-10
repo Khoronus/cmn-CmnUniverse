@@ -17,18 +17,18 @@
 *
 * @original author Alessandro Moro
 * @bug No known bugs.
-* @version 0.2.0.0
+* @version 0.3.0.0
 *
 */
 
 #ifndef CMNMATH_NUMERICSYSTEM_NUMERICSYSTEMHEADERS_HPP__
 #define CMNMATH_NUMERICSYSTEM_NUMERICSYSTEMHEADERS_HPP__
 
-#include "angleconversion.hpp"
+#include "angle_conversion_unitmeasure.hpp"
 #include "anglebetween.hpp"
 #include "quaternion.hpp"
 #include "quaternionTransformation.hpp"
 #include "quaternionNaive.hpp"
 #include "FFT.hpp"
 
-#endif /* CMNMATH_NUMERICSYSTEM_NUMERICSYSTEMHEADERS_HPP__ */
+#endif // CMNMATH_NUMERICSYSTEM_NUMERICSYSTEMHEADERS_HPP__

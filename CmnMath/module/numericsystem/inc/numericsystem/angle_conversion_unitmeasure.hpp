@@ -1,6 +1,6 @@
 /**
-* @file quaternion.hpp
-* @brief Header related to quaternions.
+* @file angle_conversion_unitmeasure.hpp
+* @brief Header to class to convert angle reference system.
 *
 * @section LICENSE
 *
@@ -21,8 +21,8 @@
 *
 */
 
-#ifndef CMNMATH_NUMERICSYSTEM_ANGLECONVERSION_HPP__
-#define CMNMATH_NUMERICSYSTEM_ANGLECONVERSION_HPP__
+#ifndef CMNMATH_NUMERICSYSTEM_ANGLECONVERSIONUNITMEASURE_HPP__
+#define CMNMATH_NUMERICSYSTEM_ANGLECONVERSIONUNITMEASURE_HPP__
 
 #include <cmath>
 #include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
@@ -43,7 +43,7 @@ namespace numericsystem
 *	@ingroup Conversion
 */
 template <typename _Ty>
-class AngleConversion
+class AngleConversionUnitMeasure
 {
 public:
 	/** Convert the grad in rad */
@@ -55,4 +55,4 @@ public:
 }	// namespace numericsystem
 }	// namespace CmnMath
 
-#endif /* CMNMATH_NUMERICSYSTEM_ANGLECONVERSION_HPP__ */
+#endif // CMNMATH_NUMERICSYSTEM_ANGLECONVERSIONUNITMEASURE_HPP__

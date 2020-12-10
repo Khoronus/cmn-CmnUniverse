@@ -33,8 +33,8 @@ namespace
 void test_angleconversion()
 {
 	CmnMath::CMN_64F angle_grad = 17;
-	CmnMath::CMN_64F angle_rad = CmnMath::numericsystem::AngleConversion<CmnMath::CMN_64F>::ToRad(angle_grad);
-	CmnMath::CMN_64F angle_grad2 = CmnMath::numericsystem::AngleConversion<CmnMath::CMN_64F>::ToGrad(angle_rad);
+	CmnMath::CMN_64F angle_rad = CmnMath::numericsystem::AngleConversionUnitMeasure<CmnMath::CMN_64F>::ToRad(angle_grad);
+	CmnMath::CMN_64F angle_grad2 = CmnMath::numericsystem::AngleConversionUnitMeasure<CmnMath::CMN_64F>::ToGrad(angle_rad);
 	std::cout << "Angle conversion: " << angle_grad << " " << angle_rad << " " 
 		<< angle_grad2 << std::endl;
 }
