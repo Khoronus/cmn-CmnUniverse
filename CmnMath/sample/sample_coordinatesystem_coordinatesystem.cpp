@@ -108,12 +108,13 @@ void test_conversion_threedim_sphere()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample CoordinateSystem" << std::endl;
 
 	test();
 	test_conversion_threedim_sphere();
+	return 0;
 }
 
 

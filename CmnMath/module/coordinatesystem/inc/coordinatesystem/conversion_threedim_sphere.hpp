@@ -50,8 +50,8 @@ public:
 	*/
 	static void sphere2uvf(_Ty1 &xyz, _Ty2 &uv)
 	{
-		uv.x = 0.5f + (std::atan2f(xyz.z, xyz.x) / (2 * CmnMath::core::kPIf));
-		uv.y = 0.5f - (std::asinf(xyz.y) / CmnMath::core::kPIf);
+		uv.x = 0.5f + (std::atan2(xyz.z, xyz.x) / (2 * CmnMath::core::kPIf));
+		uv.y = 0.5f - (std::asin(xyz.y) / CmnMath::core::kPIf);
 	}
 
 	/** @brief Finding UV on a sphere
@@ -105,9 +105,9 @@ public:
 		CmnMath::CMN_32F theta = uv.x * CmnMath::core::kPIf * 2. - CmnMath::core::kPIf;
 		CmnMath::CMN_32F phi = uv.y * CmnMath::core::kPIf;
 
-		xyz.x = std::cosf(theta) * std::sinf(phi) * radius;
-		xyz.y = std::sinf(theta) * std::sinf(phi) * radius;
-		xyz.z = std::cosf(phi) * radius;
+		xyz.x = std::cos(theta) * std::sin(phi) * radius;
+		xyz.y = std::sin(theta) * std::sin(phi) * radius;
+		xyz.z = std::cos(phi) * radius;
 	}
 
 
@@ -124,9 +124,9 @@ public:
 		CmnMath::CMN_32F theta = uv.x * CmnMath::core::kPIf * 2. - CmnMath::core::kPIf;
 		CmnMath::CMN_32F phi = uv.y * CmnMath::core::kPIf;
 
-		xyz.x = std::cosf(theta) * std::sinf(phi) * radius;
-		xyz.z = std::sinf(theta) * std::sinf(phi) * radius;
-		xyz.y = std::cosf(phi) * radius;
+		xyz.x = std::cos(theta) * std::sin(phi) * radius;
+		xyz.z = std::sin(theta) * std::sin(phi) * radius;
+		xyz.y = std::cos(phi) * radius;
 	}
 
 };

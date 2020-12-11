@@ -56,8 +56,8 @@ public:
 	}
 
 	static void logpolar2cartesian(_Ty p, _Ty theta, _Ty &x, _Ty &y) {
-		x = std::pow(CmnMath::core::E, p) * std::cos(theta);
-		y = std::pow(CmnMath::core::E, p) * std::sin(theta);
+		x = std::pow(CmnMath::core::kE, p) * std::cos(theta);
+		y = std::pow(CmnMath::core::kE, p) * std::sin(theta);
 	}
 
 	static void cartesian2logpolar(_Ty x, _Ty y, _Ty &p, _Ty &theta) {
