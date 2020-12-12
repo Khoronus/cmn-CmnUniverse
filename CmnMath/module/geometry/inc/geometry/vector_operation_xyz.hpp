@@ -84,7 +84,7 @@ public:
 	*/
 	static _Ty unitf(const _Ty &a)
 	{
-		CMN_32F v = std::sqrtf(dot_product<CMN_32F>(a, a));
+		CMN_32F v = std::sqrt(dot_product<CMN_32F>(a, a));
 		if (v == 0) return a;
 		return _Ty(a.x / v, a.y / v, a.z / v);
 	}
@@ -112,8 +112,8 @@ public:
 	template <typename _Ty2>
 	static _Ty2 magnitude_3df(const _Ty &a)
 	{
-		return std::sqrtf(std::powf(a.x, 2) + std::powf(a.y, 2) +
-			std::powf(a.z, 2));
+		return std::sqrt(std::pow(a.x, 2) + std::pow(a.y, 2) +
+			std::pow(a.z, 2));
 	}
 
 

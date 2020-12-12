@@ -26,6 +26,7 @@
 
 #include <vector>
 #include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
+#include "distance_zerodim_point.hpp"
 
 namespace CmnMath
 {
@@ -108,7 +109,7 @@ public:
 		CMN_32S n = points.size();
 		for (CMN_32S i = 0; i < n - 1; ++i)
 		{
-			d += CmnMath::geometry::DistanceZeroDimPoint::point_point_3d<cv::Point3f, CMN_32F>(
+			d += CmnMath::geometry::DistanceZeroDimPoint::point_point_3d<_Ty, CMN_32F>(
 				points[i], points[i + 1]);
 		}
 		CMN_32F dbin = d / (points_desired - 1);
@@ -117,7 +118,7 @@ public:
 		d = 0;
 		for (CMN_32S i = 0; i < n - 1; ++i)
 		{
-			d += CmnMath::geometry::DistanceZeroDimPoint::point_point_3d<cv::Point3f, CMN_32F>(
+			d += CmnMath::geometry::DistanceZeroDimPoint::point_point_3d<_Ty, CMN_32F>(
 				points[i], points[i + 1]);
 			if (d >= dexpected) {// && d > dlastmem + 0.9) {
 				dexpected += dbin;

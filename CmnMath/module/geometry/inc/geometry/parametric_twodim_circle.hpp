@@ -26,6 +26,8 @@
 
 #include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
 #include "algebralinear/inc/algebralinear/algebralinear_headers.hpp"
+#include "geometricprimitive/geometricprimitive_geometricprimitive.hpp"
+
 
 namespace CmnMath
 {
