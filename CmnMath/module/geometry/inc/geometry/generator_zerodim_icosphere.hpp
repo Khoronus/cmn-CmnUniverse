@@ -93,7 +93,7 @@ public:
 	const std::vector<_Ty3>& vertices() const { return mVertices; }
 	const std::vector<CMN_32S>& indices(CMN_32S level) const {
 		while (level >= CMN_32S(mIndices.size()))
-			const_cast<IcoSphere*>(this)->_subdivide();
+			const_cast<GeneratorZeroDimIcoSphere*>(this)->_subdivide();
 		return *mIndices[level];
 	}
 
@@ -154,7 +154,7 @@ protected:
 					edgeMap[edgeKey] = ids1[k];
 					_Ty3 psum = mVertices[e0] + mVertices[e1];
 					//CMN_32F psum_magnitude = cv::norm(psum);
-					CMN_32F psum_magnitude = VectorOperationXYZ<_Ty3>::magnitude_3d<CMN_32F>(psum);
+					CMN_32F psum_magnitude = VectorOperationXYZ<_Ty3>::template magnitude_3d<CMN_32F>(psum);
 					_Ty3 psum_norm = psum * (1.0f / psum_magnitude);
 					//mVertices.push_back((mVertices[e0] + mVertices[e1]).normalized());
 					mVertices.push_back(psum_norm);
