@@ -113,7 +113,7 @@ public:
 	*/
 	template <typename _Ty2>
 	static CMN_BOOL segment_segment(_Ty2 x1, _Ty2 y1, _Ty2 x2, _Ty2 y2,
-		_Ty2 x3, _Ty2 y3, _Ty x4, _Ty2 y4,
+		_Ty2 x3, _Ty2 y3, _Ty2 x4, _Ty2 y4,
 		_Ty2 &x_out, _Ty2 &y_out)
 	{
 		_Ty2 d = (x1 - x2)*(y3 - y4) - (y1 - y2)*(x3 - x4);
@@ -148,7 +148,7 @@ public:
 	@param[out] y_out Intersection points of the segments.
 	@return Return TRUE in case the intersection point has been found.
 	*/
-	template <typename _Ty>
+	/*template <typename _Ty2>
 	static CMN_BOOL segment_segment(_Ty x1, _Ty y1, _Ty x2, _Ty y2,
 		_Ty x3, _Ty y3, _Ty x4, _Ty y4,
 		_Ty &x_out, _Ty &y_out)
@@ -167,6 +167,7 @@ public:
 		if (yi < (std::min)(y3, y4) || yi >(std::max)(y3, y4)) return false;
 		return true;
 	}
+	*/
 
 };
 

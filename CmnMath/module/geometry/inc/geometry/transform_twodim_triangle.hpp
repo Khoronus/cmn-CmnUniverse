@@ -63,10 +63,10 @@ public:
 		_Ty1 f2 = p2 - f;
 		_Ty1 f3 = p3 - f;
 		// calculate the areas and factors (order of parameters doesn't matter):
-		float a = VectorOperationXYZ<_Ty1>::magnitude_3df<float>((p1 - p2).cross(p1 - p3)); // main triangle area a
-		float a1 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(f2.cross(f3)) / a; // p1's triangle area / a
-		float a2 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(f3.cross(f1)) / a; // p2's triangle area / a
-		float a3 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(f1.cross(f2)) / a; // p3's triangle area / a
+		float a = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>((p1 - p2).cross(p1 - p3)); // main triangle area a
+		float a1 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(f2.cross(f3)) / a; // p1's triangle area / a
+		float a2 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(f3.cross(f1)) / a; // p2's triangle area / a
+		float a3 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(f1.cross(f2)) / a; // p3's triangle area / a
 		// find the uv corresponding to point f (uv1/uv2/uv3 are associated to p1/p2/p3):
 		uv = uv1 * a1 + uv2 * a2 + uv3 * a3;
 	}
@@ -80,10 +80,10 @@ public:
 		_Ty1 f2 = p[1] - f;
 		_Ty1 f3 = p[2] - f;
 		// calculate the areas and factors (order of parameters doesn't matter):
-		float a = VectorOperationXYZ<_Ty1>::magnitude_3df<float>((p[0] - p[1]).cross(p[0] - p[2])); // main triangle area a
-		float a1 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(f2.cross(f3)) / a; // p1's triangle area / a
-		float a2 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(f3.cross(f1)) / a; // p2's triangle area / a
-		float a3 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(f1.cross(f2)) / a; // p3's triangle area / a
+		float a = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>((p[0] - p[1]).cross(p[0] - p[2])); // main triangle area a
+		float a1 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(f2.cross(f3)) / a; // p1's triangle area / a
+		float a2 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(f3.cross(f1)) / a; // p2's triangle area / a
+		float a3 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(f1.cross(f2)) / a; // p3's triangle area / a
 		// find the uv corresponding to point f (uv1/uv2/uv3 are associated to p1/p2/p3):
 		uvout = uv[0] * a1 + uv[1] * a2 + uv[2] * a3;
 	}
@@ -96,10 +96,10 @@ public:
 		_Ty1 f2 = p[1] - f;
 		_Ty1 f3 = p[2] - f;
 		// calculate the areas and factors (order of parameters doesn't matter):
-		float a = VectorOperationXYZ<_Ty1>::magnitude_3df<float>((p[0] - p[1]).cross(p[0] - p[2])); // main triangle area a
-		float a1 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(f2.cross(f3)) / a; // p1's triangle area / a
-		float a2 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(f3.cross(f1)) / a; // p2's triangle area / a
-		float a3 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(f1.cross(f2)) / a; // p3's triangle area / a
+		float a = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>((p[0] - p[1]).cross(p[0] - p[2])); // main triangle area a
+		float a1 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(f2.cross(f3)) / a; // p1's triangle area / a
+		float a2 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(f3.cross(f1)) / a; // p2's triangle area / a
+		float a3 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(f1.cross(f2)) / a; // p3's triangle area / a
 		// find the uv corresponding to point f (uv1/uv2/uv3 are associated to p1/p2/p3):
 		uvout = uv[0] * a1 + uv[1] * a2 + uv[2] * a3;
 	}
@@ -130,11 +130,11 @@ public:
 		_Ty1 va1 = f2.cross(f3); // p1's triangle cross product
 		_Ty1 va2 = f3.cross(f1); // p2's triangle cross product
 		_Ty1 va3 = f1.cross(f2); // p3's triangle cross product
-		float a = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(va); // main triangle area
+		float a = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(va); // main triangle area
 		// calculate barycentric coordinates with sign:
-		float a1 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(va1) / a * signf(va.dot(va1));
-		float a2 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(va2) / a * signf(va.dot(va2));
-		float a3 = VectorOperationXYZ<_Ty1>::magnitude_3df<float>(va3) / a * signf(va.dot(va3));
+		float a1 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(va1) / a * signf(va.dot(va1));
+		float a2 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(va2) / a * signf(va.dot(va2));
+		float a3 = VectorOperationXYZ<_Ty1>::template magnitude_3df<float>(va3) / a * signf(va.dot(va3));
 		// find the uv corresponding to point f (uv1/uv2/uv3 are associated to p1/p2/p3):
 		uv = uv1 * a1 + uv2 * a2 + uv3 * a3;
 	}

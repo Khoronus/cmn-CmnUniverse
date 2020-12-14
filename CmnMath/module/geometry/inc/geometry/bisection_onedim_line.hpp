@@ -71,8 +71,8 @@ public:
 	{
 		// Point on the first line to find the bisection plane
 		_Ty3 p = v0;
-		_Ty3 vn1 = algebralinear::norm<_Ty3>(v1);
-		_Ty3 un1 = algebralinear::norm<_Ty3>(u1);
+		_Ty3 vn1 = algebralinear::Norm<_Ty3>::calculate(v1);
+		_Ty3 un1 = algebralinear::Norm<_Ty3>::calculate(u1);
 		// direction solution 1
 		dir_line1 = vn1 + un1;
 		dir_line2 = vn1 - un1;

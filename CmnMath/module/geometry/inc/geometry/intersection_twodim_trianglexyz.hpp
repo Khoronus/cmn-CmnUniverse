@@ -195,8 +195,8 @@ public:
 //#ifdef MOLLER_TRUMBORE 
 		_Ty3 v0v1 = v1 - v0;
 		_Ty3 v0v2 = v2 - v0;
-		_Ty3 pvec = _Ty3.cross(v0v2);
-		float det = _Ty3.dot(pvec);
+		_Ty3 pvec = dir.cross(v0v2);
+		float det = v0v1.dot(pvec);
 //#ifdef CULLING 
 		// if the determinant is negative the triangle is backfacing
 		// if the determinant is close to 0, the ray misses the triangle

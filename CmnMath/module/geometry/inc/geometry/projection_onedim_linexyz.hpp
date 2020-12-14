@@ -49,7 +49,7 @@ public:
 	{
 		_Ty rhs = point - lineStart;
 		_Ty vector2 = lineEnd - lineStart;
-		CMN_32F magnitude = VectorOperationXYZ<_Ty>::magnitude_3d<CMN_32F>(vector2);
+		CMN_32F magnitude = VectorOperationXYZ<_Ty>::template magnitude_3d<CMN_32F>(vector2);
 		_Ty lhs = vector2;
 		if (magnitude > 1E-06f)
 		{

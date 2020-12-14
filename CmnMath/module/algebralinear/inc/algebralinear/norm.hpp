@@ -37,11 +37,11 @@ namespace algebralinear
 
     Class to calculate the norm of a vector.
 */
+template <typename _Ty3>
 class Norm
 {
 public:
 
-	template <typename _Ty3>
 	static _Ty3 calculate(const _Ty3 &p)
 	{
 		float module = std::sqrt(std::pow(p.x, 2.0f) + std::pow(p.y, 2.0f) +

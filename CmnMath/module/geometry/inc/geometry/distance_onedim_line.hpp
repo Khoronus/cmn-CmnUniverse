@@ -52,7 +52,7 @@ public:
 	template <typename _Ty, typename _Ty2>
 	static _Ty2 point_line(const _Ty &point, const _Ty &lineStart, const _Ty &lineEnd)
 	{
-		return VectorOperationXYZ<_Ty>::magnitude_3d<CMN_32F>(
+		return VectorOperationXYZ<_Ty>::template magnitude_3d<CMN_32F>(
 			ProjectOneDimLineXYZ<_Ty>::point2line(point, lineStart, lineEnd) - point);
 	}
 
