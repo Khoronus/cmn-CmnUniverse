@@ -41,6 +41,8 @@ namespace numericsystem
 /** This class provides the conversion of angles
 *	@author Dr. Moro Alessandro
 *	@ingroup Conversion
+* 
+*   Previous name: AngleConversion
 */
 template <typename _Ty>
 class AngleConversionUnitMeasure
