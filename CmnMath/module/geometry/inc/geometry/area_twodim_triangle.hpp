@@ -47,8 +47,8 @@ public:
 		const _Ty3 &p2) {
 		_Ty3 ab = p1 - p0;
 		_Ty3 ac = p2 - p0;
-		REAL m_ab = VectorOperationXYZ<_Ty3>::magnitude_3d<REAL>(ab);
-		REAL m_ac = VectorOperationXYZ<_Ty3>::magnitude_3d<REAL>(ac);
+		REAL m_ab = VectorOperationXYZ<_Ty3>::template magnitude_3d<REAL>(ab);
+		REAL m_ac = VectorOperationXYZ<_Ty3>::template magnitude_3d<REAL>(ac);
 		REAL theta = std::acos(ab.dot(ac) / (m_ab * m_ac));
 		return m_ab * m_ac * sin(theta) * 0.5;
 	}

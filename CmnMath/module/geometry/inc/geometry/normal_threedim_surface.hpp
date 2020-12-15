@@ -80,17 +80,16 @@ private:
 	}
 
 
-	static void computePlane(_Ty3 &A, _Ty3 &B, _Ty3 &C)
-	{
-		_Ty3 N = (A - B) % (B - C); //perform cross product of two lines on plane
-
-		if (N.getMagnitude() > 0)
-		{
-			N.normalize();  //normalize
-			m_n = N;         //assign new normal to member normal
-			m_d = n * A;   //offset plane from origin
-		}
-	}
+	//static void computePlane(_Ty3 &A, _Ty3 &B, _Ty3 &C)
+	//{
+	//	_Ty3 N = (A - B) % (B - C); //perform cross product of two lines on plane
+	//	if (N.getMagnitude() > 0)
+	//	{
+	//		N.normalize();  //normalize
+	//		m_n = N;         //assign new normal to member normal
+	//		m_d = n * A;   //offset plane from origin
+	//	}
+	//}
 
 	/**
 	https://stackoverflow.com/questions/2582367/c-opengl-how-to-find-normalized-vectors-for-a-quad

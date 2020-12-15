@@ -25,6 +25,7 @@
 #define CMNMATH_GEOMETRY_BISECTIONTWODIMARCNAIVE_HPP__
 
 #include "algebralinear/inc/algebralinear/norm.hpp"
+#include "statistics/inc/statistics/statistics_headers.hpp"
 #include "trigonometry/inc/trigonometry/bisection_angle.hpp"
 
 namespace CmnMath
@@ -70,7 +71,7 @@ public:
 		_Ty2 pa;
 		get_bisec_arc_naive(pts, p0, p1, 0.1f, pa, a);
 		a = theta;
-		pa = cv::Point2f(std::cos(a), std::sin(a));
+		pa = _Ty2(std::cos(a), std::sin(a)); // cv::Point2f
 
 		//cv::circle(out, cv::Point2f(p0.x * 256 + 256, p0.y * 256 + 256), 3, cv::Scalar(0, 0, 255), 2);
 		//cv::circle(out, cv::Point2f(p1.x * 256 + 256, p1.y * 256 + 256), 3, cv::Scalar(255, 0, 255), 2);

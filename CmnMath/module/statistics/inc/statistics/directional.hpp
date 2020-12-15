@@ -25,6 +25,7 @@
 #define CMNMATH_STATISTICS_DIRECTIONAL_HPP__ 
 
 #include <vector>
+#include <complex>
 
 namespace CmnMath
 {
@@ -44,7 +45,8 @@ public:
 		if (angles.size() == 0) return false;
 		//std::vector<_Ty> v_s, v_c;
 		_Ty s_sum = 0, c_sum = 0;
-		for (std::vector<_Ty>::const_iterator it = angles.begin(); it != angles.end(); ++it)
+		//for (std::vector<_Ty>::const_iterator it = angles.begin(); it != angles.end(); ++it)
+		for (auto it : angles)
 		{
 			s_sum += std::sin(*it);
 			c_sum += std::cos(*it);
@@ -58,7 +60,8 @@ public:
 	static bool naive_variance(const std::vector<_Ty> &angles, _Ty mean, _Ty &result) {
 		if (angles.size() == 0) return false;
 		result = 0;
-		for (std::vector<_Ty>::const_iterator it = angles.begin(); it != angles.end(); ++it)
+		//for (std::vector<_Ty>::const_iterator it = angles.begin(); it != angles.end(); ++it)
+		for (auto it : angles)
 		{
 			_Ty s = std::sin(*it);
 			_Ty c = std::cos(*it);
@@ -77,7 +80,8 @@ public:
 		if (angles.size() == 0) return false;
 		//std::vector<_Ty> v_s, v_c;
 		std::complex<_Ty> phi;
-		for (std::vector<_Ty>::const_iterator it = angles.begin(); it != angles.end(); ++it)
+		//for (std::vector<_Ty>::const_iterator it = angles.begin(); it != angles.end(); ++it)
+		for (auto it : angles)
 		{
 			phi += std::complex<_Ty>(std::cos(*it), std::sin(*it));
 		}

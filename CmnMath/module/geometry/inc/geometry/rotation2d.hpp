@@ -52,8 +52,8 @@ public:
 	*/
 	static void pointf(const _Ty &in, CMN_32F angle, _Ty &center, _Ty &out) {
 		_Ty aux = in - center;
-		CMN_32F c = std::cosf(angle);
-		CMN_32F s = std::sinf(angle);
+		CMN_32F c = std::cos(angle);
+		CMN_32F s = std::sin(angle);
 		out.x = aux.x * c - aux.y * s + center.x;
 		out.y = aux.x * s + aux.y * c + center.y;
 	}

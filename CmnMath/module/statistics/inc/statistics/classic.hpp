@@ -128,8 +128,9 @@ public:
 		if (container.size() == 0) return false;
 		size_t s = container.size();
 		result = 0;
-		for (std::vector< _Ty >::const_iterator it = container.begin();
-			it != container.end(); it++)
+		//for (std::vector< _Ty >::const_iterator it = container.begin();
+		//	it != container.end(); it++)
+		for (auto &it : container)
 		{
 			result += *it;
 		}
@@ -144,8 +145,9 @@ public:
 		if (container.size() == 0) return false;
 		size_t s = container.size();
 		result = 0;
-		for (std::vector< _Ty >::const_iterator it = container.begin();
-			it != container.end(); it++)
+		//for (std::vector< _Ty >::const_iterator it = container.begin();
+		//	it != container.end(); it++)
+		for (auto &it : container)
 		{
 			result += std::pow(*it - mean, 2);
 		}
@@ -166,8 +168,9 @@ public:
 		REAL Sum = 0;
 		REAL Sum_sqr = 0;
 
-		for (std::vector< _Ty >::const_iterator it = container.begin();
-			it != container.end(); ++it)
+		//for (std::vector< _Ty >::const_iterator it = container.begin();
+		//	it != container.end(); ++it)
+		for (auto &it : container)
 		{
 			n = n + 1;
 			Sum = Sum + (*it);
