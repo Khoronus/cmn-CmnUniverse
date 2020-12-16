@@ -134,14 +134,16 @@ void test()
 	CmnMath::CMN_32F distance = CmnMath::geometry::DistanceOneDimLine::point_line<CmnMath::algebralinear::Vector3f, CmnMath::CMN_32F>(point, start, end);
 	std::cout << "Distance: " << distance << std::endl;
 	// Test the vector operation
-	std::cout << "Cross ProductXYZ: " << CmnMath::geometry::VectorOperationXYZ<CmnMath::algebralinear::Vector3f>::cross(
-		CmnMath::algebralinear::Vector3f(1, 0, 0), CmnMath::algebralinear::Vector3f(0, 1, 0)) << std::endl;
+	auto vres1 = CmnMath::geometry::VectorOperationXYZ<CmnMath::algebralinear::Vector3f>::cross(
+		CmnMath::algebralinear::Vector3f(1, 0, 0), CmnMath::algebralinear::Vector3f(0, 1, 0));
+	std::cout << "Cross ProductXYZ: " << vres1 << std::endl;
 	std::cout << "Dot ProductXYZ: " << CmnMath::geometry::VectorOperationXYZ<CmnMath::algebralinear::Vector3f>::dot_product<CmnMath::CMN_32F>(
 		CmnMath::algebralinear::Vector3f(1, 0, 0), CmnMath::algebralinear::Vector3f(0, 1, 0)) << std::endl;
 	std::cout << "MagnitudeXYZ: " << CmnMath::geometry::VectorOperationXYZ<CmnMath::algebralinear::Vector3f>::magnitude_3d<CmnMath::CMN_32F>(
 		CmnMath::algebralinear::Vector3f(1, 0, 0)) << std::endl;
-	std::cout << "UnitXYZ: " << CmnMath::geometry::VectorOperationXYZ<CmnMath::algebralinear::Vector3f>::unit(
-		CmnMath::algebralinear::Vector3f(1, 0, 0)) << std::endl;
+	auto vres2 = CmnMath::geometry::VectorOperationXYZ<CmnMath::algebralinear::Vector3f>::unit(
+		CmnMath::algebralinear::Vector3f(1, 0, 0));
+	std::cout << "UnitXYZ: " << vres2 << std::endl;
 
 	// Test the vector operation
 	std::vector<float> a, b, c;
