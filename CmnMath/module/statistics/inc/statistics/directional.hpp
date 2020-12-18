@@ -48,8 +48,8 @@ public:
 		//for (std::vector<_Ty>::const_iterator it = angles.begin(); it != angles.end(); ++it)
 		for (auto it : angles)
 		{
-			s_sum += std::sin(*it);
-			c_sum += std::cos(*it);
+			s_sum += std::sin(it);
+			c_sum += std::cos(it);
 		}
 		_Ty s = s_sum / angles.size();
 		_Ty c = c_sum / angles.size();
@@ -63,8 +63,8 @@ public:
 		//for (std::vector<_Ty>::const_iterator it = angles.begin(); it != angles.end(); ++it)
 		for (auto it : angles)
 		{
-			_Ty s = std::sin(*it);
-			_Ty c = std::cos(*it);
+			_Ty s = std::sin(it);
+			_Ty c = std::cos(it);
 
 			_Ty r = 0;
 			if (naive_theta(s, c, r)) {
@@ -83,7 +83,7 @@ public:
 		//for (std::vector<_Ty>::const_iterator it = angles.begin(); it != angles.end(); ++it)
 		for (auto it : angles)
 		{
-			phi += std::complex<_Ty>(std::cos(*it), std::sin(*it));
+			phi += std::complex<_Ty>(std::cos(it), std::sin(it));
 		}
 		phi /= angles.size();
 		theta = std::arg(phi);
