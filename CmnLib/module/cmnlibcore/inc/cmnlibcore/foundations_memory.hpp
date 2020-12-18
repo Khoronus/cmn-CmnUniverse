@@ -33,11 +33,15 @@
 #include <cstdint>
 #include <fstream>
 #include <memory>
+#include <cstdlib>
 
+#include "cmnlibcore/inc/cmnlibcore/libdefine.hpp"
 
 #if _DEBUG
+#ifdef USE_MEMORYMANAGER
 #define CMNLIB
 #define CL_MEMORY_MANAGER
+#endif
 #endif
 
 #include "misc.hpp"

@@ -19,10 +19,20 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 	definition of the current version
 	Usefull to test in user programs
 */
-#define COMPILE_WITH_WIN32 @COMPILE_WITH_WIN32@
+//#define COMPILE_WITH_WIN32 @COMPILE_WITH_WIN32@
 
-#if COMPILE_WITH_WIN32 == 1
-#define USE_WIN32
+//#if COMPILE_WITH_WIN32 == 1
+//#define USE_WIN32
+//#endif
+
+/*
+	definition of the current version
+	Usefull to test in user programs
+*/
+#define DO_USE_MEMORYMANAGER @DO_USE_MEMORYMANAGER@
+
+#if DO_USE_MEMORYMANAGER == 1
+#define USE_MEMORYMANAGER
 #endif
 
 #endif /* CMNLIB_CMNLIB_LIBDEFINE_HPP__ */

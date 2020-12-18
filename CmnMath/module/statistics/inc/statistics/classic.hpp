@@ -132,7 +132,7 @@ public:
 		//	it != container.end(); it++)
 		for (auto &it : container)
 		{
-			result += *it;
+			result += it;
 		}
 		result /= static_cast<REAL>(s);
 		return true;
@@ -149,7 +149,7 @@ public:
 		//	it != container.end(); it++)
 		for (auto &it : container)
 		{
-			result += std::pow(*it - mean, 2);
+			result += std::pow(it - mean, 2);
 		}
 		result /= s;
 		return true;
@@ -161,7 +161,7 @@ public:
 	// http://www.mathsisfun.com/data/standard-deviation.html
 	// 600 470 170 430 300 | mean = 394 | variance = 21704 | 
 	//                       standard deviation = 147.32...
-	static bool naive_variance(std::vector< _Ty > &container, REAL &result)
+	static bool naive_variance(const std::vector< _Ty > &container, REAL &result)
 	{
 		if (container.size() == 0) return false;
 		CMN_32S n = 0;
@@ -173,8 +173,8 @@ public:
 		for (auto &it : container)
 		{
 			n = n + 1;
-			Sum = Sum + (*it);
-			Sum_sqr = Sum_sqr + std::pow((*it), 2);
+			Sum = Sum + it;
+			Sum_sqr = Sum_sqr + std::pow(it, 2);
 		}
 		result = (Sum_sqr - (Sum*Sum) / n) / n;
 		return true;

@@ -100,7 +100,7 @@ install(TARGETS ${MAIN_PROJ_NAME} EXPORT ${MAIN_PROJ_NAME}Targets
 # Options
 #option (USE_STATIC "Use static library" OFF)
 option (BUILD_EXAMPLES "Build Samples" ON)
-#option (USE_WIN32 "Compile with Win32" ON)
+option (DO_USE_MEMORYMANAGER "Compile with memory manager (possible conflicts)" 0N)
 
 ######################################################################
 # Recurse into the subdirectories. 

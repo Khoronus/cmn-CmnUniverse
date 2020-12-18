@@ -12,6 +12,9 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 
 */
 
+#include <vector>
+#include <map>
+
 #include "ts/inc/ts/ts.hpp"
 #include "cmnlibcore/inc/cmnlibcore/cmnlibcore_headers.hpp"
 
@@ -56,6 +59,10 @@ void test()	{
 	free(p2);
 
 	int *data2 = new int[123];
+
+	std::vector<std::string> words = {"hello"};
+
+	std::map<std::string, std::string> words_v2 = { {"key0", "value0"}, {"key1", "value1"} };
 }
 
 }  // namespace anonymous

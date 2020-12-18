@@ -15,9 +15,13 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 #ifndef CMNLIB_CMNLIBCORE_MEMORY_HPP__
 #define CMNLIB_CMNLIBCORE_MEMORY_HPP__
 
+#include "cmnlibcore/inc/cmnlibcore/libdefine.hpp"
+
 #if _DEBUG
+#ifdef USE_MEMORYMANAGER
 #define CMNLIB
 #define CL_MEMORY_MANAGER
+#endif
 #endif
 
 #include <iostream>
