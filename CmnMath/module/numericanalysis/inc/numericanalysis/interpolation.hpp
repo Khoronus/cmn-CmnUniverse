@@ -135,8 +135,8 @@ public:
 	//! returns the cubic interpolation of 4 points
 	static T interp_cubic(const T &v0, const T &v1, const T &v2, const T &v3, CMN_32F t)
 	{
-		type P = (v3 - v2) - (v0 - v1);
-		type Q = (v0 - v1) - P;
+		T P = (v3 - v2) - (v0 - v1);
+		T Q = (v0 - v1) - P;
 		return ((P*t + Q)*t + (v2 - v0))*t + v1; //using expanded out horner's rule
 	}
 
@@ -361,7 +361,7 @@ public:
 		CMN_64L n = p.size() - 1;
 
 		muk = 1;
-		munk = std::powf(1 - mu, (CMN_32F)n);
+		munk = std::pow(1 - mu, (CMN_32F)n);
 
 		for (CMN_64L k = 0; k <= n; k++) {
 			nn = n;

@@ -54,7 +54,7 @@ public:
 
 	/** https://math.stackexchange.com/questions/1330210/how-to-check-if-a-point-is-in-the-direction-of-the-normal-of-a-plane
 	*/
-	[[deprecated("One line function. It will be removed. Please use: n.dot(p - a)")]]
+	//[[deprecated("One line function. It will be removed. Please use: n.dot(p - a)")]]
 	static float direction(const _Ty3 &n, const _Ty3 &p, const _Ty3 &a) {
 		_Ty3 pp = p, aa = a, nn = n;
 		return nn.dot(pp - aa);

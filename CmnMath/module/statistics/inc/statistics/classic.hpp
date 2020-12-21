@@ -25,6 +25,8 @@
 #define CMNMATH_STATISTICS_CLASSIC_HPP__ 
 
 #include <vector>
+#include <numeric>
+#include <functional>
 
 namespace CmnMath
 {

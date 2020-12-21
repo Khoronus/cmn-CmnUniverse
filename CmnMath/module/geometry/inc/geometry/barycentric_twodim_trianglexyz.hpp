@@ -42,7 +42,8 @@ public:
 	// Compute barycentric coordinates (u, v, w) for
 	// point p with respect to triangle (a, b, c)
 	// link: http://gamedev.stackexchange.com/questions/23743/whats-the-most-efficient-way-to-find-barycentric-coordinates
-	static _Ty3 barycentric(_Ty3 &a, _Ty3 &b, _Ty3 &c, _Ty3 &p)
+	static _Ty3 barycentric(const _Ty3 &a, const _Ty3 &b, const _Ty3 &c, 
+				const _Ty3 &p)
 	{
 		_Ty3 v0 = b - a, v1 = c - a, v2 = p - a;
 		float d00 = v0.dot(v0);
@@ -60,7 +61,7 @@ public:
 	/** @brief Calculate the Cartesian coordinates of a barycentric point.
 	*/
 	static _Ty3 cartesian(const _Ty3 &p0, const _Ty3 &p1, const _Ty3 &p2,
-		_Ty3 &barycentric) {
+		const _Ty3 &barycentric) {
 		return barycentric.x * p0 + barycentric.y * p1 + barycentric.z * p2;
 	}
 };
