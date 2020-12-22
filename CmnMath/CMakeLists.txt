@@ -21,8 +21,8 @@ SET( MAIN_PROJ_NAME      "CmnMath" )
 project (${MAIN_PROJ_NAME})
 
 set(CMNMATH_VERSION_MAJOR 0 CACHE STRING "major version of cmnmath" FORCE)
-set(CMNMATH_VERSION_MINOR 7 CACHE STRING "minor version of cmnmath" FORCE)
-set(CMNMATH_VERSION_SUBMINOR 2 CACHE STRING "subminor version of cmnmath" FORCE)
+set(CMNMATH_VERSION_MINOR 8 CACHE STRING "minor version of cmnmath" FORCE)
+set(CMNMATH_VERSION_SUBMINOR 0 CACHE STRING "subminor version of cmnmath" FORCE)
 set(CMNMATH_VERSION_PATCH 0 CACHE STRING "patch version of cmnmath" FORCE)
 set(CMNMATH_VERSION "${CMNMATH_VERSION_MAJOR}.${CMNMATH_VERSION_MINOR}.${CMNMATH_VERSION_SUBMINOR}.${CMNMATH_VERSION_PATCH}"
                              CACHE STRING "version of cmnmath" FORCE)
@@ -143,9 +143,10 @@ write_basic_package_version_file(${version_file}
                                  COMPATIBILITY AnyNewerVersion)
 
 
-#add files (if necessary)								 
+#add files (if necessary)	
+string(TOLOWER ${MAIN_PROJ_NAME} main_proj_name_lowcase)							 
 install(EXPORT ${MAIN_PROJ_NAME}Targets DESTINATION ${CMNMATH_CMAKE_CONFIG_INSTALL_DIR}
-		                               FILE ${MAIN_PROJ_NAME}-config.cmake
+		                               FILE ${main_proj_name_lowcase}-config.cmake
 									   NAMESPACE ${MAIN_PROJ_NAME}::)
 install(FILES ${version_file} DESTINATION ${CMNMATH_CMAKE_CONFIG_INSTALL_DIR})
 

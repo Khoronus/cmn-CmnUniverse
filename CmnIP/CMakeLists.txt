@@ -130,8 +130,9 @@ write_basic_package_version_file(${version_file}
                                  COMPATIBILITY AnyNewerVersion)
 
 
-#add files (if necessary)								 
+#add files (if necessary)		
+string(TOLOWER ${MAIN_PROJ_NAME} main_proj_name_lowcase)						 
 install(EXPORT ${MAIN_PROJ_NAME}Targets DESTINATION ${CMNIP_CMAKE_CONFIG_INSTALL_DIR}
-		                               FILE ${MAIN_PROJ_NAME}-config.cmake
+		                               FILE ${main_proj_name_lowcase}-config.cmake
 									   NAMESPACE ${MAIN_PROJ_NAME}::)
 install(FILES ${version_file} DESTINATION ${CMNIP_CMAKE_CONFIG_INSTALL_DIR})
