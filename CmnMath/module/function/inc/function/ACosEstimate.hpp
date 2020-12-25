@@ -14,7 +14,7 @@
 #define CMNMATH_FUNCTION_ACOSESTIMATE_HPP__
 
 #include <cmath>
-#include "cmnmathcore\inc\cmnmathcore\define_constants.hpp"
+#include "cmnmathcore/inc/cmnmathcore/define_constants.hpp"
 
 namespace CmnMath
 {
