@@ -10,7 +10,7 @@
 
 #include "matrix.hpp"
 #include "vector4.hpp"
-#include "function\inc\function\ChebyshevRatio.hpp"
+#include "function/inc/function/ChebyshevRatio.hpp"
 
 namespace CmnMath
 {
@@ -275,7 +275,7 @@ Quaternion<Real> Slerp(Real t, Quaternion<Real> const& q0,
     }
 
     Real f0, f1;
-    ChebyshevRatio<Real>::Get(t, cosA, f0, f1);
+    function::ChebyshevRatio<Real>::Get(t, cosA, f0, f1);
     return q0 * f0 + q1 * (sign * f1);
 }
 //----------------------------------------------------------------------------
@@ -284,7 +284,7 @@ Quaternion<Real> SlerpR(Real t, Quaternion<Real> const& q0,
     Quaternion<Real> const& q1)
 {
     Real f0, f1;
-    ChebyshevRatio<Real>::Get(t, Dot(q0, q1), f0, f1);
+    function::ChebyshevRatio<Real>::Get(t, Dot(q0, q1), f0, f1);
     return q0 * f0 + q1 * f1;
 }
 //----------------------------------------------------------------------------
@@ -293,7 +293,7 @@ Quaternion<Real> SlerpRP(Real t, Quaternion<Real> const& q0,
     Quaternion<Real> const& q1, Real cosA)
 {
     Real f0, f1;
-    ChebyshevRatio<Real>::Get(t, cosA, f0, f1);
+    function::ChebyshevRatio<Real>::Get(t, cosA, f0, f1);
     return q0 * f0 + q1 * f1;
 }
 //----------------------------------------------------------------------------

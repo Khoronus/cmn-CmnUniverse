@@ -34,7 +34,7 @@
 #include <fstream>
 #include <vector>
 #include "UIntegerALU32.hpp"
-#include "cmnmathcore\inc\cmnmathcore\logger.hpp"
+#include "cmnmathcore/inc/cmnmathcore/logger.hpp"
 
 
 namespace CmnMath

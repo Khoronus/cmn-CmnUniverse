@@ -36,7 +36,7 @@ int Transform::dft(const cv::Mat &src, cv::Mat &out)
 	if (src.channels() == 3) {
 #if CV_MAJOR_VERSION == 3
 		cv::cvtColor(src, I, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::cvtColor(src, I, cv::COLOR_BGR2GRAY);
 #endif
 	}
@@ -91,7 +91,7 @@ int Transform::dft(const cv::Mat &src, cv::Mat &out)
 	// viewable image form (float between values 0 and 1).
 #if CV_MAJOR_VERSION == 3
 	cv::normalize(magI, magI, 0, 1, CV_MINMAX); 
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::normalize(magI, magI, 0, 1, cv::NORM_MINMAX);
 #endif
 

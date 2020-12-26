@@ -23,7 +23,7 @@
 #define GTE_MAKE_U64(hi,lo)  ((uint64_t)(lo) | ((uint64_t)(hi) << 32))
 
 #include <cstdint>
-#include "cmnmathcore\inc\cmnmathcore\cmnmathcore_headers.hpp"
+#include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
 
 namespace CmnMath
 {

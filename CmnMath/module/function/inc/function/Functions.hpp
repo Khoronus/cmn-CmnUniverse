@@ -8,8 +8,8 @@
 #ifndef CMNMATH_FUNCTION_FUNCTIONS_HPP__
 #define CMNMATH_FUNCTION_FUNCTIONS_HPP__
 
-#include "cmnmathcore\inc\cmnmathcore\define_constants.hpp"
-#include "arithmetic\inc\arithmetic\arithmetic.hpp"
+#include "cmnmathcore/inc/cmnmathcore/define_constants.hpp"
+#include "arithmetic/inc/arithmetic/arithmetic.hpp"
 
 namespace CmnMath
 {

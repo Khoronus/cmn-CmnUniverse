@@ -10,7 +10,7 @@
 
 #include <cstdint>
 
-#include "cmnmathcore\inc\cmnmathcore\cmnmathcore_headers.hpp"
+#include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
 
 namespace CmnMath
 {

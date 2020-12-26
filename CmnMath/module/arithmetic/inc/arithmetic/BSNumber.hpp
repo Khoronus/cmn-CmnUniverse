@@ -62,7 +62,7 @@
 
 #include "IEEEBinary.hpp"
 #include "BitHacks.hpp"
-#include "cmnmathcore\inc\cmnmathcore\logger.hpp"
+#include "cmnmathcore/inc/cmnmathcore/logger.hpp"
 
 namespace CmnMath
 {

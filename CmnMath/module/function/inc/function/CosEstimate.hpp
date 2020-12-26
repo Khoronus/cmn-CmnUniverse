@@ -14,7 +14,7 @@
 #ifndef CMNMATH_FUNCTION_COSESTIMATE_HPP__
 #define CMNMATH_FUNCTION_COSESTIMATE_HPP__
 
-#include "cmnmathcore\inc\cmnmathcore\define_constants.hpp"
+#include "cmnmathcore/inc/cmnmathcore/define_constants.hpp"
 
 namespace CmnMath
 {

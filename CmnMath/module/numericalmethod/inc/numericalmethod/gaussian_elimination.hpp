@@ -21,7 +21,7 @@
 #include <cmath>
 #include <cstring>
 #include <vector>
-#include "cmnmathcore\inc\cmnmathcore\cmnmathcore_headers.hpp"
+#include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
 
 namespace CmnMath
 {

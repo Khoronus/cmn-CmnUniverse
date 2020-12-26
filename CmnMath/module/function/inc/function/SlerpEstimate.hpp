@@ -25,7 +25,7 @@
 #ifndef CMNMATH_FUNCTION_SLERPESTIMATE_HPP__
 #define CMNMATH_FUNCTION_SLERPESTIMATE_HPP__
 
-#include "algebra\inc\algebra\quaternion.hpp"
+#include "algebra/inc/algebra/quaternion.hpp"
 
 namespace CmnMath
 {

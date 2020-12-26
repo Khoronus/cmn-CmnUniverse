@@ -11,7 +11,7 @@
 #include <array>
 #include <cmath>
 #include <initializer_list>
-#include "cmnmathcore\inc\cmnmathcore\cmnmathcore_headers.hpp"
+#include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
 
 namespace CmnMath
 {

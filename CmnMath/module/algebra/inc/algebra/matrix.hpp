@@ -11,8 +11,8 @@
 #include <cmath>
 #include <initializer_list>
 #include <vector>
-#include "cmnmathcore\inc\cmnmathcore\cmnmathcore_headers.hpp"
-#include "numericalmethod\inc\numericalmethod\gaussian_elimination.hpp"
+#include "cmnmathcore/inc/cmnmathcore/cmnmathcore_headers.hpp"
+#include "numericalmethod/inc/numericalmethod/gaussian_elimination.hpp"
 #include "vector.hpp"
 
 namespace CmnMath
