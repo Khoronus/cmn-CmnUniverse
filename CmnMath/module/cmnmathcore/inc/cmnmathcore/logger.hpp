@@ -28,13 +28,13 @@
 
 //----------------------------------------------------------------------------
 #if !defined(USE_CMNLIB)
-
 // No logging of assertions, warnings, errors, or information.
 #define LogAssert(condition, message)
 #define LogError(message)
 #define LogWarning(message)
 #define LogInformation(message)
-
+#else
+#include "control/inc/control/Logger.hpp"
 #endif
 //----------------------------------------------------------------------------
 
