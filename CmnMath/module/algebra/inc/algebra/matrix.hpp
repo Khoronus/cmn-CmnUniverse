@@ -655,7 +655,7 @@ Matrix<N, N, Real> Inverse(Matrix<N, N, Real> const& M,
 {
     Matrix<N, N, Real> invM;
     Real determinant;
-    bool invertible = GaussianElimination<Real>()(N, &M[0], &invM[0],
+    bool invertible = numericalmethod::GaussianElimination<Real>()(N, &M[0], &invM[0],
         determinant, nullptr, nullptr, nullptr, 0, nullptr);
     if (reportInvertibility)
     {
@@ -668,7 +668,7 @@ template <int N, typename Real>
 Real Determinant(Matrix<N, N, Real> const& M)
 {
     Real determinant;
-    GaussianElimination<Real>()(N, &M[0], nullptr, determinant, nullptr,
+    numericalmethod::GaussianElimination<Real>()(N, &M[0], nullptr, determinant, nullptr,
         nullptr, nullptr, 0, nullptr);
     return determinant;
 }
