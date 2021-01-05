@@ -16,7 +16,7 @@
  * 
  * @author Alessandro Moro <alessandromoro.italy@gmail.com>
  * @bug No known bugs.
- * @version 0.2.0.0
+ * @version 0.2.1.0
  * 
  */
 
@@ -141,32 +141,32 @@ public:
 	//static double *LabToRGB(const double lab[3]);
 
 	//----------------------------------------------------------------------------
-	static void ColorConversion::RGBToHSV(float r, float g, float b,
+	static void RGBToHSV(float r, float g, float b,
 							float *h, float *s, float *v)
 	{
 		double dh,ds,dv;
-		ColorConversion::RGBToHSV(r,g,b,&dh,&ds,&dv);
+		RGBToHSV(r,g,b,&dh,&ds,&dv);
 		*h = static_cast<float>(dh);
 		*s = static_cast<float>(ds);
 		*v = static_cast<float>(dv);
 	}
 
 	//----------------------------------------------------------------------------
-	static double* ColorConversion::RGBToHSV(const double rgb[3])
+	static double* RGBToHSV(const double rgb[3])
 	{
 		return ColorConversion::RGBToHSV(rgb[0], rgb[1], rgb[2]);
 	}
 
 	//----------------------------------------------------------------------------
-	static double* ColorConversion::RGBToHSV(double r, double g, double b)
+	static double* RGBToHSV(double r, double g, double b)
 	{
 		static double hsv[3];
-		ColorConversion::RGBToHSV(r, g, b, hsv, hsv + 1, hsv + 2);
+		RGBToHSV(r, g, b, hsv, hsv + 1, hsv + 2);
 		return hsv;
 	}
 
 	//----------------------------------------------------------------------------
-	static void ColorConversion::RGBToHSV(double r, double g, double b,
+	static void RGBToHSV(double r, double g, double b,
 							double *h, double *s, double *v)
 	{
 		double onethird = 1.0 / 3.0;
@@ -229,32 +229,32 @@ public:
 	}
 
 	//----------------------------------------------------------------------------
-	static void ColorConversion::HSVToRGB(float h, float s, float v,
+	static void HSVToRGB(float h, float s, float v,
 							float *r, float *g, float *b)
 	{
 		double dr,dg,db;
-		ColorConversion::HSVToRGB(h,s,v,&dr,&dg,&db);
+		HSVToRGB(h,s,v,&dr,&dg,&db);
 		*r = static_cast<float>(dr);
 		*g = static_cast<float>(dg);
 		*b = static_cast<float>(db);
 	}
 
 	//----------------------------------------------------------------------------
-	static double* ColorConversion::HSVToRGB(const double hsv[3])
+	static double* HSVToRGB(const double hsv[3])
 	{
-		return ColorConversion::HSVToRGB(hsv[0], hsv[1], hsv[2]);
+		return HSVToRGB(hsv[0], hsv[1], hsv[2]);
 	}
 
 	//----------------------------------------------------------------------------
-	static double* ColorConversion::HSVToRGB(double h, double s, double v)
+	static double* HSVToRGB(double h, double s, double v)
 	{
 		static double rgb[3];
-		ColorConversion::HSVToRGB(h, s, v, rgb, rgb + 1, rgb + 2);
+		HSVToRGB(h, s, v, rgb, rgb + 1, rgb + 2);
 		return rgb;
 	}
 
 	//----------------------------------------------------------------------------
-	static void ColorConversion::HSVToRGB(double h, double s, double v,
+	static void HSVToRGB(double h, double s, double v,
 							double *r, double *g, double *b)
 	{
 		const double onethird = 1.0 / 3.0;
@@ -311,32 +311,32 @@ public:
 	}
 
 	//----------------------------------------------------------------------------
-	static void ColorConversion::RGBToHSI(float r, float g, float b,
+	static void RGBToHSI(float r, float g, float b,
 							float *h, float *s, float *i)
 	{
 		double dh,ds,di;
-		ColorConversion::RGBToHSI(r,g,b,&dh,&ds,&di);
+		RGBToHSI(r,g,b,&dh,&ds,&di);
 		*h = static_cast<float>(dh);
 		*s = static_cast<float>(ds);
 		*i = static_cast<float>(di);
 	}
 
 	//----------------------------------------------------------------------------
-	static double* ColorConversion::RGBToHSI(const double rgb[3])
+	static double* RGBToHSI(const double rgb[3])
 	{
-		return ColorConversion::RGBToHSI(rgb[0], rgb[1], rgb[2]);
+		return RGBToHSI(rgb[0], rgb[1], rgb[2]);
 	}
 
 	//----------------------------------------------------------------------------
-	static double* ColorConversion::RGBToHSI(double r, double g, double b)
+	static double* RGBToHSI(double r, double g, double b)
 	{
 		static double hsi[3];
-		ColorConversion::RGBToHSI(r, g, b, hsi, hsi + 1, hsi + 2);
+		RGBToHSI(r, g, b, hsi, hsi + 1, hsi + 2);
 		return hsi;
 	}
 
 	//----------------------------------------------------------------------------
-	static void ColorConversion::RGBToHSI(double r, double g, double b,
+	static void RGBToHSI(double r, double g, double b,
 							double *h, double *s, double *i)
 	{
 		double onethird = 1.0 / 3.0;
@@ -358,7 +358,7 @@ public:
 	}
 
 	//----------------------------------------------------------------------------
-	static void ColorConversion::LabToXYZ(double L, double a, double b,
+	static void LabToXYZ(double L, double a, double b,
 							double *x, double *y, double *z)
 	{
 		//LAB to XYZ
@@ -383,15 +383,15 @@ public:
 	}
 
 	//-----------------------------------------------------------------------------
-	static double *ColorConversion::LabToXYZ(const double lab[3])
+	static double *LabToXYZ(const double lab[3])
 	{
 		static double xyz[3];
-		ColorConversion::LabToXYZ(lab[0], lab[1], lab[2], xyz+0, xyz+1, xyz+2);
+		LabToXYZ(lab[0], lab[1], lab[2], xyz+0, xyz+1, xyz+2);
 		return xyz;
 	}
 
 	//-----------------------------------------------------------------------------
-	static void ColorConversion::XYZToLab(double x, double y, double z,
+	static void XYZToLab(double x, double y, double z,
 							double *L, double *a, double *b)
 	{
 		const double ref_X = 0.9505;
@@ -414,15 +414,15 @@ public:
 	}
 
 	//-----------------------------------------------------------------------------
-	static double *ColorConversion::XYZToLab(const double xyz[3])
+	static double *XYZToLab(const double xyz[3])
 	{
 		static double lab[3];
-		ColorConversion::XYZToLab(xyz[0], xyz[1], xyz[2], lab+0, lab+1, lab+2);
+		XYZToLab(xyz[0], xyz[1], xyz[2], lab+0, lab+1, lab+2);
 		return lab;
 	}
 
 	//----------------------------------------------------------------------------
-	static void ColorConversion::XYZToRGB(double x, double y, double z,
+	static void XYZToRGB(double x, double y, double z,
 							double *r, double *g, double *b)
 	{
 		//double ref_X = 0.9505;        //Observer = 2 deg Illuminant = D65
@@ -467,15 +467,15 @@ public:
 	}
 
 	//-----------------------------------------------------------------------------
-	static double *ColorConversion::XYZToRGB(const double xyz[3])
+	static double *XYZToRGB(const double xyz[3])
 	{
 		static double rgb[3];
-		ColorConversion::XYZToRGB(xyz[0], xyz[1], xyz[2], rgb+0, rgb+1, rgb+2);
+		XYZToRGB(xyz[0], xyz[1], xyz[2], rgb+0, rgb+1, rgb+2);
 		return rgb;
 	}
 
 	//-----------------------------------------------------------------------------
-	static void ColorConversion::RGBToXYZ(double r, double g, double b,
+	static void RGBToXYZ(double r, double g, double b,
 							double *x, double *y, double *z)
 	{
 		// The following performs a "gamma correction" specified by the sRGB color
@@ -500,41 +500,41 @@ public:
 	}
 
 	//-----------------------------------------------------------------------------
-	static double *ColorConversion::RGBToXYZ(const double rgb[3])
+	static double *RGBToXYZ(const double rgb[3])
 	{
 		static double xyz[3];
-		ColorConversion::RGBToXYZ(rgb[0], rgb[1], rgb[2], xyz+0, xyz+1, xyz+2);
+		RGBToXYZ(rgb[0], rgb[1], rgb[2], xyz+0, xyz+1, xyz+2);
 		return xyz;
 	}
 
 	//-----------------------------------------------------------------------------
-	static void ColorConversion::RGBToLab(double red, double green, double blue,
+	static void RGBToLab(double red, double green, double blue,
 							double *L, double *a, double *b)
 	{
 		double x, y, z;
-		ColorConversion::RGBToXYZ(red, green, blue, &x, &y, &z);
-		ColorConversion::XYZToLab(x, y, z, L, a, b);
+		RGBToXYZ(red, green, blue, &x, &y, &z);
+		XYZToLab(x, y, z, L, a, b);
 	}
 
 	//-----------------------------------------------------------------------------
-	static double *ColorConversion::RGBToLab(const double rgb[3])
+	static double *RGBToLab(const double rgb[3])
 	{
-		return ColorConversion::XYZToLab(ColorConversion::RGBToXYZ(rgb));
+		return XYZToLab(ColorConversion::RGBToXYZ(rgb));
 	}
 
 	//-----------------------------------------------------------------------------
-	static void ColorConversion::LabToRGB(double L, double a, double b,
+	static void LabToRGB(double L, double a, double b,
 							double *red, double *green, double *blue)
 	{
 		double x, y, z;
-		ColorConversion::LabToXYZ(L, a, b, &x, &y, &z);
-		ColorConversion::XYZToRGB(x, y, z, red, green, blue);
+		LabToXYZ(L, a, b, &x, &y, &z);
+		XYZToRGB(x, y, z, red, green, blue);
 	}
 
 	//-----------------------------------------------------------------------------
-	static double *ColorConversion::LabToRGB(const double lab[3])
+	static double *LabToRGB(const double lab[3])
 	{
-		return ColorConversion::XYZToRGB(ColorConversion::LabToXYZ(lab));
+		return XYZToRGB(ColorConversion::LabToXYZ(lab));
 	}
 
 };
@@ -542,4 +542,4 @@ public:
 } // namespace transform
 } // namespace CmnIP
 
-#endif /* CMNIP_TRANSFORM_COLOR_CONVERSION_HPP__ */
+#endif // CMNIP_TRANSFORM_COLOR_CONVERSION_HPP__

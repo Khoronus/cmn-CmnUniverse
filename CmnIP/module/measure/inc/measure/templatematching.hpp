@@ -99,7 +99,7 @@ public:
 		} else {
 			matchLoc = maxLoc;
 		}
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		if (match_method == cv::TM_SQDIFF || match_method == cv::TM_SQDIFF_NORMED) {
 			matchLoc = minLoc;
 		} else {
