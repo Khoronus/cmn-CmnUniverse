@@ -1,6 +1,6 @@
 /**
-* @file algorithm.hpp
-* @brief Virtual class to manage algorithms
+* @file measuresimilarity.cpp
+* @brief Body of the relative class
 *
 * @section LICENSE
 *
@@ -43,7 +43,7 @@ double MeasureSimilarities::PSNR(cv::Mat& src1, cv::Mat& src2, int bb)
 	} else {
 #if CV_MAJOR_VERSION == 3
 		cv::cvtColor(src1, s1, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::cvtColor(src1, s1, cv::COLOR_BGR2GRAY);
 #endif
 	}
@@ -52,7 +52,7 @@ double MeasureSimilarities::PSNR(cv::Mat& src1, cv::Mat& src2, int bb)
 	} else {
 #if CV_MAJOR_VERSION == 3
 		cv::cvtColor(src2, s2, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::cvtColor(src2, s2, cv::COLOR_BGR2GRAY);
 #endif
 	}

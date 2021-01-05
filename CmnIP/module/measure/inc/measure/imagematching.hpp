@@ -61,7 +61,7 @@ public:
 
 	TemplateContainer() {}
 
-	TemplateContainer(cv::Mat &src, TIMESTAMP timestamp) {
+	TemplateContainer(const cv::Mat &src, TIMESTAMP timestamp) {
 		src_ = src;
 		timestamp_ = timestamp;
 	}
