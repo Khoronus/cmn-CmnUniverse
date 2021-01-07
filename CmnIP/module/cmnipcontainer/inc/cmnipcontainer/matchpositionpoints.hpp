@@ -115,7 +115,7 @@ public:
 
 	/** Set the point position and image associated
 	*/
-	void set(int image_id, int point_id, cv::Point2f &pt)
+	void set(int image_id, int point_id, const cv::Point2f &pt)
 	{
 		if (m_v_point_.find( image_id ) != m_v_point_.end())
 		{
@@ -131,7 +131,7 @@ public:
 		Set the point position and image associated.
 		The index is equal to the size of the total points memorized.
 	*/
-	void set_incremental(int image_id, cv::Point2f &pt)
+	void set_incremental(int image_id, const cv::Point2f &pt)
 	{
 		if (m_v_point_.find(image_id) != m_v_point_.end())
 		{
@@ -143,7 +143,7 @@ public:
 
 	/** Move the point position and image associated
 	*/
-	void move(int image_id, int point_id, cv::Point2f &pt)
+	void move(int image_id, int point_id, const cv::Point2f &pt)
 	{
 		if (m_v_point_.find( image_id ) != m_v_point_.end())
 		{

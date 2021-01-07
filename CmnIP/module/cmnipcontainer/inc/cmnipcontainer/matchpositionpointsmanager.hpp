@@ -54,7 +54,8 @@ public:
 		@param[in] pt Coordinate.
 	*/
 	int set(int image_id_origin, int iMaxNumPointsEachImage, 
-		std::pair<int, int> &p_associated, int point_id, cv::Point2f &pt, 
+		const std::pair<int, int> &p_associated, int point_id, 
+		const cv::Point2f &pt, 
 		bool bUnivoque)
 	{
 		//std::cout << "Set0: " << p_associated.first << " " << p_associated.second << " " << image_id_origin << std::endl;
