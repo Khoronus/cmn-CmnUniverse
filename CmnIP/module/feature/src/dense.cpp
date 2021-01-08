@@ -57,9 +57,10 @@ void Dense::linear6histo(const cv::Mat &src, bool show, cv::Mat &output)
 		hist.copyTo(output(cv::Rect(i, 0, 1, histBin)));
 
 		if (show) {
+		       cv::Scalar color(0, 0, 255);
 			cv::normalize(hist, hist, 0, 256, cv::NORM_MINMAX);
 			draw::Histogram2Image::onechannel_hist(imagehist, hist, 512, 400, 
-				histBin, cv::Scalar(0, 0, 255));
+				histBin, color);
 			cv::imshow("hist", imagehist);
 		}
 	}
@@ -78,9 +79,10 @@ void Dense::linear6histo(const cv::Mat &src, bool show, cv::Mat &output)
 	cv::normalize(hist, hist, 0, 1, cv::NORM_MINMAX);
 	hist.copyTo(output(cv::Rect(4, 0, 1, histBin)));
 	if (show) { 
+               cv::Scalar color(0, 255);
 		cv::normalize(hist, hist, 0, 256, cv::NORM_MINMAX);
 		draw::Histogram2Image::onechannel_hist(imagehist, hist, 512, 400, 
-			histBin, cv::Scalar(0, 255));
+			histBin, color);
 		cv::imshow("hist", imagehist);
 	}
 
@@ -99,9 +101,10 @@ void Dense::linear6histo(const cv::Mat &src, bool show, cv::Mat &output)
 	cv::normalize(hist, hist, 0, 1, cv::NORM_MINMAX);
 	hist.copyTo(output(cv::Rect(5, 0, 1, histBin)));
 	if (show) { 
+               cv::Scalar color(255);
 		cv::normalize(hist, hist, 0, 256, cv::NORM_MINMAX);
 		draw::Histogram2Image::onechannel_hist(imagehist, hist, 512, 400, 
-			histBin, cv::Scalar(255));
+			histBin, color);
 		cv::imshow("hist", imagehist);
 	}
 }
@@ -133,9 +136,10 @@ void Dense::linear10histo(const cv::Mat &src, bool show, cv::Mat &output)
 		hist.copyTo(output(cv::Rect(i, 0, 1, histBin)));
 
 		if (show) {
+                       cv::Scalar color(0, 0, 255);
 			cv::normalize(hist, hist, 0, 256, cv::NORM_MINMAX);
 			draw::Histogram2Image::onechannel_hist(imagehist, hist, 512, 400,
-				histBin, cv::Scalar(0, 0, 255));
+				histBin, color);
 			cv::imshow("hist", imagehist);
 		}
 	}
@@ -154,9 +158,10 @@ void Dense::linear10histo(const cv::Mat &src, bool show, cv::Mat &output)
 	cv::normalize(hist, hist, 0, 1, cv::NORM_MINMAX);
 	hist.copyTo(output(cv::Rect(4, 0, 1, histBin)));
 	if (show) { 
+               cv::Scalar color(0, 255);
 		cv::normalize(hist, hist, 0, 256, cv::NORM_MINMAX);
 		draw::Histogram2Image::onechannel_hist(imagehist, hist, 512, 400, 
-			histBin, cv::Scalar(0, 255));
+			histBin, color);
 		cv::imshow("hist", imagehist);
 	}
 
@@ -180,9 +185,10 @@ void Dense::linear10histo(const cv::Mat &src, bool show, cv::Mat &output)
 		cv::normalize(hist, hist, 0, 1, cv::NORM_MINMAX, -1, cv::Mat());
 		hist.copyTo(output(cv::Rect(5, 0, 1, histBin)));
 		if (show) { 
+                       cv::Scalar color(255);
 			cv::normalize(hist, hist, 0, 256, cv::NORM_MINMAX);
 			draw::Histogram2Image::onechannel_hist(imagehist, hist, 512, 400, 
-				histBin, cv::Scalar(255));
+				histBin, color);
 			cv::imshow("hist", imagehist);
 		}
 		cv::calcHist(&planes[1], 1, 0, cv::Mat(), hist, 1, &histBin, &sranges,
@@ -190,9 +196,10 @@ void Dense::linear10histo(const cv::Mat &src, bool show, cv::Mat &output)
 		cv::normalize(hist, hist, 0, 1, cv::NORM_MINMAX, -1, cv::Mat());
 		hist.copyTo(output(cv::Rect(6, 0, 1, histBin)));
 		if (show) { 
+                       cv::Scalar color(255);
 			cv::normalize(hist, hist, 0, 256, cv::NORM_MINMAX);
 			draw::Histogram2Image::onechannel_hist(imagehist, hist, 512, 400,
-				histBin, cv::Scalar(255));
+				histBin, color);
 			cv::imshow("hist", imagehist);
 		}
 	}
@@ -214,9 +221,10 @@ void Dense::linear10histo(const cv::Mat &src, bool show, cv::Mat &output)
 			cv::normalize(hist, hist, 0, 1, cv::NORM_MINMAX, -1, cv::Mat());
 			hist.copyTo(output(cv::Rect(7 + i, 0, 1, histBin)));
 			if (show) { 
+                               cv::Scalar color(255, 255);
 				cv::normalize(hist, hist, 0, 256, cv::NORM_MINMAX);
 				draw::Histogram2Image::onechannel_hist(imagehist, hist, 512, 400,
-					histBin, cv::Scalar(255, 255));
+					histBin, color);
 				cv::imshow("hist", imagehist);
 			}
 		}

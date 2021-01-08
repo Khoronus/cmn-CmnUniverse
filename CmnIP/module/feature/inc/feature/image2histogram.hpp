@@ -1,4 +1,4 @@
-/**
+﻿/**
 * @file histogram.cpp
 * @brief Example of the drawing organized images.
 *
@@ -53,7 +53,8 @@ public:
 		if (!src.data) { return 0; }
 
 		/// Set the ranges ( for B,G,R) )
-		float range[] = { histMinRange, histMaxRange };
+		float range[] = { static_cast<float>(histMinRange), 
+		  static_cast<float>(histMaxRange) };
 		const float* histRange = { range };
 
 		cv::Mat gray;
@@ -62,7 +63,7 @@ public:
 		} else {
 #if CV_MAJOR_VERSION == 3
 			cv::cvtColor(src, gray, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::cvtColor(src, gray, cv::COLOR_BGR2GRAY);
 #endif
 		}
@@ -107,3 +108,4 @@ public:
 }	// namespace CmnIP
 
 #endif /* CMNIP_FEATURE_IMAGE2HISTOGRAM_HPP__ */
+

@@ -173,7 +173,9 @@ public:
 		CmnIP::Math::PointTransformation::PointRotation(origin, src, _angle, dst);
 		o.x = dst.x; o.y = dst.y; o.z = dst.z;
 #else
-		float initial_position[4] = {p.x, p.y, p.z, 1.0f }, final_position[4];
+		float initial_position[4] = {static_cast<float>(p.x), 
+		  static_cast<float>(p.y), 
+		  static_cast<float>(p.z), 1.0f }, final_position[4];
 		float _angle[3] = {angle.x, angle.y, angle.z };
 	    CmnMath::geometry::TransformZeroDimPoint::RotatePoint(
 			_angle, initial_position, final_position);
