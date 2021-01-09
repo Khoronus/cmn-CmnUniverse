@@ -362,7 +362,7 @@ private:
 
 	std::string winName;
 
-	static enum { NONE_FILTER = 0, CROSS_CHECK_FILTER = 1 };
+	enum { NONE_FILTER = 0, CROSS_CHECK_FILTER = 1 };
 
 	// OpenCV feature detectors
 	cv::Ptr<cv::FeatureDetector> detector;

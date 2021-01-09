@@ -56,8 +56,9 @@ public:
 	static void points_relation(const std::vector< std::pair<_Ty, _Ty> > &points,
 		std::vector< _Ty2 > &v_angle, std::vector< _Ty2 > &v_magnitude) {
 
-		for (std::vector< std::pair<_Ty, _Ty> >::const_iterator it = points.begin();
-			it != points.end(); it++)
+		//for (std::vector< std::pair<_Ty, _Ty> >::const_iterator it = points.begin();
+		//	it != points.end(); it++)
+		for (auto &it : points)
 		{
 			v_angle.push_back(std::atan2((_Ty2)(it->second.y - it->first.y),
 				(_Ty2)(it->second.x - it->first.x)));

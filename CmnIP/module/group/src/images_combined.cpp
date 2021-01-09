@@ -1,5 +1,5 @@
-/* @file color_conversion.hpp
- * @brief Class to convert a color space in another.
+/* @file images_combined.hpp
+ * @brief Class to combine multiple images.
  *
  * @section LICENSE
  *
@@ -47,7 +47,7 @@ cv::Mat ImagesCombined::combine(
 		{
 #if CV_MAJOR_VERSION == 3
 			cv::cvtColor(res_out, res_out, CV_GRAY2BGR);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::cvtColor(res_out, res_out, cv::COLOR_GRAY2BGR);
 #endif
 		}
@@ -93,7 +93,7 @@ cv::Mat ImagesCombined::combine(
 		{
 #if CV_MAJOR_VERSION == 3
 			cv::cvtColor(res_out, res_out, CV_GRAY2BGR);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::cvtColor(res_out, res_out, cv::COLOR_GRAY2BGR);
 #endif
 		}
@@ -182,7 +182,7 @@ void ImagesCombined::map_images_to_image(
 		if (img.channels() == 1) {
 #if CV_MAJOR_VERSION == 3
 			cv::cvtColor(img, img, CV_GRAY2BGR);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::cvtColor(img, img, cv::COLOR_GRAY2BGR);
 #endif
 		}
