@@ -1,5 +1,5 @@
 /**
-* @file algorithm_headers.hpp
+* @file measure_headers.hpp
 * @brief Header of all the files related to the algorithm
 *
 * @section LICENSE
@@ -34,4 +34,4 @@
 #include "distancehamming.hpp"
 #include "moment.hpp"
 
-#endif /* CMNIP_HISTOGRAM_MEASUREHEADERS_HPP__ */
+#endif // CMNIP_HISTOGRAM_MEASUREHEADERS_HPP__

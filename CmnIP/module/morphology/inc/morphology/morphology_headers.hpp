@@ -1,5 +1,5 @@
 /**
-* @file algorithm_headers.hpp
+* @file morphology_headers.hpp
 * @brief Header of all the files related to the algorithm
 *
 * @section LICENSE
@@ -26,4 +26,4 @@
 
 #include "morphology.hpp"
 
-#endif /* CMNIP_MORPHOLOGY_MORPHOLOGYHEADERS_HPP__ */
+#endif // CMNIP_MORPHOLOGY_MORPHOLOGYHEADERS_HPP__
