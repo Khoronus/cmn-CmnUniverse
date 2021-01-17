@@ -42,7 +42,7 @@
 //#include "opencv2/core/opengl_interop.hpp"
 //#include "opencv2/contrib/contrib.hpp"
 
-#include "cmnipcore\inc\cmnipcore\math_function.hpp"
+#include "cmnipcore/inc/cmnipcore/math_function.hpp"
 #include "cmnmathworld/inc/cmnmathworld/cmnmathworld_headers.hpp"
 
 namespace CmnIP
@@ -71,7 +71,7 @@ public:
 		if (frame.channels() == 3) {
 			cvtColor(frame, frame, CV_BGR2GRAY);
 		}
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		if (frame.channels() == 3) {
 			cvtColor(frame, frame, cv::COLOR_BGR2GRAY);
 		}
@@ -106,7 +106,7 @@ public:
 		if (frame.channels() == 3) {
 			cvtColor(frame, frame, CV_BGR2GRAY);
 		}
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		if (frame.channels() == 3) {
 			cvtColor(frame, frame, cv::COLOR_BGR2GRAY);
 		}

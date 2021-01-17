@@ -1,6 +1,6 @@
 /**
-* @file types.hpp
-* @brief Header of all the types.
+* @file math_function.hpp
+* @brief Header of math functions (deprecated).
 *
 * @section LICENSE
 *
@@ -38,4 +38,4 @@
 
 #endif
 
-#endif /* CMNIP_CMNIPCORE_MATHFUNCTION_HPP__ */
+#endif // CMNIP_CMNIPCORE_MATHFUNCTION_HPP__

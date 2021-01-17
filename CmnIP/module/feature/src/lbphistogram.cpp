@@ -22,7 +22,7 @@ double LBPHistogram::chi_square_(const cv::Mat& histogram0, const cv::Mat& histo
 		CV_Error(CV_StsBadArg, "Histograms must be of equal type.");
 	if (histogram0.rows != 1 || histogram0.rows != histogram1.rows || histogram0.cols != histogram1.cols)
 		CV_Error(CV_StsBadArg, "Histograms must be of equal dimension.");
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	if (histogram0.type() != histogram1.type())
 		CV_Error(-1, "Histograms must be of equal type.");
 	if (histogram0.rows != 1 || histogram0.rows != histogram1.rows || histogram0.cols != histogram1.cols)
@@ -79,6 +79,7 @@ double LBPHistogram::chi_square(const cv::Mat& histogram0, const cv::Mat& histog
 	case CV_16UC1: return chi_square_<unsigned short>(histogram0, histogram1); break;
 	case CV_32SC1: return chi_square_<int>(histogram0, histogram1); break;
 	}
+	return 0;
 }
 
 void LBPHistogram::spatial_histogram(const cv::Mat& src, cv::Mat& dst, int numPatterns, int gridx, int gridy, int overlap) {
