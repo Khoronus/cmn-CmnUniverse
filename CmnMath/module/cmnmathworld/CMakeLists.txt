@@ -53,7 +53,6 @@ target_link_libraries(${PROJ_NAME} coordinatesystem)
 target_link_libraries(${PROJ_NAME} geometry)
 target_link_libraries(${PROJ_NAME} numericsystem)
 target_link_libraries(${PROJ_NAME} statistics)
-target_link_libraries(${PROJ_NAME} version)
 
 #Use static compiler library or dynamic
 if (USE_STATIC)
