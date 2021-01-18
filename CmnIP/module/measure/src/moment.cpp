@@ -46,7 +46,7 @@ void Moment::distance(const cv::Mat &src, cv::Mat &dst,
   cv::Mat dist;
 #if CV_MAJOR_VERSION == 3
   cv::distanceTransform(src, dist, CV_DIST_L2, 3);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
   cv::distanceTransform(src, dist, cv::DIST_L2, 3);
 #endif
   // Normalize the distance image for range = {0.0, 1.0}
@@ -69,7 +69,7 @@ void Moment::distance(const cv::Mat &src, cv::Mat &dst,
 #if CV_MAJOR_VERSION == 3
   cv::threshold(dist, dist, threshold_thresh, threshold_maxval, 
 	  CV_THRESH_BINARY);//.3
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
   cv::threshold(dist, dist, threshold_thresh, threshold_maxval, 
 	  cv::THRESH_BINARY);
 #endif

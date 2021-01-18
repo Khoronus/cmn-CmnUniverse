@@ -72,6 +72,7 @@ public:
 		cv::calcHist(&gray, 1, 0, cv::Mat(), dst, 1, &histSize, &histRange, uniform,
 			accumulate);
 		cv::normalize(dst, dst, 0, 1, cv::NORM_MINMAX, -1, cv::Mat());
+		return 1;
 	}
 
 

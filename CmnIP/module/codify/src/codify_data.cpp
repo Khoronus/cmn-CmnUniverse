@@ -63,6 +63,7 @@ int CodifyData2Image::image2message(const cv::Mat &image, int index_start,
 		data[s] = '\0';
 		index_end = index_start + s + 4;
 	}
+	return 1;
 }
 //-----------------------------------------------------------------------------
 int CodifyData2Image::message2image(cv::Mat &image, const std::string &message,
@@ -106,6 +107,8 @@ int CodifyData2Image::image2message(const cv::Mat &image, int index_start,
 	delete buf; buf = NULL;
 #endif
 	index_end = index_start + s + 4;
+
+	return 1;
 }
 //-----------------------------------------------------------------------------
 void CodifyData2Image::message2image(cv::Mat &image, 

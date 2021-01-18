@@ -204,11 +204,13 @@ void test()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample Matching Template" << std::endl;
 
 	test();
 	test_multiple_areas();
 	test_regions();
+	
+	return 0;
 }

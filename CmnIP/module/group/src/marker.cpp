@@ -49,7 +49,7 @@ void Marker::estimate(const cv::Mat &src )
 #if CV_MAJOR_VERSION == 3
   cv::findContours(src, contours_, hierarchy_, CV_RETR_EXTERNAL,
 	  CV_CHAIN_APPROX_SIMPLE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
   cv::findContours(src, contours_, hierarchy_, cv::RETR_EXTERNAL,
 	  cv::CHAIN_APPROX_SIMPLE);
 #endif
