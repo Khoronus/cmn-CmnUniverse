@@ -60,11 +60,11 @@ public:
 		//	it != points.end(); it++)
 		for (auto &it : points)
 		{
-			v_angle.push_back(std::atan2((_Ty2)(it->second.y - it->first.y),
-				(_Ty2)(it->second.x - it->first.x)));
+			v_angle.push_back(std::atan2((_Ty2)(it.second.y - it.first.y),
+				(_Ty2)(it.second.x - it.first.x)));
 			v_magnitude.push_back(std::sqrt(
-				std::pow((_Ty2)it->second.y - (_Ty2)it->first.y, 2) +
-				std::pow((_Ty2)it->second.x - (_Ty2)it->first.x, 2)));
+				std::pow((_Ty2)it.second.y - (_Ty2)it.first.y, 2) +
+				std::pow((_Ty2)it.second.x - (_Ty2)it.first.x, 2)));
 		}
 	}
 
