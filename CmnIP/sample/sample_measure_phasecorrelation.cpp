@@ -52,7 +52,7 @@ int sample_dft(cv::Mat &src)
 	if (src.channels() == 3) {
 #if CV_MAJOR_VERSION == 3
 		cv::cvtColor(src, I, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::cvtColor(src, I, cv::COLOR_BGR2GRAY);
 #endif
 	}
@@ -108,7 +108,7 @@ int sample_dft(cv::Mat &src)
 	// Transform the matrix with float values into a
 #if CV_MAJOR_VERSION == 3
 	cv::normalize(magI, magI, 0, 1, CV_MINMAX); 
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::normalize(magI, magI, 0, 1, cv::NORM_MINMAX);
 #endif
 
@@ -117,7 +117,7 @@ int sample_dft(cv::Mat &src)
 	cv::imshow("spectrum magnitude", magI);
 #if CV_MAJOR_VERSION == 3
 	cv::normalize(mangle, mangle, 0, 1, CV_MINMAX);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::normalize(mangle, mangle, 0, 1, cv::NORM_MINMAX);
 #endif
 	cv::imshow("specturm phase", mangle);
@@ -129,7 +129,7 @@ int sample_dft(cv::Mat &src)
 	// Transform the matrix with float values into a
 #if CV_MAJOR_VERSION == 3
 	cv::normalize(inverseTransform, inverseTransform, 0, 1, CV_MINMAX);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::normalize(inverseTransform, inverseTransform, 0, 1, cv::NORM_MINMAX);
 #endif
 	cv::imshow("Reconstructed", inverseTransform);
@@ -162,7 +162,7 @@ void test()
 		char buf[512];
 #if CV_MAJOR_VERSION == 3
 		cv::cvtColor(frame, curr, CV_RGB2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::cvtColor(frame, curr, cv::COLOR_RGB2GRAY);
 #endif
 		if (prev.empty()) {
@@ -186,7 +186,7 @@ void test()
 				center.x + static_cast<int>(shift.x * 10),
 				center.y + static_cast<int>(shift.y * 10)), cv::Scalar(0, 255, 0),
 				3, CV_AA);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::circle(frame, center, (int)radius, cv::Scalar(0, 255, 0), 3, 
 				cv::LINE_AA);
 			cv::line(frame, center, cv::Point(
@@ -209,9 +209,10 @@ void test()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample Matching Phase Correlation" << std::endl;
 
 	test();
+	return 0;
 }

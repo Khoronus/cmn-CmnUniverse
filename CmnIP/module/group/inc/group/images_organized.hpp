@@ -138,7 +138,8 @@ public:
 #if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
 		for (auto it = group_container.begin(); it != group_container.end(); it++)
 #else
-		for (std::map<int, std::vector< _Ty* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
+		//for (std::map<int, std::vector< _Ty* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
+		for (auto &it : group_container)
 #endif
 		{
 			if (it->second.size() >= min_size) ++ifound;
@@ -150,7 +151,8 @@ public:
 #if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
 			for (auto it = group_container.begin(); it != group_container.end(); it++)
 #else
-			for (std::map<int, std::vector< _Ty* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
+			//for (std::map<int, std::vector< _Ty* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
+			for (auto &it : group_container)
 #endif
 			{
 				if (it->second.size() >= min_size)
@@ -162,7 +164,8 @@ public:
 #if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
 					for (auto it2 = it->second.begin();	it2 != it->second.end(); it2++)
 #else
-					for (std::vector< _Ty* >::const_iterator it2 = it->second.begin();	it2 != it->second.end(); it2++)
+					//for (std::vector< _Ty* >::const_iterator it2 = it->second.begin();	it2 != it->second.end(); it2++)
+					for (auto &it2 : it->second)
 #endif
 					{
 						cv::Mat tmp;
@@ -196,7 +199,8 @@ public:
 #if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
 		for (auto it = group_container.begin(); it != group_container.end(); it++)
 #else
-		for (std::map<int, std::vector< std::pair<_Ty, _Ty>* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
+		//for (std::map<int, std::vector< std::pair<_Ty, _Ty>* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
+		for (auto &it : group_container)
 #endif
 		{
 			if (it->second.size() >= min_size) ++ifound;
@@ -208,7 +212,8 @@ public:
 #if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
 			for (auto it = group_container.begin(); it != group_container.end(); it++)
 #else
-			for (std::map<int, std::vector< std::pair<_Ty, _Ty>* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
+			//for (std::map<int, std::vector< std::pair<_Ty, _Ty>* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
+			for (auto &it : group_container)
 #endif
 			{
 				if (it->second.size() >= min_size)
@@ -220,7 +225,8 @@ public:
 #if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
 					for (auto it2 = it->second.begin();	it2 != it->second.end(); it2++)
 #else
-					for (std::vector< std::pair<_Ty, _Ty>* >::const_iterator it2 = it->second.begin();	it2 != it->second.end(); it2++)
+					//for (std::vector< std::pair<_Ty, _Ty>* >::const_iterator it2 = it->second.begin();	it2 != it->second.end(); it2++)
+					for (auto &it2 : it->second)
 #endif
 					{
 						cv::Mat tmp;

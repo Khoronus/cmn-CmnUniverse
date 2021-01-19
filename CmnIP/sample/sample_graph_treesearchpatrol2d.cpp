@@ -113,9 +113,10 @@ void test()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Test patrol2d" << std::endl;
 
 	test();
+	return 0;
 }

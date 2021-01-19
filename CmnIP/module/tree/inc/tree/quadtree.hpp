@@ -72,7 +72,7 @@ public:
 				r1.mask = cv::Mat::zeros(size, CV_8U);
 #if CV_MAJOR_VERSION == 3
 				cv::rectangle(r1.mask, r1.roi, 1, CV_FILLED);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 				cv::rectangle(r1.mask, r1.roi, 1, cv::FILLED);
 #endif
 
@@ -127,7 +127,7 @@ public:
 		r.mask = cv::Mat::zeros(size, CV_8U);
 #if CV_MAJOR_VERSION == 3
 		cv::rectangle(r.mask, r.roi, 1, CV_FILLED);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::rectangle(r.mask, r.roi, 1, cv::FILLED);
 #endif
 		r.validity = true;
@@ -179,7 +179,7 @@ public:
 		if (r.validity == true && r.childs.size() == 0) {
 #if CV_MAJOR_VERSION == 3
 			cv::rectangle(img, r.roi, r.label, CV_FILLED);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::rectangle(img, r.roi, r.label, cv::FILLED);
 #endif
 		}

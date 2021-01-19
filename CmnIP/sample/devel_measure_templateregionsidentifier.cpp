@@ -181,9 +181,10 @@ void test_regions()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample Matching Template" << std::endl;
 
 	test_regions();
+	return 0;
 }

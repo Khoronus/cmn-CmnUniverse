@@ -209,8 +209,9 @@ void test_multiple_areas()
 
 /** Main function
 */
-void main()
+int main(int argc, char* argv[])
 {
 	test();
 	test_multiple_areas();
+	return 0;
 }

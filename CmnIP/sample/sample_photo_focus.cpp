@@ -55,11 +55,12 @@ void test()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample Photo Focus" << std::endl;
 
 	test();
+	return 0;
 }
 
 

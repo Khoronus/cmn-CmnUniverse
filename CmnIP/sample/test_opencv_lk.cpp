@@ -41,7 +41,7 @@ public:
 #if CV_MAJOR_VERSION == 3
 		termcrit = cv::TermCriteria(CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 
 			20, 0.03);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		termcrit = cv::TermCriteria(cv::TermCriteria::MAX_ITER | cv::TermCriteria::EPS, 
 			20, 0.03);
 #endif
@@ -56,7 +56,7 @@ public:
 		cv::Mat image = src.clone();
 #if CV_MAJOR_VERSION == 3
 		cv::cvtColor(image, gray, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
 #endif
 
