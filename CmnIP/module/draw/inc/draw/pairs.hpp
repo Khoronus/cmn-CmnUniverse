@@ -163,7 +163,7 @@ public:
 	template <typename _Ty>
 	static int numbers_weight(const std::vector<_Ty> &v1,
 		const std::vector<_Ty> &v2, const std::vector<float> &w,
-		int fontFace, float fontScale, cv::Scalar &color,
+		int fontFace, float fontScale, const cv::Scalar &color,
 		cv::Mat &inout) {
 		if (inout.empty()) return 0;
 		size_t s = (std::min)(v1.size(), v2.size());

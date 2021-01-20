@@ -138,7 +138,8 @@ namespace group
 
 		int item(int idx, _Ty &item) {
 			if (idx >= 0 && idx < container_.size()) {
-				std::list<_Ty>::iterator it = container_.begin();
+				//std::list<_Ty>::iterator it = container_.begin();
+				auto it = container_.begin();
 				item = *(std::next(it, idx));
 				return 1;
 			}
@@ -649,7 +650,8 @@ namespace group
 
 		int item(int idx, _Ty &item) {
 			if (idx >= 0 && idx < container_.size()) {
-				std::list<std::unique_ptr<_Ty> >::iterator it = container_.begin();
+				//std::list<std::unique_ptr<_Ty> >::iterator it = container_.begin();
+				auto it = container_.begin();
 				item = **(std::next(it, idx));
 				return 1;
 			}
