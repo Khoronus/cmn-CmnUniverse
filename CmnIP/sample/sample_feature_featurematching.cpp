@@ -180,8 +180,11 @@ int mean(std::vector<_Ty> &values, _Ty &value)
 
 /** @brief Function to test the feature detection with a generic detector.
 */
-void test_detection2(CmnIP::feature::FeatureMatching *feature_matching,
-	cv::Mat &prev, cv::Mat &curr, cv::Point2f &a, cv::Point2f &b, cv::Mat &out)
+void test_detection2(
+        CmnIP::feature::FeatureMatching *feature_matching,
+	cv::Mat &prev, cv::Mat &curr, 
+	const cv::Point2f &a, 
+	const cv::Point2f &b, cv::Mat &out)
 {
 	std::vector< cv::Point2f > v_points1, v_points2;
 
@@ -580,7 +583,7 @@ void test_regions()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample Feature Detection" << std::endl;
 
@@ -588,4 +591,6 @@ void main()
 	test_2pic();
 	test_multiple_areas();
 	test_regions();
+	
+	return 0;
 }

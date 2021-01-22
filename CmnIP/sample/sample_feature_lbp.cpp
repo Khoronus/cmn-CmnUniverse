@@ -58,7 +58,7 @@ int main(int argc, const char *argv[]) {
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow("original", CV_WINDOW_AUTOSIZE);
 	cv::namedWindow("lbp", CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow("original", cv::WINDOW_AUTOSIZE);
 	cv::namedWindow("lbp", cv::WINDOW_AUTOSIZE);
 #endif
@@ -85,7 +85,7 @@ int main(int argc, const char *argv[]) {
 
 #if CV_MAJOR_VERSION == 3
 		cv::cvtColor(frame, dst, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::cvtColor(frame, dst, cv::COLOR_BGR2GRAY);
 #endif
 		cv::GaussianBlur(dst, dst, cv::Size(7, 7), 5, 3, cv::BORDER_CONSTANT); // tiny bit of smoothing is always a good idea

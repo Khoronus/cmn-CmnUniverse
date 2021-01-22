@@ -51,7 +51,8 @@ void ChartRadar::clear() {
 	}
 }
 //-----------------------------------------------------------------------------
-void ChartRadar::draw(const std::vector<float> &container, cv::Scalar &color)
+void ChartRadar::draw(const std::vector<float> &container, 
+                      const cv::Scalar &color)
 {
 	if (container.size() == 0) return;
 	std::vector< cv::Point2f > points;
@@ -109,7 +110,7 @@ void ChartRadar::container2points(const std::vector<float> &container,
 //-----------------------------------------------------------------------------
 void ChartRadar::internal_draw(cv::Mat &chart,
 	const std::vector<cv::Point2f> &points,
-	cv::Point2f &center, float radius, cv::Scalar &color,
+	cv::Point2f &center, float radius, const cv::Scalar &color,
 	bool show_text) {
 	// Draw the points
 	int s = points.size();

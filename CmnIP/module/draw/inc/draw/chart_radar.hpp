@@ -72,7 +72,8 @@ public:
 		@param[in] container Container with the data to display.
 		@param[in] color The color used to display the data.
 	*/
-	void draw(const std::vector<float> &container, cv::Scalar &color);
+	void draw(const std::vector<float> &container, 
+	          const cv::Scalar &color);
 
 	/** @brief Draw the container data on the chart.
 
@@ -138,7 +139,8 @@ private:
 	*/
 	void internal_draw(cv::Mat &chart,
 		const std::vector<cv::Point2f> &points,
-		cv::Point2f &center, float radius, cv::Scalar &color,
+		cv::Point2f &center, float radius, 
+		const cv::Scalar &color,
 		bool show_text);
 };
 
