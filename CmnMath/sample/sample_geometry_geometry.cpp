@@ -463,7 +463,111 @@ void barycentric() {
 
 }
 
+/** @brief It align a cloud of points to its 4 vertexes
+*/
+void angle_points(std::vector< CmnMath::algebralinear::Vector3f >& vp,
+	CmnMath::algebralinear::Vector3f& center,
+	std::vector<CmnMath::algebralinear::Vector3f>& vangle) {
+	std::cout << "Pointstt: " << vp[0] << std::endl;
+	std::cout << "Pointstb: " << vp[1] << std::endl;
+	std::cout << "Pointsbt: " << vp[2] << std::endl;
+	std::cout << "Pointsbb: " << vp[3] << std::endl;
+	CmnMath::algebralinear::Vector3f angle =
+		CmnMath::geometry::AngleTwoDimPoint< CmnMath::algebralinear::Vector3f>::vectors2angles(
+			vp[1], vp[0]);
+	std::cout << "angle10: " << angle.x << " " << angle.y << " " <<
+		angle.z << std::endl;
+}
+
+/** @brief It align a cloud of points to its 4 vertexes
+*/
+void align_points2(std::vector< CmnMath::algebralinear::Vector3f >& vp,
+	CmnMath::algebralinear::Vector3f& center) {
+
+	//cv::Point3f center(0.410399, 6.2244, -0.475846);
+
+	std::cout << "Pointstt: " << vp[0] << std::endl;
+	std::cout << "Pointstb: " << vp[1] << std::endl;
+	std::cout << "Pointsbt: " << vp[2] << std::endl;
+	std::cout << "Pointsbb: " << vp[3] << std::endl;
+
+	CmnMath::geometricprimitive::Plane plane0(
+		CmnMath::algebralinear::Vector3f(vp[0].x, vp[0].y, vp[0].z),
+		CmnMath::algebralinear::Vector3f(vp[1].x, vp[1].y, vp[1].z),
+		CmnMath::algebralinear::Vector3f(vp[2].x, vp[2].y, vp[2].z));
+	std::cout << "Plane: " << plane0.n.x << " " << plane0.n.y << " " << plane0.n.z << std::endl;
+	cv::Point3f v0(plane0.n.x, plane0.n.y, plane0.n.z);
+	CmnMath::algebralinear::Vector3f v00(plane0.n.x, plane0.n.y, plane0.n.z);
+
+	CmnMath::geometricprimitive::Plane plane1(
+		CmnMath::algebralinear::Vector3f(0, 0, 0),
+		CmnMath::algebralinear::Vector3f(1, 0, 0),
+		CmnMath::algebralinear::Vector3f(0, 1, 0));
+	std::cout << "Plane: " << plane1.n.x << " " << plane1.n.y << " " << plane1.n.z << std::endl;
+	cv::Point3f v1(plane1.n.x, plane1.n.y, plane1.n.z);
+	CmnMath::algebralinear::Vector3f v11(plane1.n.x, plane1.n.y, plane1.n.z);
+
+	// calculate the rotation
+	CmnMath::algebralinear::Vector3f Mx = v00.normalized();
+	CmnMath::algebralinear::Vector3f Mz = v00.cross(v11).normalized();
+	CmnMath::algebralinear::Vector3f My = Mz.cross(v00).normalized();
+	//cv::Mat m3x3 = (cv::Mat_<double>(3, 3) << Mx.x, Mx.y, Mx.z,
+	//	My.x, My.y, My.z, Mz.x, Mz.y, Mz.z);
+	//cv::Mat m3x3 = (cv::Mat_<double>(3, 3) << Mx.x, My.x, Mz.x,
+	//	Mx.y, My.y, Mz.y, Mx.z, My.z, Mz.z);
+	//cv::Mat m3x3 = (cv::Mat_<double>(3, 3) << Mx.x, Mx.y, Mx.z,
+	//	Mz.x, Mz.y, Mz.z, My.x, My.y, My.z);
+	//cv::Mat m3x3 = (cv::Mat_<double>(3, 3) << Mz.x, Mz.y, Mz.z, My.x, My.y, My.z, Mx.x, Mx.y, Mx.z);
+	cv::Mat m3x3 = (cv::Mat_<double>(3, 3) << Mx.x, Mx.z, Mx.y,
+		My.x, My.z, My.y, Mz.x, Mz.z, Mz.y);
+	std::cout << "M3x3: " << m3x3 << std::endl;
+
+	auto M3x3V = CmnMath::geometry::AngleTwoDimPoint< CmnMath::algebralinear::Vector3f>::rotation_between_vectors_to_matrix(v00, v11);
+	//std::cout << "M3x3V: " << M3x3V << std::endl;
+	for (int y = 0; y < 3; ++y) {
+		for (int x = 0; x < 3; ++x) {
+			std::cout << M3x3V[y][x] << " ";
+		}
+		std::cout << std::endl;
+	}
+}
+
+/** @brief Test angle between two points
+*/
+void test_angle_point3d() {
+	std::vector<CmnMath::algebralinear::Vector3f> vp;
+
+	//cv::Point3f center = cv::Point3f(-3.676499843597412, 4.086901187896729, -0.2089430093765259);
+	CmnMath::algebralinear::Vector3f center = CmnMath::algebralinear::Vector3f(-0.5, -0.5, 0);
+	// Valid sequence (top view). X plus right side of the observer (camera). 
+	//                            Y plus near the observer (camera). 
+	// 0 1 -- +-
+	// 3 2 -+ ++
+	vp.push_back(CmnMath::algebralinear::Vector3f(-0.5, -0.5, 0));
+	vp.push_back(CmnMath::algebralinear::Vector3f(0.5, -0.5, 0));
+	vp.push_back(CmnMath::algebralinear::Vector3f(0.5, 0.5, 0));
+	vp.push_back(CmnMath::algebralinear::Vector3f(-0.5, 0.5, 0));
+
+	// Invalid sequence
+	//// 3 2 -+ ++
+	//// 0 1 -- +-
+	//vp.push_back(cv::Point3f(-0.5, 0.5, 0));
+	//vp.push_back(cv::Point3f(0.5, 0.5, 0));
+	//vp.push_back(cv::Point3f(0.5, -0.5, 0));
+	//vp.push_back(cv::Point3f(-0.5, -0.5, 0));
+
+	// 0 2
+	std::vector<CmnMath::algebralinear::Vector3f> vangle;
+	angle_points(vp, center, vangle);
+
+	// aligne points
+	align_points2(vp, center);
+}
+
 }	// namespace
+
+
+
 
 /** main
 */
@@ -472,5 +576,6 @@ int main(int argc, char *argv[])
 	std::cout << "Test geometry" << std::endl;
 	test();
 	barycentric();
+	test_angle_point3d();
 	return 0;
 }

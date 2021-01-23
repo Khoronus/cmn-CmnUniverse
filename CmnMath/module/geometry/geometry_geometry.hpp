@@ -17,12 +17,14 @@
 *
 * @original author Alessandro Moro
 * @bug No known bugs.
-* @version 0.1.2.1
+* @version 0.2.0.0
 *
 */
 
 #ifndef CMNMATH_GEOMETRY_GEOMETRY_HPP__
 #define CMNMATH_GEOMETRY_GEOMETRY_HPP__
+
+#include "inc/geometry/angle_twodim_point.hpp"
 
 #include "inc/geometry/parametric_twodim_circle.hpp"
 
