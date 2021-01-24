@@ -1,6 +1,6 @@
 /**
-* @file statistics_headers.hpp
-* @brief Header of all the files related to the statistics
+* @file filesio_headers.hpp
+* @brief Header of all the files related to the IO
 *
 * @section LICENSE
 *
@@ -17,7 +17,7 @@
 *
 * @original author Alessandro Moro
 * @bug No known bugs.
-* @version 0.1.0.0
+* @version 0.2.0.0
 *
 */
 
@@ -33,5 +33,7 @@
 #include "Points3DIO.hpp"
 #include "Pairs2DIO.hpp"
 #include "Node6DOFT3R3.hpp"
+#include "VertexIONaive.hpp"
+#include "VertexOrientedIONaive.hpp"
 
 #endif /* CMNIO_FILESIO_HEADERS_HPP__ */

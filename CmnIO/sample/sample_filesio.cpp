@@ -1,6 +1,6 @@
 /**
-* @file sample_numericsystem_numericsystem.cpp
-* @brief Sample dynamic.
+* @file sample_filesio.cpp
+* @brief Sample files IO.
 *
 * @section LICENSE
 *
@@ -24,11 +24,36 @@
 #include <iostream>
 #include <string>
 
+#include <opencv2/opencv.hpp>
+
+#include "filesio/inc/files/filesio_headers.hpp"
+
+// ############################################################################
+
+/** @brief Test VertexIO
+*/
+void test_vertexIO() {
+
+	std::vector<std::pair<cv::Point2f, cv::Point3f> > v_xyxyz =
+	{ {cv::Point2f(0, 1), cv::Point3f(0, 1, 2)} };
+	std::string fname = "test_vertexIO.txt", header;
+	// write
+	CmnIO::filesio::VertexIONaive::write(fname, "test",
+		v_xyxyz);
+	// read
+	CmnIO::filesio::VertexIONaive::read(fname, header,
+		v_xyxyz);
+
+	for (auto& it : v_xyxyz) {
+		std::cout << it.first << " " << it.second << std::endl;
+	}
+}
 
 // ############################################################################
 
 void main()
 {
+	test_vertexIO();
 }
 
 

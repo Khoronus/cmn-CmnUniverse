@@ -7,3 +7,6 @@ configure/win/build_result.txt
 CmnLib/module/version/version.hpp
 CmnMath/module/version/version.hpp
 CmnCS/module/version/version.hpp
+
+# Ignore CmnIO files
+CmnIO/module/cmniocore/inc/cmniocore/libdefine.hpp
