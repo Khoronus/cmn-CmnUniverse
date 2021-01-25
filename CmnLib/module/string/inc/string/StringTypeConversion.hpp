@@ -1,6 +1,6 @@
 /**
-* @file StringOp.hpp
-* @brief Elaboration of strings
+* @file StringTypeConversion.hpp
+* @brief Change the type of a vector of string in a foundamental data type.
 *
 * @section LICENSE
 *
@@ -15,14 +15,15 @@
 * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *
-* @author Alessandro Moro <alessandromoro.italy@gmail.com>
+* @author 
+* @modified by Alessandro Moro <alessandromoro.italy@gmail.com>
 * @bug No known bugs.
 * @version 0.1.0.0
 *
 */
 
 #ifndef CMNLIB_STRING_STRINGTYPECONVERSION_HPP__
-#define COMMONOBJECTS_STRINGCOMMON_STRINGTYPECONVERSION_HPP__
+#define CMNLIB_STRING_STRINGTYPECONVERSION_HPP__
 
 #include <string>
 #include <vector>
@@ -58,10 +59,10 @@ public:
 
 		using types = std::tuple<int, float, double, long double>;
 		auto funcs = std::make_tuple(
-			&StringConversion::to_int, 
-			&StringConversion::to_float,
-			&StringConversion::to_double,
-			&StringConversion::to_longdouble);
+			&StringTypeConversion::to_int,
+			&StringTypeConversion::to_float,
+			&StringTypeConversion::to_double,
+			&StringTypeConversion::to_longdouble);
 
 		std::vector<_Ty> vals;
 		for (auto &it : words) {

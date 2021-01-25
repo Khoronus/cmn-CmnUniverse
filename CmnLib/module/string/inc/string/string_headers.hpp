@@ -17,7 +17,7 @@
 *
 * @author  Alessandro Moro <alessandromoro.italy@gmail.com>
 * @bug No known bugs.
-* @version 1.2.0.0
+* @version 1.2.1.0
 *
 */
 
@@ -29,5 +29,7 @@
 #include "StringTokenizer.hpp"
 #include "STDStringFunc.hpp"
 #include "StringIterator.hpp"
+#include "StringOp.hpp"
+#include "StringTypeConversion.hpp"
 
-#endif /* CMNLIB_STRING_STRINGHEADERS_HPP__ */
+#endif // CMNLIB_STRING_STRINGHEADERS_HPP__
