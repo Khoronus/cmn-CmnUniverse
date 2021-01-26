@@ -62,7 +62,7 @@ void ChartRadar::draw(const std::vector<float> &container,
 }
 //-----------------------------------------------------------------------------
 void ChartRadar::draw(const std::vector<std::pair<float, float> > &container, 
-	cv::Scalar &color)
+	const cv::Scalar &color)
 {
 	if (container.size() == 0) return;
 	std::vector<float> container_v1, container_v2;

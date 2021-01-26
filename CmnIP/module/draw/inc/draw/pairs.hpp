@@ -171,10 +171,10 @@ public:
 		char buf[1024];
 		for (size_t i = 0; i < s; i++)
 		{
-			sprintf(buf, "%i", i);
+			//sprintf(buf, "%i", i);
 			float scale = fontScale * w[i];
-			cv::putText(inout, buf, v1[i], fontFace, scale, color, 1);
-			cv::putText(inout, buf, v2[i], fontFace, scale, color, 1);
+			cv::putText(inout, std::to_string(i), v1[i], fontFace, scale, color, 1);
+			cv::putText(inout, std::to_string(i), v2[i], fontFace, scale, color, 1);
 		}
 		return 1;
 	}

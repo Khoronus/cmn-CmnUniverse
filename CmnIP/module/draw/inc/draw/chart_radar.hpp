@@ -83,7 +83,7 @@ public:
 		@param[in] color The color used to display the data.
 	*/
 	void draw(const std::vector<std::pair<float, float> > &container, 
-		cv::Scalar &color);
+		const cv::Scalar &color);
 
 	/** @brief Return the structure with the chart.
 

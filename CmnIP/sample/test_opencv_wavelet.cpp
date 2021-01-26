@@ -214,7 +214,7 @@ int process(VideoCapture& capture)
 	cout << "press space to save a picture. q or esc to quit" << endl;
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow(window_name, CV_WINDOW_KEEPRATIO); //resizable window;
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow(window_name, cv::WINDOW_KEEPRATIO); //resizable window;
 #endif
 	Mat frame;
@@ -234,7 +234,7 @@ int process(VideoCapture& capture)
 		if (frame.empty()) continue;
 #if CV_MAJOR_VERSION == 3
 		cvtColor(frame, GrayFrame, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cvtColor(frame, GrayFrame, cv::COLOR_BGR2GRAY);
 #endif
 		GrayFrame.convertTo(Src, CV_32FC1);
