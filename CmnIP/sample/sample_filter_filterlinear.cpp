@@ -19,7 +19,7 @@ namespace
 {
 
 void hist2image(cv::Mat &image, cv::Mat &hist, int hist_w, int hist_h, 
-	int histSize, cv::Scalar &color) {
+	int histSize, const cv::Scalar &color) {
 
   // Draw the histograms for B, G and R
   int bin_w = cvRound( (double) hist_w/histSize );
@@ -43,7 +43,8 @@ int image2histogram(const cv::Mat &src, cv::Mat &dst, const int histSize,
   if( !src.data ) { return 0; }
 
   /// Set the ranges ( for B,G,R) )
-  float range[] = { histMinRange, histMaxRange } ;
+  float range[] = { static_cast<float>(histMinRange), 
+      static_cast<float>(histMaxRange) } ;
   const float* histRange = { range };
 
   cv::Mat gray;
@@ -52,7 +53,7 @@ int image2histogram(const cv::Mat &src, cv::Mat &dst, const int histSize,
   } else {
 #if CV_MAJOR_VERSION == 3
 	  cv::cvtColor(src, gray, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	  cv::cvtColor(src, gray, cv::COLOR_BGR2GRAY);
 #endif
   }
@@ -60,6 +61,8 @@ int image2histogram(const cv::Mat &src, cv::Mat &dst, const int histSize,
   /// Compute the histograms:
   cv::calcHist( &gray, 1, 0, cv::Mat(), dst, 1, &histSize, &histRange, uniform, 
 	  accumulate );
+	  
+  return 1;
 }
 
 
@@ -213,7 +216,7 @@ int main( int argc, char** argv )
   /// Display
 #if CV_MAJOR_VERSION == 3
   cv::namedWindow("calcHist Demo", CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
   cv::namedWindow("calcHist Demo", cv::WINDOW_AUTOSIZE);
 #endif
   cv::imshow("calcHist Demo", histImage );
