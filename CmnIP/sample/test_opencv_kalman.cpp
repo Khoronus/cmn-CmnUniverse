@@ -1,6 +1,5 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/video/tracking.hpp"
-#include <Windows.h>
 
 #if CV_MAJOR_VERSION == 3
 
@@ -8,7 +7,7 @@
 line( img, Point( center.x - d, center.y - d ), Point( center.x + d, center.y + d ), color, 2, CV_AA, 0); \
 line( img, Point( center.x + d, center.y - d ), Point( center.x - d, center.y + d ), color, 2, CV_AA, 0 )
 
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 
 
 #define drawCross( center, color, d )                                 \

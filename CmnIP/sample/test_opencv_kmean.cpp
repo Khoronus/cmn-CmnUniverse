@@ -64,7 +64,7 @@ int test_kmean_points()
 		cv::kmeans(points, clusterCount, labels,
 			cv::TermCriteria(CV_TERMCRIT_EPS + CV_TERMCRIT_ITER, 10, 1.0),
 			3, cv::KMEANS_PP_CENTERS, centers);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::kmeans(points, clusterCount, labels,
 			cv::TermCriteria(cv::TermCriteria::EPS + cv::TermCriteria::MAX_ITER, 10, 1.0),
 			3, cv::KMEANS_PP_CENTERS, centers);
@@ -84,7 +84,7 @@ int test_kmean_points()
 			}
 #if CV_MAJOR_VERSION == 3
 			cv::circle(img, ipt, 2, colors[clusterIdx], CV_FILLED, CV_AA);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::circle(img, ipt, 2, colors[clusterIdx], cv::FILLED, 
 				cv::LINE_AA);
 #endif
@@ -121,7 +121,7 @@ int test_kmean()
 	cv::kmeans(samples, clusterCount, labels, 
 		cv::TermCriteria(CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 
 			10000, 0.0001), attempts, cv::KMEANS_PP_CENTERS, centers);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::kmeans(samples, clusterCount, labels, 
 		cv::TermCriteria(cv::TermCriteria::MAX_ITER | cv::TermCriteria::EPS, 
 			10000, 0.0001), attempts, cv::KMEANS_PP_CENTERS, centers);
@@ -146,8 +146,9 @@ int test_kmean()
 } // namespace anonymous
 
 
-void main()
+int main(int argc, char* argv[])
 {
 	test_kmean_points();
 	test_kmean();
+	return 0;
 }
