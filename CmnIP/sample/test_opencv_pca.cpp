@@ -360,7 +360,7 @@ namespace
 		//Perform PCA analysis
 #if CV_MAJOR_VERSION == 3
 		cv::PCA pca_analysis(data_pts, cv::Mat(), CV_PCA_DATA_AS_ROW);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::PCA pca_analysis(data_pts, cv::Mat(), cv::PCA::DATA_AS_ROW);
 #endif
 
@@ -401,7 +401,7 @@ int main()
 	// Apply thresholding
 #if CV_MAJOR_VERSION == 3
 	cv::threshold(bw, bw, 150, 255, CV_THRESH_BINARY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::threshold(bw, bw, 150, 255, cv::THRESH_BINARY);
 #endif
 
@@ -410,7 +410,7 @@ int main()
 	std::vector<cv::Vec4i> hierarchy;
 #if CV_MAJOR_VERSION == 3
 	cv::findContours(bw, contours, hierarchy, CV_RETR_LIST, CV_CHAIN_APPROX_NONE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::findContours(bw, contours, hierarchy, cv::RETR_LIST, cv::CHAIN_APPROX_NONE);
 #endif
 

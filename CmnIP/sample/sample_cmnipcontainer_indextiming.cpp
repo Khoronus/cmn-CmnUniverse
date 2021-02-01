@@ -45,11 +45,12 @@ void test()
 }  // namespace anonymous
 
 
-/** Main function
+/** @brief Main function
 */
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Class to manage timer index. It requires check and debug" << 
 		std::endl;
 	test();
+	return 0;
 }

@@ -29,7 +29,7 @@ void onMouse(int evt, int x, int y, int flags, void* param)
 	{
 #if CV_MAJOR_VERSION == 3
 	case CV_EVENT_LBUTTONDOWN:
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	case cv::EVENT_LBUTTONDOWN:
 #endif
 		pThis->x = x;
@@ -37,7 +37,7 @@ void onMouse(int evt, int x, int y, int flags, void* param)
 		break;
 #if CV_MAJOR_VERSION == 3
 	case CV_EVENT_LBUTTONUP:
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	case cv::EVENT_LBUTTONUP:
 #endif
 		pThis->x = x;

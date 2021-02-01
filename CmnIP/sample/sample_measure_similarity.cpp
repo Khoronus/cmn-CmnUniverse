@@ -44,11 +44,14 @@ void test()
 
 // ############################################################################
 
-void main()
+/** @brief Main function
+*/
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample Image Similarities" << std::endl;
 
 	test();
+	return 0;
 }
 
 
