@@ -19,12 +19,43 @@ line( img, Point( center.x + d, center.y - d ), Point( center.x - d, center.y + 
 using namespace cv;
 using namespace std;
 
+
+void onMouse(int evt, int x, int y, int flags, void* param)
+{
+	cv::Point2f* pThis = (cv::Point2f*)param;
+	// use pThis as needed...
+
+	switch (evt)
+	{
+#if CV_MAJOR_VERSION == 3
+	case CV_EVENT_LBUTTONDOWN:
+#else if CV_MAJOR_VERSION == 4
+	case cv::EVENT_LBUTTONDOWN:
+#endif
+		pThis->x = x;
+		pThis->y = y;
+		break;
+#if CV_MAJOR_VERSION == 3
+	case CV_EVENT_LBUTTONUP:
+#else if CV_MAJOR_VERSION == 4
+	case cv::EVENT_LBUTTONUP:
+#endif
+		pThis->x = x;
+		pThis->y = y;
+		break;
+	}
+}
+
+
+// ----------------------------------------------------------------------------
 int main()
 {
 
 	KalmanFilter KF(4, 2, 0);
-	POINT mousePos;
-	GetCursorPos(&mousePos);
+
+	cv::Point2f mousePos;
+	namedWindow("test_opencv_mouse_kalman", WINDOW_AUTOSIZE);
+	setMouseCallback("test_opencv_mouse_kalman", onMouse, (void*)&mousePos);
 
 	// intialization of KF...
 	//KF.transitionMatrix = *(Mat_<float>(4, 4) << 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1);
@@ -52,7 +83,6 @@ int main()
 		Point predictPt(prediction.at<float>(0), prediction.at<float>(1));
 
 		// Get mouse point
-		GetCursorPos(&mousePos);
 		measurement(0) = mousePos.x;
 		measurement(1) = mousePos.y;
 
@@ -62,7 +92,7 @@ int main()
 		Point statePt(estimated.at<float>(0), estimated.at<float>(1));
 		Point measPt(measurement(0), measurement(1));
 		// plot points
-		imshow("mouse kalman", img);
+		imshow("mouse test_opencv_mouse_kalman", img);
 		img = cv::Scalar::all(0);
 
 		mousev.push_back(measPt);
