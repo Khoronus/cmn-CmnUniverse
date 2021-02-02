@@ -28,7 +28,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-#include "group\inc\group\group_headers.hpp"
+#include "group/inc/group/group_headers.hpp"
 
 namespace
 {
@@ -58,11 +58,13 @@ void test()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample Group Marker" << std::endl;
 
 	test();
+	
+	return 0;
 }
 
 

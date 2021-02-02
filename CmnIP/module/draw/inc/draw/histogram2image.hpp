@@ -17,7 +17,7 @@
 *
 * @author  Alessandro Moro <alessandromoro.italy@gmail.com>
 * @bug No known bugs.
-* @version 1.0.0.1
+* @version 1.1.0.0
 *
 */
 
@@ -49,7 +49,7 @@ public:
 		Convert an histogram in an image.
 	*/
 	static void onechannel_hist(cv::Mat &image, cv::Mat &hist, int hist_w, 
-		int hist_h,	int histSize, cv::Scalar &color) {
+		int hist_h, int histSize, const cv::Scalar &color) {
 
 	  // Draw the histograms for B, G and R
 	  int bin_w = cvRound( (double) hist_w/histSize );
@@ -76,4 +76,4 @@ public:
 }	// namespace draw
 }	// namespace CmnIP
 
-#endif /* CMNIP_DRAW_HISTOGRAM2IMAGE_HPP__ */
+#endif // CMNIP_DRAW_HISTOGRAM2IMAGE_HPP__

@@ -44,7 +44,8 @@ public:
 	/** Set the points for the homography
 	*/
 	void setPoint(int image_id_origin, int iMaxNumPointsEachImage, 
-		std::pair<int, int> &p_associated, int point_id, cv::Point2f &pt)
+		const std::pair<int, int> &p_associated, int point_id, 
+		const cv::Point2f &pt)
 	{
 		ipmpc_.set(image_id_origin, iMaxNumPointsEachImage, p_associated, 
 			point_id, pt, false);

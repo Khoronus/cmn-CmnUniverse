@@ -17,7 +17,7 @@
 *
 * @author  Alessandro Moro <alessandromoro.italy@gmail.com>
 * @bug No known bugs.
-* @version 1.0.0.0
+* @version 1.0.1.0
 *
 */
 
@@ -135,41 +135,41 @@ public:
 		image = cv::Scalar::all(0);
 
 		int min_size = 1, ifound = 0;
-#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
-		for (auto it = group_container.begin(); it != group_container.end(); it++)
-#else
+//#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//		for (auto it = group_container.begin(); it != group_container.end(); it++)
+//#else
 		//for (std::map<int, std::vector< _Ty* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
 		for (auto &it : group_container)
-#endif
+//#endif
 		{
-			if (it->second.size() >= min_size) ++ifound;
+			if (it.second.size() >= min_size) ++ifound;
 		}
 		if (ifound > 0)
 		{
 			int hsize = image.rows / ifound;
 			int row = 0;
-#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
-			for (auto it = group_container.begin(); it != group_container.end(); it++)
-#else
+//#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//			for (auto it = group_container.begin(); it != group_container.end(); it++)
+//#else
 			//for (std::map<int, std::vector< _Ty* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
 			for (auto &it : group_container)
-#endif
+//#endif
 			{
-				if (it->second.size() >= min_size)
+				if (it.second.size() >= min_size)
 				{
 					//std::cout << "Group: " << it->first << " " << it->second.size() << std::endl;
 					int wsize = (std::min)(hsize,
-						(int)(image.cols / it->second.size()));
+						(int)(image.cols / it.second.size()));
 					int col = 0;
-#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
-					for (auto it2 = it->second.begin();	it2 != it->second.end(); it2++)
-#else
+//#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//					for (auto it2 = it->second.begin();	it2 != it->second.end(); it2++)
+//#else
 					//for (std::vector< _Ty* >::const_iterator it2 = it->second.begin();	it2 != it->second.end(); it2++)
-					for (auto &it2 : it->second)
-#endif
+					for (auto &it2 : it.second)
+//#endif
 					{
 						cv::Mat tmp;
-						cv::resize(pFunc(**it2), tmp,
+						cv::resize(pFunc(*it2), tmp,
 							cv::Size(wsize, wsize));
 						tmp.copyTo(image(cv::Rect(wsize * col, hsize * row,
 							wsize, wsize)));
@@ -196,45 +196,45 @@ public:
 		image = cv::Scalar::all(0);
 
 		int min_size = 1, ifound = 0;
-#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
-		for (auto it = group_container.begin(); it != group_container.end(); it++)
-#else
+//#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//		for (auto it = group_container.begin(); it != group_container.end(); it++)
+//#else
 		//for (std::map<int, std::vector< std::pair<_Ty, _Ty>* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
 		for (auto &it : group_container)
-#endif
+//#endif
 		{
-			if (it->second.size() >= min_size) ++ifound;
+			if (it.second.size() >= min_size) ++ifound;
 		}
 		if (ifound > 0)
 		{
 			int hsize = image.rows / ifound;
 			int row = 0;
-#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
-			for (auto it = group_container.begin(); it != group_container.end(); it++)
-#else
+//#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//			for (auto it = group_container.begin(); it != group_container.end(); it++)
+//#else
 			//for (std::map<int, std::vector< std::pair<_Ty, _Ty>* > >::const_iterator it = group_container.begin(); it != group_container.end(); it++)
 			for (auto &it : group_container)
-#endif
+//#endif
 			{
-				if (it->second.size() >= min_size)
+				if (it.second.size() >= min_size)
 				{
 					//std::cout << "Group: " << it->first << " " << it->second.size() << std::endl;
 					int wsize = (std::min)(hsize,
-						(int)(image.cols / it->second.size()));
+						(int)(image.cols / it.second.size()));
 					int col = 0;
-#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
-					for (auto it2 = it->second.begin();	it2 != it->second.end(); it2++)
-#else
+//#if _MSC_VER && !__INTEL_COMPILER && (_MSC_VER > 1600)
+//					for (auto it2 = it->second.begin();	it2 != it->second.end(); it2++)
+//#else
 					//for (std::vector< std::pair<_Ty, _Ty>* >::const_iterator it2 = it->second.begin();	it2 != it->second.end(); it2++)
-					for (auto &it2 : it->second)
-#endif
+					for (auto &it2 : it.second)
+//#endif
 					{
 						cv::Mat tmp;
-						cv::resize(pFunc((*it2)->first), tmp,
+						cv::resize(pFunc(it2->first), tmp,
 							cv::Size(wsize / 2, wsize / 2));
 						tmp.copyTo(image(cv::Rect(wsize * col, hsize * row,
 							wsize / 2, wsize / 2)));
-						cv::resize(pFunc((*it2)->second), tmp,
+						cv::resize(pFunc(it2->second), tmp,
 							cv::Size(wsize / 2, wsize / 2));
 						tmp.copyTo(image(cv::Rect(wsize * col + wsize / 2, 
 							hsize * row + wsize / 2, wsize / 2, wsize / 2)));
@@ -251,4 +251,4 @@ public:
 } // namespace group
 } // namespace CmnIP
 
-#endif /* CMNIP_GROUP_IMAGESCOMBINED_HPP__ */
+#endif // CMNIP_GROUP_IMAGESCOMBINED_HPP__
