@@ -1,5 +1,5 @@
 /**
-* @file sample_numericsystem_numericsystem.cpp
+* @file sample_measure_measure.cpp
 * @brief Sample dynamic.
 *
 * @section LICENSE
@@ -28,7 +28,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-#include "measure\inc\measure\measure_headers.hpp"
+#include "measure/inc/measure/measure_headers.hpp"
 
 namespace
 {
@@ -53,11 +53,12 @@ void test()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample Measure Moment" << std::endl;
 
 	test();
+	return 0;
 }
 
 
