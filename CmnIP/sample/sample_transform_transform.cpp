@@ -30,7 +30,7 @@ void test()
 	cv::Mat gray;
 #if CV_MAJOR_VERSION == 3
 	cv::cvtColor(src, gray, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::cvtColor(src, gray, cv::COLOR_BGR2GRAY);
 #endif
 	CmnIP::transform::Transform::dct(gray, dst);
@@ -43,7 +43,8 @@ void test()
 
 /** Main function
 */
-void main()
+int main(int argc, char* argv[])
 {
   test();
+  return 0;
 }

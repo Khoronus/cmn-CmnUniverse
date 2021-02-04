@@ -59,7 +59,7 @@ namespace
 		{
 #if CV_MAJOR_VERSION == 3
 		case CV_EVENT_LBUTTONDOWN:
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		case cv::EVENT_LBUTTONDOWN:
 #endif
 			origin = cv::Point(x, y);
@@ -68,7 +68,7 @@ namespace
 			break;
 #if CV_MAJOR_VERSION == 3
 		case CV_EVENT_LBUTTONUP:
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		case cv::EVENT_LBUTTONUP:
 #endif
 			selectObject = false;
@@ -151,7 +151,7 @@ int main(int argc, const char** argv)
 		{
 #if CV_MAJOR_VERSION == 3
 			cvtColor(image, hsv, CV_BGR2HSV);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cvtColor(image, hsv, cv::COLOR_BGR2HSV);
 #endif
 
@@ -171,7 +171,7 @@ int main(int argc, const char** argv)
 					calcHist(&roi, 1, 0, maskroi, hist, 1, &hsize, &phranges);
 #if CV_MAJOR_VERSION == 3
 					normalize(hist, hist, 0, 255, CV_MINMAX);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 					normalize(hist, hist, 0, 255, cv::NORM_MINMAX);
 #endif
 
@@ -186,7 +186,7 @@ int main(int argc, const char** argv)
 						cv::saturate_cast<uchar>(i*180. / hsize), 255, 255);
 #if CV_MAJOR_VERSION == 3
 					cvtColor(buf, buf, CV_HSV2BGR);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 					cvtColor(buf, buf, cv::COLOR_HSV2BGR);
 #endif
 
@@ -206,7 +206,7 @@ int main(int argc, const char** argv)
 				cv::RotatedRect trackBox = CamShift(backproj, trackWindow,
 					cv::TermCriteria(CV_TERMCRIT_EPS |
 						CV_TERMCRIT_ITER, 10, 1));
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 				cv::RotatedRect trackBox = CamShift(backproj, trackWindow,
 					cv::TermCriteria(cv::TermCriteria::EPS |
 						cv::TermCriteria::MAX_ITER, 10, 1));
@@ -227,7 +227,7 @@ int main(int argc, const char** argv)
 				//ellipse( image, trackBox, Scalar(0,0,255), 3, CV_AA );
 				cv::rectangle(image, trackBox.boundingRect(),
 					cv::Scalar(0, 0, 255), 3, CV_AA);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 				if (backprojMode) {
 					cvtColor(backproj, image, cv::COLOR_GRAY2BGR);
 				}
@@ -254,7 +254,7 @@ int main(int argc, const char** argv)
 #if CV_MAJOR_VERSION == 3
 				cv::rectangle(image, rFace, cv::Scalar(0, 255, 255), 3, 
 					CV_AA);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 				cv::rectangle(image, rFace, cv::Scalar(0, 255, 255), 3, 
 					cv::LINE_AA);
 #endif
