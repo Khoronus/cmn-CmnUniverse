@@ -223,7 +223,7 @@ void test(int argc, char *argv[])
 		cv::remap(tmp, out2, map_x_f, map_y_f, CV_INTER_LINEAR,
 			cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 		//pm2.transform(tmp, cv::Rect(0, 0, image.cols, image.rows), out2);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::remap(image, out, map_x_p, map_y_p, cv::INTER_LINEAR,
 			cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 		//pm2.transform(image, cv::Rect(0, 0, image.cols, image.rows), out);
@@ -379,7 +379,7 @@ int check_mapping()
 		cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 	cv::remap(img_perspective, img_fisheye, map_x_f, map_y_f, CV_INTER_LINEAR,
 		cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::remap(image, img_perspective, map_x_p, map_y_p, cv::INTER_LINEAR,
 		cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 	cv::remap(img_perspective, img_fisheye, map_x_f, map_y_f, cv::INTER_LINEAR,

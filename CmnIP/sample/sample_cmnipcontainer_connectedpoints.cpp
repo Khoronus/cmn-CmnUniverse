@@ -50,7 +50,7 @@ void test()
 #if CV_MAJOR_VERSION == 3
 	cv::findContours(mask, contours, hierarchy, CV_RETR_TREE,
 		CV_CHAIN_APPROX_SIMPLE, cv::Point(0, 0));
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::findContours(mask, contours, hierarchy, cv::RETR_TREE,
 		cv::CHAIN_APPROX_SIMPLE, cv::Point(0, 0));
 #endif
@@ -65,7 +65,7 @@ void test()
 	/// Show in a window
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow("Contours", CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow("Contours", cv::WINDOW_AUTOSIZE);
 #endif
 	cv::imshow( "Contours", drawing );
@@ -86,7 +86,7 @@ void test()
 	cv::Mat mask_cpy;
 #if CV_MAJOR_VERSION == 3
 	cv::cvtColor(mask, mask_cpy, CV_GRAY2BGR);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::cvtColor(mask, mask_cpy, cv::COLOR_GRAY2BGR);
 #endif
 	int counter_insert_sparse = 0;

@@ -17,7 +17,7 @@
 *
 * @author  Alessandro Moro <alessandromoro.italy@gmail.com>
 * @bug No known bugs.
-* @version 1.0.0.0
+* @version 1.1.0.0
 *
 */
 
@@ -113,7 +113,7 @@ public:
 	static void cluster2bound_container(
 		const std::vector<cv::Point2f> &points,
 		const std::map<int, std::vector<int> > &cluster,
-		cv::Point2f &offset,
+		const cv::Point2f &offset,
 		std::map<int, float> &radius_out,
 		BoundContainer &bc)
 	{

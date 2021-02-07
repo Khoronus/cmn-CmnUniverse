@@ -364,12 +364,14 @@ int test(std::string &settingfilename_in)
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample Feature Detection" << std::endl;
 
 	std::string settingfilename = "";
 	test(settingfilename);
+	
+	return 0;
 }
 
 

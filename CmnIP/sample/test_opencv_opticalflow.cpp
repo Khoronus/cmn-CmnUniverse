@@ -1,5 +1,5 @@
 /**
-* @file sample_test_pca.cpp
+* @file test_opencv_opticalflow.cpp
 * @brief Container for training/testing images
 *
 * @section LICENSE
@@ -47,7 +47,7 @@ public:
 		else {
 #if CV_MAJOR_VERSION == 3
 			cv::cvtColor(src, gray, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::cvtColor(src, gray, cv::COLOR_BGR2GRAY);
 #endif
 		}
@@ -62,14 +62,14 @@ public:
 			cv::calcOpticalFlowFarneback(prevgray, gray, flow, 0.5, 3, of_size, 3, 5, 1.2, 0);
 #if CV_MAJOR_VERSION == 3
 			cv::cvtColor(prevgray, cflow, CV_GRAY2BGR);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::cvtColor(prevgray, cflow, cv::COLOR_GRAY2BGR);
 #endif
 			CmnIP::draw::OpticalFlowDrawer::flow2rgb(flow, cflow);
 			if (!cflow.empty()) cv::imshow("flow_rgb", cflow);
 #if CV_MAJOR_VERSION == 3
 			cv::cvtColor(prevgray, cflow, CV_GRAY2BGR);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::cvtColor(prevgray, cflow, cv::COLOR_GRAY2BGR);
 #endif
 			CmnIP::draw::OpticalFlowDrawer::drawOptFlowMap(flow, cflow, 10);
@@ -158,8 +158,8 @@ private:
 };
 
 
-
-int main()
+// ----------------------------------------------------------------------------
+int main(int argc, char* argv[])
 {
 	cv::VideoCapture cap(0);
 	if (!cap.isOpened())

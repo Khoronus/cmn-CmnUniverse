@@ -181,7 +181,7 @@ void test(const cv::Mat &img)
 
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow("original", CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow("original", cv::WINDOW_AUTOSIZE);
 #endif
 	cv::imshow("original", img);
@@ -196,7 +196,7 @@ void test(const cv::Mat &img)
 	CmnIP::tree::QuadTree::draw_rect(imgRect, r);
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow("split", CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow("split", cv::WINDOW_AUTOSIZE);
 #endif
 	cv::imshow("split", imgRect);
@@ -208,7 +208,7 @@ void test(const cv::Mat &img)
 	CmnIP::tree::QuadTree::draw_rect(imgMerge, r);
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow("merge", CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow("merge", cv::WINDOW_AUTOSIZE);
 #endif
 	cv::imshow("merge", imgMerge);
@@ -218,7 +218,7 @@ void test(const cv::Mat &img)
 	CmnIP::tree::QuadTree::draw_region(imgSegmented, r);
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow("segmented", CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow("segmented", cv::WINDOW_AUTOSIZE);
 #endif
 	cv::imshow("segmented", imgSegmented);
@@ -285,7 +285,7 @@ int main(int /*argc*/, char** /*argv*/)
 
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow("original", CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow("original", cv::WINDOW_AUTOSIZE);
 #endif
 	cv::imshow("original", img);
@@ -300,7 +300,7 @@ int main(int /*argc*/, char** /*argv*/)
 	CmnIP::tree::QuadTree::draw_rect(imgRect, r);
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow("split", CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow("split", cv::WINDOW_AUTOSIZE);
 #endif
 	cv::imshow("split", imgRect);
@@ -312,7 +312,7 @@ int main(int /*argc*/, char** /*argv*/)
 	CmnIP::tree::QuadTree::draw_rect(imgMerge, r);
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow("merge", CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow("merge", cv::WINDOW_AUTOSIZE);
 #endif
 	cv::imshow("merge", imgMerge);
@@ -322,7 +322,7 @@ int main(int /*argc*/, char** /*argv*/)
 	CmnIP::tree::QuadTree::draw_region(imgSegmented, r);
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow("segmented", CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow("segmented", cv::WINDOW_AUTOSIZE);
 #endif
 	cv::imshow("segmented", imgSegmented);
