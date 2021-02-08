@@ -87,10 +87,12 @@ int test_em(cv::Mat &src)
 	return 0;
 }
 
-
-void main()
+// ----------------------------------------------------------------------------
+int main(int argc, char* argv[])
 {
 	cv::Mat src = cv::imread("..\\..\\data\\floweryellow.jpg");
 	test_em(src);
 	cv::waitKey();
+	
+	return 0;
 }
