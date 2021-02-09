@@ -87,7 +87,7 @@ public:
 #if CV_MAJOR_VERSION == 3
 		cv::remap(vout[0], HA, mapx, mapy, CV_INTER_LINEAR, 
 			cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::remap(vout[0], HA, mapx, mapy, cv::INTER_LINEAR, 
 			cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 #endif
@@ -97,7 +97,7 @@ public:
 #if CV_MAJOR_VERSION == 3
 		cv::remap(vout[1], HA, mapx, mapy, CV_INTER_LINEAR, 
 			cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::remap(vout[1], HA, mapx, mapy, cv::INTER_LINEAR, 
 			cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 #endif
@@ -228,7 +228,7 @@ void test(int argc, char *argv[])
 	cv::imshow("m11", m1);
 	cv::remap(m0, m1, mapx, mapy, CV_INTER_LINEAR, cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 	cv::imshow("m12", m1);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::remap(m0, m1, mapx, mapy, cv::INTER_LINEAR, cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 	cv::imshow("m11", m1);
 	cv::remap(m0, m1, mapx, mapy, cv::INTER_LINEAR, cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));

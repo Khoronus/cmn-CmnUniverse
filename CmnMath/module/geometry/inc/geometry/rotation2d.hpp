@@ -1,6 +1,6 @@
 /**
-* @file statistics_headers.hpp
-* @brief Header of all the files related to the statistics
+* @file rotation2.hpp
+* @brief Header of all the files related to 2D rotation
 *
 * @section LICENSE
 *
@@ -40,7 +40,8 @@ public:
 
 	/** @brief Rotation of a 2D point around another point.
 	*/
-	static void point(const _Ty &in, CMN_64F angle, _Ty &center, _Ty &out) {
+	static void point(const _Ty &in, CMN_64F angle, 
+	                  const _Ty &center, _Ty &out) {
 		_Ty aux = in - center;
 		CMN_64F c = std::cos(angle);
 		CMN_64F s = std::sin(angle);
@@ -50,7 +51,8 @@ public:
 
 	/** @brief Rotation of a 2D point around another point.
 	*/
-	static void pointf(const _Ty &in, CMN_32F angle, _Ty &center, _Ty &out) {
+	static void pointf(const _Ty &in, CMN_32F angle, 
+	                   const _Ty &center, _Ty &out) {
 		_Ty aux = in - center;
 		CMN_32F c = std::cos(angle);
 		CMN_32F s = std::sin(angle);

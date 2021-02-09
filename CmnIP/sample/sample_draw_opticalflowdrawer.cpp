@@ -54,7 +54,7 @@ void test()
 		cv::Mat gray;
 #if CV_MAJOR_VERSION == 3
 		cv::cvtColor(frameReference, gray, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::cvtColor(frameReference, gray, cv::COLOR_BGR2GRAY);
 #endif
 		if (prevgray.empty()) {
@@ -68,14 +68,14 @@ void test()
 			cv::calcOpticalFlowFarneback(prevgray, gray, flow, 0.5, 3, of_size, 3, 5, 1.2, 0);
 #if CV_MAJOR_VERSION == 3
 			cv::cvtColor(prevgray, cflow, CV_GRAY2BGR);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::cvtColor(prevgray, cflow, cv::COLOR_GRAY2BGR);
 #endif
 			CmnIP::draw::OpticalFlowDrawer::flow2rgb(flow, cflow);
 			if (!cflow.empty()) cv::imshow("flow_rgb", cflow);
 #if CV_MAJOR_VERSION == 3
 			cv::cvtColor(prevgray, cflow, CV_GRAY2BGR);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::cvtColor(prevgray, cflow, cv::COLOR_GRAY2BGR);
 #endif
 			CmnIP::draw::OpticalFlowDrawer::drawOptFlowMap(flow, cflow, 10);

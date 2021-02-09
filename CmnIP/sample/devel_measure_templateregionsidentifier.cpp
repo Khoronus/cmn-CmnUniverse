@@ -89,6 +89,7 @@ public:
 		}
 
 		cv::imshow("result_window", result);
+		return 1;
 	}
 };
 

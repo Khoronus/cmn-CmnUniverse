@@ -40,7 +40,7 @@ typedef struct PointMass_
 {
 	cv::Point2f p_;
 	double mass_;
-	PointMass_(cv::Point2f &p, double mass) {
+	PointMass_(const cv::Point2f &p, double mass) {
 		p_ = p; mass_ = mass;
 	}
 } PointMass, *pPointMass;
@@ -666,7 +666,7 @@ void display(const std::string &filename_result_false,
 
 // ############################################################################
 
-void main()
+int main(int arc, char* argv[])
 {
 	// Generate a set of random points for the coordinate
 	std::ifstream myfile("../../data/gravitypoint_coordinate.txt");
@@ -698,4 +698,6 @@ void main()
 	test3("../../data/gravitypoint_coordinate.txt",
 		"../../data/result_t.txt", true);
 	display("../../data/result_f.txt", "../../data/result_t.txt");
+	
+	return 0;
 }

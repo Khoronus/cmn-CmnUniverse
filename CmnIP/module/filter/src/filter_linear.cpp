@@ -86,7 +86,7 @@ int FilterLinear::get_laplace(const cv::Mat &src, int kernel_size, int scale,
 	} else {
 #if CV_MAJOR_VERSION == 3
 		cv::cvtColor(src, src_gray, CV_RGB2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::cvtColor(src, src_gray, cv::COLOR_RGB2GRAY);
 #endif
 	}

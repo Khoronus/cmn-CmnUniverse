@@ -256,7 +256,7 @@ void gmm()
 
 /**	 Main code
 */
-int main(int argc, char *argv[], char *window_name)
+int main(int argc, char *argv[])
 {
 	gmm();
 	return 0;
