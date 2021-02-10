@@ -62,7 +62,7 @@ void test()
 		clahe->setClipLimit(4);
 #if CV_MAJOR_VERSION == 3
 		cv::cvtColor(src, src, CV_BGR2GRAY);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::cvtColor(src, src, cv::COLOR_BGR2GRAY);
 #endif
 		clahe->apply(src, src);
@@ -84,7 +84,8 @@ void test()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	test();
+	return 0;
 }

@@ -1,4 +1,4 @@
-/* @file sample_classification_classifycolor.cpp
+/* @file test_opencv_filter2d.cpp
 * @brief Main file with the example for the hog descriptor and visualization.
 *
 * @section LICENSE
@@ -46,14 +46,14 @@ int test()
 	double delta;
 	int ddepth;
 	int kernel_size;
-	char* window_name = "filter2D Demo";
+	std::string window_name = "filter2D Demo";
 
 	int c;
 
 	/// Create window
 #if CV_MAJOR_VERSION == 3
 	cv::namedWindow(window_name, CV_WINDOW_AUTOSIZE);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 	cv::namedWindow(window_name, cv::WINDOW_AUTOSIZE);
 #endif
 
@@ -104,7 +104,7 @@ int test()
 
 /**	 Main code
 */
-int main(int argc, char *argv[], char *window_name)
+int main(int argc, char *argv[])
 {
 	test();
 	return 0;

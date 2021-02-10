@@ -1,5 +1,6 @@
-/* @file fisheye2perspective.hpp
- * @brief Class to map the points from a fish-eye to perspective and viceversa.
+/* @file fisheye2polar.hpp
+ * @brief Class to map the points from a fish-eye to polar coordinates and 
+ *        vice versa.
  *
  * @section LICENSE
  *
@@ -52,7 +53,7 @@ class FishEye2Polar
 public:
 
 	// Convert a fish eye image in a polar image
-	static void fish2polar(cv::Mat &image, cv::Mat &out, bool direction) {
+	static void fish2polar(const cv::Mat &image, cv::Mat &out, bool direction) {
 		cv::Mat m0 = image;
 		//cv::resize(m0, m0, cv::Size(512, 512));
 		cv::Point center(m0.cols / 2, m0.rows / 2);
@@ -104,7 +105,7 @@ public:
 
 
 	// Covert a polar coordinate image in a fish eye image
-	static void polar2fisheye(cv::Mat &image, cv::Mat &out, bool direction) {
+	static void polar2fisheye(const cv::Mat &image, cv::Mat &out, bool direction) {
 		cv::Mat m = image;
 		int kCut = 0;
 		m = m(cv::Rect(0, kCut, m.cols, m.rows - kCut));
@@ -149,7 +150,7 @@ public:
 
 
 	// Convert a fish eye image in a polar image
-	static int fish2polarMap(cv::Mat &src, bool direction, cv::Mat &mapx, cv::Mat &mapy) {
+	static int fish2polarMap(const cv::Mat &src, bool direction, cv::Mat &mapx, cv::Mat &mapy) {
 
 		if (src.empty()) return 0;
 		mapx = cv::Mat(src.size(), CV_32FC1, cv::Scalar(0));
@@ -197,7 +198,7 @@ public:
 
 
 	// Covert a polar coordinate image in a fish eye image
-	static int polar2fisheyeMap(cv::Mat &src, bool direction, cv::Mat &mapx, cv::Mat &mapy) {
+	static int polar2fisheyeMap(const cv::Mat &src, bool direction, cv::Mat &mapx, cv::Mat &mapy) {
 
 		if (src.empty()) return 0;
 		mapx = cv::Mat(src.size(), CV_32FC1, cv::Scalar(0));
@@ -249,7 +250,7 @@ public:
 };
 
 
-}  // namespace transform
-}	// namespace CmnIP
+} // namespace transform
+} // namespace CmnIP
 
-#endif /* CMNIP_TRANSFORM_FISHEYE2POLAR_HPP__ */
+#endif // CMNIP_TRANSFORM_FISHEYE2POLAR_HPP__
