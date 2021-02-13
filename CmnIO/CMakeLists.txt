@@ -39,18 +39,17 @@ endif()
 if(UNIX)
     include(GNUInstallDirs)
 
-    set(CMNIO_INC_INSTALL_DIR "${CMAKE_INSTALL_INCLUDEDIR}/module") 
+    set(CMNIO_INC_INSTALL_DIR "module")  
     set(CMNIO_RUNTIME_INSTALL_DIR "${CMAKE_INSTALL_BINDIR}") 
     set(CMNIO_LIBRARY_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
     set(CMNIO_ARCHIVE_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
     set(CMNIO_FRAMEWORK_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
 
-    set(CMNIO_CMAKE_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/cmnio/cmake")
-    set(CMNIO_ADDITIONAL_FILES_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/module")
+    set(CMNIO_CMAKE_CONFIG_INSTALL_DIR "cmake")
+    set(CMNIO_ADDITIONAL_FILES_INSTALL_DIR "./")
 
     set(CMNIO_RUNTIME_INSTALL_DIR "bin") # for the nodesize_dbg, just ignore version and the like
-    set(CMNIO_INC_INSTALL_DIR "include/cmnio") # header filestree
-
+    set(CMNIO_INC_INSTALL_DIR "module") # header filestree
 elseif(WIN32)
     set(CMNIO_INC_INSTALL_DIR "module")
     set(CMNIO_RUNTIME_INSTALL_DIR   "bin") 

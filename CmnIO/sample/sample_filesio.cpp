@@ -51,9 +51,11 @@ void test_vertexIO() {
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	test_vertexIO();
+	
+	return 0;
 }
 
 

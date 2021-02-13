@@ -24,3 +24,11 @@ cmake ..
 make
 make install
 
+# CmnIO
+cd ../../CmnIO
+mkdir build
+cd build
+cmake ..
+make
+make install
+
