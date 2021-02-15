@@ -1,6 +1,6 @@
 /**
-* @file sample_numericsystem_numericsystem.cpp
-* @brief Sample dynamic.
+* @file sample_computationalgeometry_computationalgeometry.cpp
+* @brief Sample of computational geometry.
 *
 * @section LICENSE
 *
@@ -24,7 +24,7 @@
 #include <iostream>
 #include <string>
 
-#include "computationalgeometry\inc\computationalgeometry\computationalgeometry_headers.hpp"
+#include "computationalgeometry/inc/computationalgeometry/computationalgeometry_headers.hpp"
 
 namespace
 {

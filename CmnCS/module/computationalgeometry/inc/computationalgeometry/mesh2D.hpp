@@ -1,18 +1,25 @@
 /**
-
-THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY 
-APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE 
-COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM 
-ÅgAS ISÅh WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR 
-IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
-THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM 
-IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE 
-COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
+* @file mesh2D.hpp
+* @brief Contains classes to manage 2D meshes.
+*
+* @section LICENSE
+*
+* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+* AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+* ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR/AUTHORS BE LIABLE FOR ANY
+* DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+* (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+* LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+* ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+* (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+* THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*
+* @author  Alessandro Moro <alessandromoro.italy@gmail.com>
+* @bug No known bugs.
+* @version 0.1.1.3
+*
 */
-
-// File Version 0.1.1.2
 
 #ifndef CMNCS_COMPUTATIONALGEOMETRY_MESH2D_HPP__
 #define CMNCS_COMPUTATIONALGEOMETRY_MESH2D_HPP__
@@ -23,9 +30,9 @@ COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/video/tracking.hpp>
 
-#include "cmncscore\inc\cmncscore\error.hpp"
-#include "cmncscore\inc\cmncscore\deprecated.hpp"
-#include "cmnmathworld\inc\cmnmathworld\cmnmathworld_headers.hpp"
+#include "cmncscore/inc/cmncscore/error.hpp"
+#include "cmncscore/inc/cmncscore/deprecated.hpp"
+#include "cmnmathworld/inc/cmnmathworld/cmnmathworld_headers.hpp"
 
 namespace CmnCS
 {
@@ -357,7 +364,7 @@ private:
 	{
 #if CV_MAJOR_VERSION == 3
 		cv::circle( img, fp, 3, color, CV_FILLED, 8, 0 );
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 		cv::circle(img, fp, 3, color, cv::FILLED, 8, 0);
 #endif
 	}
@@ -397,7 +404,7 @@ private:
 			if (point_valid(pt[2], cv::Point(0, 0), cv::Point(img.cols, img.rows)) &&
 				point_valid(pt[0], cv::Point(0, 0), cv::Point(img.cols, img.rows)))
 				cv::line(img, pt[2], pt[0], delaunay_color, 1, CV_AA, 0);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			if (point_valid(pt[0], cv::Point(0, 0), cv::Point(img.cols, img.rows)) &&
 				point_valid(pt[1], cv::Point(0, 0), cv::Point(img.cols, img.rows)))
 				cv::line(img, pt[0], pt[1], delaunay_color, 1, cv::LINE_AA, 0);
@@ -449,7 +456,7 @@ private:
 			if (point_valid(pt[2], cv::Point(0, 0), cv::Point(img.cols, img.rows)) &&
 				point_valid(pt[0], cv::Point(0, 0), cv::Point(img.cols, img.rows)))
 				cv::line(img, pt[2], pt[0], delaunay_color, 1, CV_AA, 0);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			if (point_valid(pt[0], cv::Point(0, 0), cv::Point(img.cols, img.rows)) &&
 				point_valid(pt[1], cv::Point(0, 0), cv::Point(img.cols, img.rows)))
 				cv::line(img, pt[0], pt[1], delaunay_color, 1, cv::LINE_AA, 0);
@@ -501,7 +508,7 @@ private:
 #if CV_MAJOR_VERSION == 3
 			cv::polylines(img, ifacets, true, cv::Scalar(), 1, CV_AA, 0);
 			cv::circle(img, centers[i], 3, cv::Scalar(), -1, CV_AA, 0);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::polylines(img, ifacets, true, cv::Scalar(), 1, cv::LINE_AA, 0);
 			cv::circle(img, centers[i], 3, cv::Scalar(), -1, cv::LINE_AA, 0);
 #endif
@@ -533,7 +540,7 @@ private:
 #if CV_MAJOR_VERSION == 3
 			cv::polylines(img, ifacets, true, cv::Scalar(), 1, CV_AA, 0);
 			cv::circle(img, centers[i], 3, cv::Scalar(), -1, CV_AA, 0);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::polylines(img, ifacets, true, cv::Scalar(), 1, cv::LINE_AA, 0);
 			cv::circle(img, centers[i], 3, cv::Scalar(), -1, cv::LINE_AA, 0);
 #endif
@@ -567,7 +574,7 @@ private:
 			ifacets[0] = ifacet;
 #if CV_MAJOR_VERSION == 3
 			cv::polylines(m, ifacets, true, cv::Scalar(), 1, CV_AA, 0);
-#else if CV_MAJOR_VERSION == 4
+#elif CV_MAJOR_VERSION == 4
 			cv::polylines(m, ifacets, true, cv::Scalar(), 1, cv::LINE_AA, 0);
 #endif
 			out.push_back(m);
@@ -607,4 +614,4 @@ private:
 } // namespace computationalgeometry
 } // namespace CmnCS
 
-#endif /* CMNCS_COMPUTATIONALGEOMETRY_MESH2D_HPP__ */
+#endif // CMNCS_COMPUTATIONALGEOMETRY_MESH2D_HPP__

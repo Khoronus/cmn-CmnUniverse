@@ -29,7 +29,7 @@
 #include <vector>
 #include <map>
 
-#include "cmncscore\inc\cmncscore\type.hpp"
+#include "cmncscore/inc/cmncscore/type.hpp"
 
 namespace CmnCS
 {

@@ -39,18 +39,17 @@ endif()
 if(UNIX)
     include(GNUInstallDirs)
 
-    set(CMNCS_INC_INSTALL_DIR "${CMAKE_INSTALL_INCLUDEDIR}/module") 
+    set(CMNCS_INC_INSTALL_DIR "module")  
     set(CMNCS_RUNTIME_INSTALL_DIR "${CMAKE_INSTALL_BINDIR}") 
     set(CMNCS_LIBRARY_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
     set(CMNCS_ARCHIVE_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
     set(CMNCS_FRAMEWORK_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}")
 
-    set(CMNCS_CMAKE_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/cmncs/cmake")
-    set(CMNCS_ADDITIONAL_FILES_INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/module")
+    set(CMNCS_CMAKE_CONFIG_INSTALL_DIR "cmake")
+    set(CMNCS_ADDITIONAL_FILES_INSTALL_DIR "./")
 
     set(CMNCS_RUNTIME_INSTALL_DIR "bin") # for the nodesize_dbg, just ignore version and the like
-    set(CMNCS_INC_INSTALL_DIR "include/cmncs") # header filestree
-
+    set(CMNCS_INC_INSTALL_DIR "module") # header filestree
 elseif(WIN32)
     set(CMNCS_INC_INSTALL_DIR "module")
     set(CMNCS_RUNTIME_INSTALL_DIR   "bin") 

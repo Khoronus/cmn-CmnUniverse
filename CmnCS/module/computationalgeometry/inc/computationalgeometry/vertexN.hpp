@@ -1,7 +1,6 @@
 /**
-* @file structure_texture.hpp
-* @brief Contains classes to manage the 3D structure and textures, merge and
-* split.
+* @file vertexN.hpp
+* @brief Contains classes to manage the ND vertex structure.
 *
 * @section LICENSE
 *
@@ -30,7 +29,7 @@
 #include <vector>
 #include <map>
 
-#include "cmncscore\inc\cmncscore\type.hpp"
+#include "cmncscore/inc/cmncscore/type.hpp"
 
 namespace CmnCS
 {
@@ -221,4 +220,4 @@ private:
 } // namespace computationalgeometry
 } // namespace CmnCS
 
-#endif /* CMNCS_COMPUTATIONALGEOMETRY_VERTEXN_HPP__ */
+#endif // CMNCS_COMPUTATIONALGEOMETRY_VERTEXN_HPP__

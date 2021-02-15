@@ -1,5 +1,5 @@
 /**
-* @file sample_numericsystem_numericsystem.cpp
+* @file sample_indexing_simplifyindex.cpp
 * @brief Sample dynamic.
 *
 * @section LICENSE
@@ -245,11 +245,13 @@ int test()
 
 // ############################################################################
 
-void main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample SimplifyIndex" << std::endl;
 	test_simple();
 	test();
+	
+	return 0;
 }
 
 
