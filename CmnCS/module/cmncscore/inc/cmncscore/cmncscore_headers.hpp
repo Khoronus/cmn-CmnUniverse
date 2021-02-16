@@ -29,4 +29,4 @@
 #include "error.hpp"
 #include "type.hpp"
 
-#endif /* CMNCS_CMNCSCORE_COREHEADERS_HPP__ */
+#endif // CMNCS_CMNCSCORE_COREHEADERS_HPP__
