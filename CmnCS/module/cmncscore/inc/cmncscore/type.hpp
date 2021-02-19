@@ -26,6 +26,6 @@
 #ifndef CMNCS_CMNCSCORE_TYPE_HPP__
 #define CMNCS_CMNCSCORE_TYPE_HPP__
 
-typedef unsigned __int32 INDEX;
+typedef uint32_t INDEX;
 
 #endif // CMNCS_CMNCSCORE_TYPE_HPP__
