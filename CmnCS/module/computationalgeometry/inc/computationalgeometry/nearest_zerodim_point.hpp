@@ -90,7 +90,8 @@ public:
 		The nearest is p0
 	*/
 	template <typename _Ty>
-	static int find_index_nearest(_Ty &src, _Ty &ref, float angle_tolerance,
+	static int find_index_nearest(const _Ty &src, const _Ty &ref, 
+	        float angle_tolerance,
 		std::map<int, _Ty> &m_points)
 	{
 		float d = std::numeric_limits<float>::max();

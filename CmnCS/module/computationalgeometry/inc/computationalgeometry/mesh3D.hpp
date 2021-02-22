@@ -30,6 +30,7 @@
 #include <vector>
 #include <map>
 
+#include "mesh_naive_3DIO.hpp"
 #include "triangle3D.hpp"
 
 namespace CmnCS
@@ -510,7 +511,7 @@ class Mesh3D
   bool load(const std::string &filename)
   {
 	  std::vector< std::vector< float > > v_triangles_;
-	  if (!MeshUtils::loadTriangles(filename, v_triangles_, 1.0)) return false;
+	  if (!MeshNaive3DIO::loadTriangles_naive(filename, v_triangles_)) return false;
 	  m_triangle_.clear();
 	  index_last_valid_ = 0;
 

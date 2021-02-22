@@ -364,17 +364,17 @@ class Triangle3D
 		!structure_.exist(2)) return 0;
 	if (!texture_.exist(0) || !texture_.exist(1) || 
 		!texture_.exist(2)) return 0;
-	std::vector< cv::Point3f > p3d(3);
-	std::vector< cv::Point2f > p2d(3);
+	std::vector< _Ty3 > p3d(3);
+	std::vector< _Ty2 > p2d(3);
 	structure_.find(0, p3d[0]);
 	structure_.find(1, p3d[1]);
 	structure_.find(2, p3d[2]);
 	//texture_.find(0, p2d[0]);
 	texture_.find(1, p2d[1]);
 	texture_.find(2, p2d[2]);
-	cv::Point3f a = p3d[2] - p3d[0];
-	cv::Point3f b = p3d[1] - p3d[0];
-	cv::Point3f N = a.cross(b);
+	_Ty3 a = p3d[2] - p3d[0];
+	_Ty3 b = p3d[1] - p3d[0];
+	_Ty3 N = a.cross(b);
 	float w = N.dot(p3d[0]);
 
 	if (w > 0) {

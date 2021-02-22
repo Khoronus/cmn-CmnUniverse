@@ -98,10 +98,12 @@ void test()
 
 // ############################################################################
 
-void main()
+int main(int argc, char* argv[])
 {
 	std::cout << "Sample ComputationalGeometry" << std::endl;
 	test();
+	
+	return 0;
 }
 
 

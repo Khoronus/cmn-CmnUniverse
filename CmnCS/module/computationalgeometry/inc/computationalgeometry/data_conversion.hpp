@@ -90,7 +90,7 @@ public:
 			// Search the element in the texture
 			_Ty2 value;
 			if (texture.find(it->first, value)) {
-				m_3Dmap[ std::pair<int, int>(value.x * size.width, value.y * size.height) ] =
+				m_3Dmap[ std::pair<int, int>(value.x * width, value.y * height) ] =
 					it->second;
 			}
 		}
