@@ -29,6 +29,8 @@
 #include <vector>
 #include <map>
 
+#include "cmnmathworld/inc/cmnmathworld/cmnmathworld_headers.hpp"
+
 #include "cmncscore/inc/cmncscore/type.hpp"
 
 namespace CmnCS
@@ -191,7 +193,7 @@ public:
 		int iFound = 0;
 		for (auto it = data_.begin(); it != data_.end(); it++)
 		{
-			float d = Distance::point_point(value, it->second);
+			float d = CmnMath::geometry::DistanceZeroDimPoint::point_point_2d<cv::Point2f, float>(value, it->second);
 			if (d < distance && d <= min_distance) {
 				iFound = 1;
 				distance = d;
