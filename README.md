@@ -1,4 +1,4 @@
-# cmn-GenericCamera
+# cmn-CmnUniverse
 Collection of common libraries.
 
 ## Getting Started
