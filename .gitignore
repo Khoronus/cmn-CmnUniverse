@@ -3,6 +3,7 @@ build/
 
 # Ignore specific files (created locally)
 configure/path_configuration.txt
+configure/global_path_configuration.txt
 configure/win/build_result.txt
 CmnLib/module/version/version.hpp
 CmnMath/module/version/version.hpp
